@@ -11870,6 +11870,16 @@ body {
   color: #1ed75f;
 }
 
+#player-mobile {
+  background-color: #242424;
+  border-radius: 10px;
+  bottom: 100px;
+}
+
+#navbar-mobile {
+  background-color: #242424;
+}
+
 /*ALBUM*/
 /*ARTIST*/
 /*SEARCH*//*# sourceMappingURL=main.css.map */

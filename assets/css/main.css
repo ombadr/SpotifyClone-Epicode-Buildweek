@@ -12044,6 +12044,15 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
 }
+#player-desktop div:nth-child(2) {
+  padding: 0;
+}
+#player-desktop div:nth-child(2) p {
+  margin: 0;
+}
+#player-desktop div:nth-child(2) progress {
+  width: 300px;
+}
 
 /*ALBUM*/
 /*ARTIST*/

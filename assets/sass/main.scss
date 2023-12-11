@@ -94,6 +94,15 @@ body {
       object-fit: contain;
     }
   }
+  div:nth-child(2){
+    padding: 0;
+    p {
+      margin: 0;
+    }
+    progress {
+      width: 300px;
+    }
+  }
 }
 
 

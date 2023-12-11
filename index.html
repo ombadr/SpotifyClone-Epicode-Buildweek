@@ -1,72 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--BOOTSTRAP ICONS-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
-    />
-    <title>Homepage</title>
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="assets/js/index.js"></script>
-  </head>
-  <body>
-    <header>
-      <!--TOP-BAR MOBILE-->
-      <div id="top-bar">
-        <h1>Top bar navbar</h1>
-      </div>
-    </header>
-    <main>
-      <div id="desktop-wrapper" class="container-fluid">
-        <div class="row">
-          <!--NAVBAR DESKTOP-->
-          <div id="navbar-desktop" class="col-lg-3">
-            <h1>Navbar desktop</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--BOOTSTRAP ICONS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  <title>Homepage</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="assets/js/index.js"></script>
+</head>
+
+<body>
+  <header>
+    <!--TOP-BAR MOBILE-->
+    <div id="top-bar">
+      <h1>Top bar navbar</h1>
+    </div>
+  </header>
+  <main>
+    <div id="desktop-wrapper" class="container-fluid">
+      <div class="row">
+        <!--NAVBAR DESKTOP-->
+        <div id="navbar-desktop" class="col-lg-3">
+          <h1>Navbar desktop</h1>
+        </div>
+
+        <!--CENTER SECTION-->
+        <section class="col-lg-7">
+          <!--HERO-HOMEPAGE massimo-->
+          <div id="hero-homepage">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <button class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2 "><svg
+                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-chevron-left" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                    </svg></button>
+                  <button class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 "><svg
+                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-chevron-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></button>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="dropdown d-flex justify-content-end">
+                    <img src="" alt="">
+                    <button class=" dropdown-toggle rounded-pill border-0 bg-black text-white mx-2" type="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      User 1
+                    </button>
+                    <ul class="dropdown-menu bg-black bg-gradient">
+                      <li> <img src="" alt=""><a class="dropdown-item text-white" href="#">User 2</a></li>
+                      <li> <img src="" alt=""><a class="dropdown-item text-white" href="#">User 3</a></li>
+                      <li> <img src="" alt=""><a class="dropdown-item text-white" href="#">User 4</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3 border-0 bg-black bg-gradient">
+              <div class="row">
+                <div class="col-md-3 p-4">
+                  <img src="/assets/imgs/main/image-12.jpg" class="img-fluid" alt="copertina singolo">
+                </div>
+                <div class="col-md-6 pt-3">
+                  <div class="card-body text-light">
+                    <h5 class="card-title"><b class="fs-1">VIOLA(feat.SALMO)</b></h5>
+                    <p class="card-text">Fedez,Salmo</p>
+                    <p class="card-text">Ascolta il nuovo singolo di Fedez e Salmo!</p>
+                    <button class="rounded-pill border-0 spotify-green-bg mx-2"><b>Play</b></button>
+                    <button
+                      class="rounded-pill border border-secondary bg-transparent text-white mx-2"><b>Salva</b></button>
+                    <button class="rounded-pill border-0 text-secondary bg-transparent "><b>. . .</b></button>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <button class="rounded border-0 text-secondary bg-black bg-gradient m-2 h-10 opacity-50 "><b>NASCONDI
+                      ANNUNCI</b></button>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!--CENTER SECTION-->
-          <section class="col-lg-7">
-            <!--HERO-HOMEPAGE-->
-            <div id="hero-homepage">
-              <h1>Hero homepage</h1>
+          <!--SUGGERITI massimo-->
+          <div id="suggeriti">
+            <h1>Buonasera</h1>
+            <div class="container mt-4">
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Prima Riga -->
+                <div class="col">
+                  <div class="card bg-dark border-0 text-white">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/assets/imgs/main/image-1.jpg" class="img-fluid rounded-start" alt="Card Image">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title text-truncate"><b>early stages emily syndrome</b></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>          
+                <div class="col">
+                  <div class="card bg-dark border-0 text-white">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/assets/imgs/main/image-2.jpg" class="img-fluid rounded-start" alt="Card Image">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title text-truncate"><b>Be The Young</b></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>          
+                <div class="col">
+                  <div class="card bg-dark border-0 text-white">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/assets/imgs/main/image-3.jpg" class="img-fluid rounded-start" alt="Card Image">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title text-truncate"><b>saggio vibes</b></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-dark border-0 text-white">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/assets/imgs/main/image-11.jpg" class="img-fluid rounded-start" alt="Card Image">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title text-truncate"><b>Brani che ti piacciono</b></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col">
+                  <div class="card bg-dark border-0 text-white">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/assets/imgs/main/image-18.jpg" class="img-fluid rounded-start" alt="Card Image">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title text-truncate"><b>2021 lol</b></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card bg-dark border-0 text-white">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/assets/imgs/main/image-19.jpg" class="img-fluid rounded-start" alt="Card Image">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title text-truncate"><b>Deep Dive with Ali Abdal</b></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <!--SUGGERITI-->
-            <div id="suggeriti">
-              <h1>suggeriti</h1>
-            </div>
-
-            <!--LIKED-->
-            <div id="liked">
-              <h1>Liked</h1>
-            </div>
-          </section>
-          <!--FRIENDS-->
-          <div id="friends" class="col-lg-2">
-            <h1>Friends</h1>
           </div>
+
+         <!--LIKED-->
+         <div id="liked">
+          <h1>Liked</h1>
+        </div>                             
+        </section>
+        <!--FRIENDS-->
+        <div id="friends" class="col-lg-2">
+          <h1>Friends</h1>
         </div>
       </div>
+    </div>
 
-      <!--PLAYLIST MOBILE-->
-      <div id="playlist-mobile"><h1>Playlist mobile</h1></div>
+    <!--PLAYLIST MOBILE-->
+    <div id="playlist-mobile">
+      <h1>Playlist mobile</h1>
+    </div>
 
-      <!--PLAYER DESKTOP-->
-      <div id="player-desktop"><h1>Player desktop</h1></div>
+    <!--PLAYER DESKTOP-->
+    <div id="player-desktop">
+      <h1>Player desktop</h1>
+    </div>
 
-      <!--PLAYER-MOBILE-->
-      <div id="player-mobile"><h1>Player mobile</h1></div>
+    <!--PLAYER-MOBILE-->
+    <div id="player-mobile">
+      <h1>Player mobile</h1>
+    </div>
 
-      <!--NAVBAR MOBILE-->
-      <div id="navbar-mobile"><h1>Navbar mobile</h1></div>
-    </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <!--NAVBAR MOBILE-->
+    <div id="navbar-mobile">
+      <h1>Navbar mobile</h1>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

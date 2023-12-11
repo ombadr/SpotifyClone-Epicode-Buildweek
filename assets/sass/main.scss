@@ -138,6 +138,32 @@ body {
 
 /*SEARCH*/
 
+#search-component {
+  input {
+    color: white;
+    &::placeholder {
+      color: $secondary;
+      font-weight: bold;
+    }
+  }
+  .custom-focus:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* CATEGORIES */
+
+.categories-card {
+  overflow: hidden;
+  img {
+    transform: translateX(16px);
+    rotate: 20deg;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+  }
+}
+
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 768px) {

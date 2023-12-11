@@ -11861,6 +11861,15 @@ body {
 }
 
 /*HOMEPAGE*/
+#playlist-mobile {
+  border-radius: 20px;
+  background-color: #242424;
+}
+
+.bi-heart-fill {
+  color: #1ed75f;
+}
+
 /*ALBUM*/
 /*ARTIST*/
 /*SEARCH*//*# sourceMappingURL=main.css.map */

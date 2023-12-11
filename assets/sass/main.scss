@@ -1,0 +1,149 @@
+@import 'bootstrap/scss/bootstrap.scss';
+
+// Variables
+
+// Text and background colors
+$darkGradientColor: #010101;
+$lighterGradientColor: #202020;
+$cardBackground: #171717;
+$lighterBackground: #2b2b2b;
+$darkTextColor: #838383;
+$lightTextColor: #f7f7f7;
+
+body {
+  background-color: black;
+  color: white;
+}
+
+/*HOMEPAGE*/
+
+/*LIKED SECTION */
+
+#liked {
+  color: $darkTextColor;
+
+  p {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    color: $lightTextColor;
+    margin-bottom: 30px;
+  }
+
+  .playlists {
+    gap: 10px;
+
+    .card {
+      padding: 10px;
+      background-color: $cardBackground;
+      border: none;
+
+      img {
+        width: 100%;
+      }
+
+      h5 {
+        color: $lightTextColor;
+        font-size: 1rem;
+      }
+
+      p {
+        color: $darkTextColor;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+/* PLAYER DESKTOP */
+#player-desktop {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  background-color: $cardBackground;
+  width: 100vw;
+  height: 100px;
+
+  svg,
+  progress {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  div:nth-child(1),
+  div:nth-child(2),
+  div:nth-child(3) {
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+    h6 {
+      color: $lightTextColor;
+      font-size: 0.8rem;
+    }
+    p {
+      font-size: 0.8rem;
+      color: $darkTextColor;
+    }
+    img {
+      border-radius: 3px;
+      box-shadow: 1px 1px, 5px, black;
+      width: 15%;
+      object-fit: contain;
+    }
+    #volumeBar {
+      width: 90px;
+      height: 10px;
+    }
+  }
+  div:nth-child(2) {
+    padding: 0;
+    p {
+      margin: 0;
+    }
+    progress {
+      width: 300px;
+      height: 10px;
+    }
+  }
+}
+
+/* PLAYLIST MOBILE */
+#playlist-mobile {
+  border-radius: 20px;
+  background-color: #242424;
+}
+
+.bi-heart-fill {
+  color: #1ed75f;
+}
+
+/* PLAYER MOBILE */
+#player-mobile {
+  background-color: #242424;
+  border-radius: 10px;
+  bottom: 100px;
+}
+
+/* NAVBAR MOBILE */
+#navbar-mobile {
+  background-color: #242424;
+}
+
+/*ALBUM*/
+
+/*ARTIST*/
+
+/*SEARCH*/
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 768px) {
+  #player-title-artist {
+    h6 {
+      display: none;
+    }
+  }
+}

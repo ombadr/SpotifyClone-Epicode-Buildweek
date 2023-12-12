@@ -27,6 +27,19 @@ body {
   }
 }
 
+#navbar-desktop,
+#friends {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+/*CENTER SECTION */
+#center-section {
+  overflow-y: auto;
+  height: 90vh;
+}
+
 /* HERO HOMEPAGE */
 
 .spotify-green-bg {

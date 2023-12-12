@@ -11861,6 +11861,14 @@ body {
 }
 
 /*HOMEPAGE*/
+/* NAVBAR DESKTOP */
+.dropdown-toggle {
+  cursor: pointer;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+
 /* HERO HOMEPAGE */
 .spotify-green-bg {
   background: #1db954;

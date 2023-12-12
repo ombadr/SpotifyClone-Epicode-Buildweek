@@ -18,6 +18,15 @@ body {
 
 /*HOMEPAGE*/
 
+/* NAVBAR DESKTOP */
+
+.dropdown-toggle {
+  cursor: pointer;
+  &::after {
+    display: none;
+  }
+}
+
 /* HERO HOMEPAGE */
 
 .spotify-green-bg {

@@ -19,10 +19,19 @@ let likedAlbums = ['122366', '7090505', '496520481', '62646932', '9410100'] // 5
 let homePageTracks = ['92720102', '1141668', '1662139552'] // 3 random tracks for homepage
 let suggeritiAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257'] // 6 randoms albums for suggeriti section in homepage
 
+let mobileMusicaPodcastAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257']
+
+let podcastShowAlbums = ['2732901', '108938', '1238967', '340077257', '297188862', '103248']
+
+let playlistMobileAlbums = ['2732901', '108938', '1238967']
+
+
 const likedAlbumCards = document.querySelector('#likedCards') // homepage liked cards
 const trackSliderItems = document.querySelector('#tracksSliderItems') // homepage slider
 const suggeritiAlbumsContainer = document.querySelector('#suggeritiAlbums')
-
+const mobileMusicaSuggeriti = document.querySelector('#mobileMusicaSuggeriti')
+const mobilePodcastSuggeriti = document.querySelector('#mobilePodcastSuggeriti')
+const playlistMobileAlbumsContainer = document.querySelector('#playlistMobile')
 
 // getAlbumTracks(ID)
 // getTracksFromSearch(artist)
@@ -164,7 +173,7 @@ async function getTracksForSlider() {
 }
 
 
-getTracksForSlider(); // Activate this to start the api fetch
+// getTracksForSlider(); // Activate this to start the api fetch
 
 // END GET TRACKS FOR HOMEPAGE
 
@@ -215,7 +224,167 @@ function displaySuggeritiAlbums(albumsHTML) {
     suggeritiAlbumsContainer.innerHTML = albumsHTML
 }
 
-getSuggeritiAlbums() // Activate this to start the API fetch
+// getSuggeritiAlbums() // Activate this to start the API fetch
 
 // END SUGGERITI ALBUMS
+
+// SUGGERITI MOBILE
+
+async function getMobileMusicaSuggeriti() {
+    try {
+        let albumsHTML = '';
+
+        for (let i = 0; i < mobileMusicaPodcastAlbums.length; i++) {
+            const albumId = mobileMusicaPodcastAlbums[i];
+            const albumTracks = await getAlbumTracks(albumId);
+            const albumHTML = createMobileMusicaSuggeriti(albumTracks);
+            albumsHTML += albumHTML;
+
+        }
+        displayMobileMusicaSuggeriti(albumsHTML);
+
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+async function getMobilePodcastSuggeriti() {
+    try {
+        let albumsHTML = '';
+
+        for (let i = 0; i < podcastShowAlbums.length; i++) {
+            const albumId = podcastShowAlbums[i];
+            const albumTracks = await getAlbumTracks(albumId);
+            const albumHTML = createMobileMusicaSuggeriti(albumTracks);
+            albumsHTML += albumHTML;
+
+        }
+        displayMobilePodcastSuggeriti(albumsHTML);
+
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+function createMobileMusicaSuggeriti(albumTracks) {
+    const { title, cover_big } = albumTracks
+
+    return `<div class="col-6 mb-2">
+                  <div class="card bg-dark border-0 text-white">
+                    <div class="row g-0">
+                      <div class="col-4">
+                        <img
+                          src="${cover_big}"
+                          class="img-fluid rounded-start"
+                          alt="{${title}"
+                        
+                        />
+                      </div>
+                      <div class="col-8">
+                        <div class="col-md-4">
+                          <div class="card-body pb-0 pt-2">
+                            <h5 class="card-title">${title}</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>`;
+}
+
+function createMobilePodcastSuggeriti(albumTracks) {
+    const { title, cover_big } = albumTracks
+
+    return `<div class="col-6 mb-2">
+                  <div class="card bg-dark border-0 text-white">
+                    <div class="row g-0">
+                      <div class="col-4">
+                        <img
+                          src="${cover_big}"
+                          class="img-fluid rounded-start"
+                          alt="{${title}"
+                        
+                        />
+                      </div>
+                      <div class="col-8">
+                        <div class="col-md-4">
+                          <div class="card-body pb-0 pt-2">
+                            <h5 class="card-title">${title}</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>`;
+}
+
+
+function displayMobileMusicaSuggeriti(albumsHTML) {
+    mobileMusicaSuggeriti.innerHTML = albumsHTML;
+}
+
+function displayMobilePodcastSuggeriti(albumsHTML) {
+    mobilePodcastSuggeriti.innerHTML = albumsHTML
+}
+
+// getMobileMusicaSuggeriti() // activate this for the fetch request
+
+// getMobilePodcastSuggeriti() // activate this for the fetch request
+
+// END SUGGERITI MOBILE
+
+// PLAYLIST MOBILE
+
+async function getMobilePlaylistAlbums() {
+    try {
+        let albumsHTML = '';
+
+        for (let i = 0; i < playlistMobileAlbums.length; i++) {
+            const albumId = playlistMobileAlbums[i];
+            const albumTracks = await getAlbumTracks(albumId);
+            const albumHTML = createMobilePlaylistAlbums(albumTracks);
+            albumsHTML += albumHTML;
+
+        }
+        displayMobilePlaylistAlbums(albumsHTML);
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+function createMobilePlaylistAlbums(albumTracks) {
+    const { title, cover_big } = albumTracks
+
+    return `<div id="playlist-mobile" class="m-4 p-2 d-md-none">
+          <div class="d-flex mt-2 mx-2">
+            <img
+              src="${cover_big}"
+              height="200px"
+              alt="Image 19"
+              class="me-3"
+            />
+            <div>
+              <p class="text-secondary">Playlist</p>
+              <h2>${title}</h2>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mx-2 mt-4">
+            <div class="d-flex">
+              <i class="bi bi-heart-fill fs-1"></i>
+              <i class="bi bi-three-dots-vertical fs-1 px-3 text-secondary"></i>
+            </div>
+            <div class="d-flex align-items-center">
+              <p class="mb-0 px-3 text-secondary">16 brani</p>
+              <i class="bi bi-play-circle-fill fs-1"></i>
+            </div>
+          </div>
+        </div>`;
+}
+
+function displayMobilePlaylistAlbums(albumHTML) {
+    playlistMobileAlbumsContainer.innerHTML = albumHTML
+}
+
+// getMobilePlaylistAlbums() // activate this for the fetch request
+// END PLAYLIST MOBILE
 

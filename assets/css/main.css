@@ -11893,12 +11893,16 @@ body {
   height: 87vh;
 }
 
+#playlistMobile {
+  overflow-y: auto;
+  height: 87vh;
+}
+
 /* HERO HOMEPAGE */
 .spotify-green-bg {
   background: #1db954;
 }
 
-/*LIKED SECTION */
 /*LIKED SECTION */
 #liked {
   color: #838383;
@@ -11919,6 +11923,10 @@ body {
   background-color: #171717;
   border: none;
   display: block;
+}
+#liked .playlists .card:hover {
+  cursor: pointer;
+  background-color: #2b2b2b;
 }
 @media screen and (min-width: 992px) {
   #liked .playlists .card {
@@ -12085,9 +12093,6 @@ body {
 #player-desktop #pauseButton {
   width: 30px;
   height: 30px;
-}
-#player-desktop #pauseButton {
-  display: none;
 }
 #player-desktop .playerBar {
   position: relative;

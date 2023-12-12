@@ -9,6 +9,13 @@ $cardBackground: #171717;
 $lighterBackground: #2b2b2b;
 $darkTextColor: #838383;
 $lightTextColor: #f7f7f7;
+$spotifyGreen: #1db954;
+
+// Breakpoints
+$mdBreak: 768px;
+$lgBreak: 992px;
+$xlBreak: 1200px;
+$xxlBreak: 1400px;
 
 body {
   background-color: black;
@@ -16,6 +23,36 @@ body {
 }
 
 /*HOMEPAGE*/
+
+/* NAVBAR DESKTOP */
+
+.dropdown-toggle {
+  cursor: pointer;
+  &::after {
+    display: none;
+  }
+}
+
+#navbar-desktop,
+#friends {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+/*CENTER SECTION */
+#center-section {
+  overflow-y: auto;
+  height: 90vh;
+}
+
+/* HERO HOMEPAGE */
+
+.spotify-green-bg {
+  background: $spotifyGreen;
+}
+
+/*LIKED SECTION */
 
 /*LIKED SECTION */
 
@@ -39,6 +76,31 @@ body {
       padding: 10px;
       background-color: $cardBackground;
       border: none;
+      display: block;
+
+      // Responsive behaviour based on number of cards
+      @media screen and (min-width: $lgBreak) {
+        display: none;
+        @for $i from 1 to 4 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: $xlBreak) {
+        @for $i from 1 to 5 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: $xxlBreak) {
+        @for $i from 1 to 6 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
 
       img {
         width: 100%;
@@ -65,6 +127,7 @@ body {
   background-color: $cardBackground;
   width: 100vw;
   height: 100px;
+  justify-content: space-between;
 
   svg,
   progress {
@@ -73,40 +136,141 @@ body {
     }
   }
 
-  div:nth-child(1),
-  div:nth-child(2),
-  div:nth-child(3) {
+  .nowPlaying,
+  .playbackControls,
+  .volumeControls {
     padding: 20px;
     align-items: center;
     gap: 10px;
+
     h6 {
       color: $lightTextColor;
       font-size: 0.8rem;
     }
+
     p {
       font-size: 0.8rem;
       color: $darkTextColor;
     }
+
     img {
       border-radius: 3px;
       box-shadow: 1px 1px, 5px, black;
-      width: 15%;
+      width: 60px;
       object-fit: contain;
+      display: none;
+      @media screen and (min-width: 860px) {
+        display: block;
+      }
     }
+
     #volumeBar {
       width: 90px;
       height: 10px;
     }
   }
-  div:nth-child(2) {
-    padding: 0;
+
+  .nowPlaying {
+    width: 300px;
+    gap: 20px;
+
     p {
       margin: 0;
     }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .playbackControls {
+    align-items: center;
+    position: relative;
+    right: 20px;
+    @media screen and (min-width: $lgBreak) {
+      position: static;
+    }
+
+    div {
+      align-items: center;
+      padding: 5px;
+      gap: 8px;
+
+      progress {
+        height: 8px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .playerButtons {
+      height: 40px;
+      position: relative;
+      bottom: 10px;
+
+      svg {
+        width: 30px;
+        height: 20px;
+
+        &:hover {
+          scale: 1.2;
+          transition-property: scale;
+          transition-duration: 100ms;
+          transition-timing-function: ease-in-out;
+        }
+      }
+    }
+  }
+
+  #playButton,
+  #pauseButton {
+    width: 30px;
+    height: 30px;
+  }
+
+  #pauseButton {
+    display: none;
+  }
+
+  .playerBar {
+    position: relative;
+    bottom: 10px;
+
     progress {
       width: 300px;
-      height: 10px;
     }
+  }
+
+  .playbackControls {
+    gap: 10px;
+  }
+}
+
+#heartFill {
+  display: none;
+}
+
+.volumeControls {
+  svg {
+    display: none;
+    @media screen and (min-width: $lgBreak) {
+      display: block;
+    }
+  }
+  #volumeIcon,
+  #fullscreenIcon {
+    display: block;
+  }
+}
+
+/* SUGGERITI MOBILE */
+.nav-tabs {
+  --bs-nav-tabs-border-color: black;
+  .nav-link {
+    color: white;
   }
 }
 
@@ -131,13 +295,26 @@ body {
 #navbar-mobile {
   background-color: #242424;
 }
-.spotify-green-bg{
-  background-color: #1DB954;
-}/*Verde brillante spotify di sfondo*/
+
 /*ALBUM*/
 
 /*ARTIST*/
-
+.custom-bg {
+  background-image: url('/assets/imgs/main/image-15.jpg');
+  background-size: cover;
+}
+/*Aggiunta classe custom per img di bg di div hero artist */
+#buttonFollowingBar{
+  background-color: $spotifyGreen;
+}
+/*Colore bottone play following bar pagina artist*/ 
+.custom-gradient-background {
+  background: linear-gradient(to bottom, #cc9900, #444444, #000000);
+}
+/*aggiunta classe custom per il bg color della sezione album*/
+.sfumaAlbum{
+  box-shadow: 0 0 30px rgba(0, 0, 0,1);
+}
 /*SEARCH*/
 
 #search-component {
@@ -169,9 +346,15 @@ body {
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 768px) {
+  #player-desktop {
+    display: none !important;
+  }
   #player-title-artist {
     h6 {
       display: none;
     }
   }
 }
+
+
+  

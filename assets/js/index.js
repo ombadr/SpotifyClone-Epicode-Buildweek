@@ -15,9 +15,11 @@ const artist = '50 cent' // Test artist
 
 // 5 random albums
 
-let likedAlbums = ['122366', '7090505', '496520481', '62646932', '9410100'] // 2 random albums for liked section in homepage
+let likedAlbums = ['122366', '7090505', '496520481', '62646932', '9410100'] // 5 random albums for liked section in homepage
+let homePageTracks = ['92720102', '1141668', '1662139552'] // 3 random tracks for homepage
 
 const likedAlbumCards = document.querySelector('#likedCards')
+const trackSliderItems = document.querySelector('#tracksSliderItems')
 
 
 // getAlbumTracks(ID)
@@ -45,6 +47,8 @@ async function getTracksFromSearch(artist) {
     }
 }
 
+
+
 async function getLikedAlbumTracks() {
     try {
         let albumsHTML = '';
@@ -54,7 +58,7 @@ async function getLikedAlbumTracks() {
             const albumTracks = await getAlbumTracks(albumId);
             const albumHTML = createLikedAlbumHTML(albumTracks);
             albumsHTML += albumHTML;
-            console.log('Album tracks: ', albumTracks);
+            // console.log('Album tracks: ', albumTracks);
         }
 
         displayLikedAlbums(albumsHTML);
@@ -63,8 +67,40 @@ async function getLikedAlbumTracks() {
     }
 }
 
+async function getTrackFromID(trackID) {
+    try {
+        const data = await fetch(BASE_URL + 'track/' + trackID, options)
+        const response = await data.json()
+
+        return response
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+
+async function getTracksForSlider() {
+    try {
+
+        for (let i = 0; i < homePageTracks.length; i++) {
+            const trackId = homePageTracks[i];
+            const tracks = await getTrackFromID(trackId)
+
+            console.log('Tracks: ' + tracks)
+
+
+        }
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+getTracksForSlider()
+
+
+
 function createLikedAlbumHTML(albumTracks) {
-    const { title, label, cover_big, artist } = albumTracks;
+    const { title, cover_big, artist } = albumTracks;
     return `<div class="card">
                   <img
                     src="${cover_big}"
@@ -77,6 +113,8 @@ function createLikedAlbumHTML(albumTracks) {
                   </div>
                 </div>`;
 }
+
+
 
 function displayLikedAlbums(albumsHTML) {
     likedAlbumCards.innerHTML = albumsHTML;

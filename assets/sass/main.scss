@@ -56,7 +56,7 @@ body {
 /*CENTER SECTION */
 #center-section {
   overflow-y: auto;
-  height: 90vh;
+  height: 87vh;
 }
 
 /* HERO HOMEPAGE */
@@ -64,8 +64,6 @@ body {
 .spotify-green-bg {
   background: $spotifyGreen;
 }
-
-/*LIKED SECTION */
 
 /*LIKED SECTION */
 
@@ -90,6 +88,10 @@ body {
       background-color: $cardBackground;
       border: none;
       display: block;
+      &:hover {
+        cursor: pointer;
+        background-color: $hoverLighterBackground;
+      }
 
       // Responsive behaviour based on number of cards
       @media screen and (min-width: $lgBreak) {
@@ -242,10 +244,6 @@ body {
   #pauseButton {
     width: 30px;
     height: 30px;
-  }
-
-  #pauseButton {
-    display: none;
   }
 
   .playerBar {

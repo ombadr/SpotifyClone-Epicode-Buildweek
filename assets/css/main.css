@@ -11876,6 +11876,17 @@ body {
   height: 100vh;
 }
 
+.friends-card h4, .friends-card .h4 {
+  font-size: 15px;
+  font-weight: bold;
+}
+.friends-card span {
+  font-size: 11px;
+}
+.friends-card p {
+  font-size: 12px;
+}
+
 /*CENTER SECTION */
 #center-section {
   overflow-y: auto;

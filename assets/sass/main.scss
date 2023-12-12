@@ -10,6 +10,7 @@ $lighterBackground: #2b2b2b;
 $darkTextColor: #838383;
 $lightTextColor: #f7f7f7;
 
+
 body {
   background-color: black;
   color: white;
@@ -65,6 +66,7 @@ body {
   background-color: $cardBackground;
   width: 100vw;
   height: 100px;
+  justify-content: space-between;
 
   svg,
   progress {
@@ -73,40 +75,104 @@ body {
     }
   }
 
-  div:nth-child(1),
-  div:nth-child(2),
-  div:nth-child(3) {
+
+  .nowPlaying,
+  .playbackControls,
+  .volumeControls {
     padding: 20px;
     align-items: center;
     gap: 10px;
+
     h6 {
       color: $lightTextColor;
       font-size: 0.8rem;
     }
+
     p {
       font-size: 0.8rem;
       color: $darkTextColor;
     }
+
     img {
       border-radius: 3px;
       box-shadow: 1px 1px, 5px, black;
       width: 15%;
       object-fit: contain;
     }
+
     #volumeBar {
       width: 90px;
       height: 10px;
     }
   }
-  div:nth-child(2) {
-    padding: 0;
+
+  .nowPlaying {
+    width: 33%;
+    gap: 20px;
     p {
       margin: 0;
     }
-    progress {
-      width: 300px;
-      height: 10px;
+    svg{
+      width: 20px;
+      height: 20px;
     }
+  }
+
+  .playbackControls {
+    align-items: center;
+
+    div {
+      align-items: center;
+      padding: 5px;
+      gap: 8px;
+
+      progress {
+        height: 8px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+    .volumeControls {
+      gap: 0px;
+    }
+
+    .playerButtons {
+      height: 40px;
+      position: relative;
+      bottom: 10px;
+
+      svg {
+        width: 30px;
+        height: 20px;
+
+        &:hover {
+          scale: 1.2;
+          transition-property: scale;
+          transition-duration: 100ms;
+          transition-timing-function: ease-in-out;
+        }
+      }
+    }
+  }
+  
+  #playButton, #pauseButton {
+    width: 30px;
+    height: 30px;
+  }
+  #pauseButton{
+    display: none;
+  }
+  .playerBar {
+    position: relative;
+    bottom: 10px;
+    progress{
+      width: 300px;
+    }
+  }
+  .playbackControls {
+    gap: 10px;
   }
 }
 
@@ -141,11 +207,13 @@ body {
 #search-component {
   input {
     color: white;
+
     &::placeholder {
       color: $secondary;
       font-weight: bold;
     }
   }
+
   .custom-focus:focus {
     outline: none;
     box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
@@ -156,6 +224,7 @@ body {
 
 .categories-card {
   overflow: hidden;
+
   img {
     transform: translateX(16px);
     rotate: 20deg;

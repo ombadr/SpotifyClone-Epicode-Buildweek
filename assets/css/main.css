@@ -11982,6 +11982,7 @@ body {
 }
 
 /*HOMEPAGE*/
+/*LIKED SECTION */
 #liked {
   color: #838383;
 }
@@ -11990,7 +11991,7 @@ body {
   font-weight: 700;
 }
 #liked h2, #liked .h2 {
-  color: #F7F7F7;
+  color: #f7f7f7;
   margin-bottom: 30px;
 }
 #liked .playlists {
@@ -12005,7 +12006,7 @@ body {
   width: 100%;
 }
 #liked .playlists .card h5, #liked .playlists .card .h5 {
-  color: #F7F7F7;
+  color: #f7f7f7;
   font-size: 1rem;
 }
 #liked .playlists .card p {
@@ -12013,6 +12014,7 @@ body {
   font-size: 0.8rem;
 }
 
+/* PLAYER DESKTOP */
 #player-desktop {
   position: fixed;
   z-index: 10;
@@ -12020,45 +12022,164 @@ body {
   background-color: #171717;
   width: 100vw;
   height: 100px;
+  justify-content: space-between;
 }
-#player-desktop svg:hover, #player-desktop progress:hover {
+#player-desktop svg:hover,
+#player-desktop progress:hover {
   cursor: pointer;
 }
-#player-desktop div:nth-child(1), #player-desktop div:nth-child(2), #player-desktop div:nth-child(3) {
+#player-desktop .nowPlaying,
+#player-desktop .playbackControls,
+#player-desktop .volumeControls {
   padding: 20px;
   align-items: center;
   gap: 10px;
 }
-#player-desktop div:nth-child(1) h6, #player-desktop div:nth-child(1) .h6, #player-desktop div:nth-child(2) h6, #player-desktop div:nth-child(2) .h6, #player-desktop div:nth-child(3) h6, #player-desktop div:nth-child(3) .h6 {
-  color: #F7F7F7;
+#player-desktop .nowPlaying h6, #player-desktop .nowPlaying .h6,
+#player-desktop .playbackControls h6,
+#player-desktop .playbackControls .h6,
+#player-desktop .volumeControls h6,
+#player-desktop .volumeControls .h6 {
+  color: #f7f7f7;
   font-size: 0.8rem;
 }
-#player-desktop div:nth-child(1) p, #player-desktop div:nth-child(2) p, #player-desktop div:nth-child(3) p {
+#player-desktop .nowPlaying p,
+#player-desktop .playbackControls p,
+#player-desktop .volumeControls p {
   font-size: 0.8rem;
   color: #838383;
 }
-#player-desktop div:nth-child(1) img, #player-desktop div:nth-child(2) img, #player-desktop div:nth-child(3) img {
+#player-desktop .nowPlaying img,
+#player-desktop .playbackControls img,
+#player-desktop .volumeControls img {
   border-radius: 3px;
   box-shadow: 1px 1px, 5px, black;
   width: 15%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-#player-desktop div:nth-child(1) #volumeBar, #player-desktop div:nth-child(2) #volumeBar, #player-desktop div:nth-child(3) #volumeBar {
+#player-desktop .nowPlaying #volumeBar,
+#player-desktop .playbackControls #volumeBar,
+#player-desktop .volumeControls #volumeBar {
   width: 90px;
   height: 10px;
 }
-#player-desktop div:nth-child(2) {
-  padding: 0;
+#player-desktop .nowPlaying {
+  width: 33%;
+  gap: 20px;
 }
-#player-desktop div:nth-child(2) p {
+#player-desktop .nowPlaying p {
   margin: 0;
 }
-#player-desktop div:nth-child(2) progress {
+#player-desktop .nowPlaying svg {
+  width: 20px;
+  height: 20px;
+}
+#player-desktop .playbackControls {
+  align-items: center;
+}
+#player-desktop .playbackControls div {
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+}
+#player-desktop .playbackControls div progress {
+  height: 8px;
+}
+#player-desktop .playbackControls div p {
+  margin: 0;
+}
+#player-desktop .playbackControls .volumeControls {
+  gap: 0px;
+}
+#player-desktop .playbackControls .playerButtons {
+  height: 40px;
+  position: relative;
+  bottom: 10px;
+}
+#player-desktop .playbackControls .playerButtons svg {
+  width: 30px;
+  height: 20px;
+}
+#player-desktop .playbackControls .playerButtons svg:hover {
+  scale: 1.2;
+  transition-property: scale;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+#player-desktop #playButton, #player-desktop #pauseButton {
+  width: 30px;
+  height: 30px;
+}
+#player-desktop #pauseButton {
+  display: none;
+}
+#player-desktop .playerBar {
+  position: relative;
+  bottom: 10px;
+}
+#player-desktop .playerBar progress {
   width: 300px;
-  height: 10px;
+}
+#player-desktop .playbackControls {
+  gap: 10px;
+}
+
+/* PLAYLIST MOBILE */
+#playlist-mobile {
+  border-radius: 20px;
+  background-color: #242424;
+}
+
+.bi-heart-fill {
+  color: #1ed75f;
+}
+
+/* PLAYER MOBILE */
+#player-mobile {
+  background-color: #242424;
+  border-radius: 10px;
+  bottom: 100px;
+}
+
+/* NAVBAR MOBILE */
+#navbar-mobile {
+  background-color: #242424;
 }
 
 /*ALBUM*/
 /*ARTIST*/
-/*SEARCH*//*# sourceMappingURL=main.css.map */
+/*SEARCH*/
+#search-component input {
+  color: white;
+}
+#search-component input::-moz-placeholder {
+  color: #6c757d;
+  font-weight: bold;
+}
+#search-component input::placeholder {
+  color: #6c757d;
+  font-weight: bold;
+}
+#search-component .custom-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+/* CATEGORIES */
+.categories-card {
+  overflow: hidden;
+}
+.categories-card img {
+  transform: translateX(16px);
+  rotate: 20deg;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 768px) {
+  #player-title-artist h6, #player-title-artist .h6 {
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */

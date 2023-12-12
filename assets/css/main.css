@@ -12001,6 +12001,52 @@ body {
   padding: 10px;
   background-color: #171717;
   border: none;
+  display: block;
+}
+@media screen and (min-width: 992px) {
+  #liked .playlists .card {
+    display: none;
+  }
+  #liked .playlists .card:nth-child(1) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(2) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(3) {
+    display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #liked .playlists .card:nth-child(1) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(2) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(3) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(4) {
+    display: block;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #liked .playlists .card:nth-child(1) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(2) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(3) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(4) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(5) {
+    display: block;
+  }
 }
 #liked .playlists .card img {
   width: 100%;
@@ -12054,9 +12100,17 @@ body {
 #player-desktop .volumeControls img {
   border-radius: 3px;
   box-shadow: 1px 1px, 5px, black;
-  width: 15%;
+  width: 60px;
   -o-object-fit: contain;
      object-fit: contain;
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  #player-desktop .nowPlaying img,
+  #player-desktop .playbackControls img,
+  #player-desktop .volumeControls img {
+    display: block;
+  }
 }
 #player-desktop .nowPlaying #volumeBar,
 #player-desktop .playbackControls #volumeBar,
@@ -12130,6 +12184,18 @@ body {
 .playbackControls {
   position: relative;
   right: 30px;
+}
+
+.volumeControls svg {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .volumeControls svg {
+    display: block;
+  }
+}
+.volumeControls #volumeIcon, .volumeControls #fullscreenIcon {
+  display: block;
 }
 
 /* PLAYLIST MOBILE */

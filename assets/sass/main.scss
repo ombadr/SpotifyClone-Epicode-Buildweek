@@ -9,6 +9,11 @@ $cardBackground: #171717;
 $lighterBackground: #2b2b2b;
 $darkTextColor: #838383;
 $lightTextColor: #f7f7f7;
+// Brealpoints
+$mdBreak: 768px;
+$lgBreak: 992px;
+$xlBreak: 1200px;
+$xxlBreak: 1400px;
 
 
 body {
@@ -40,6 +45,32 @@ body {
       padding: 10px;
       background-color: $cardBackground;
       border: none;
+      display: block;
+
+      // Responsive behaviour based on number of cards
+      @media screen and (min-width: $lgBreak){
+        display: none;
+        @for $i from 1 to 4{
+          &:nth-child(#{$i}){
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: $xlBreak){
+        @for $i from 1 to 5{
+          &:nth-child(#{$i}){
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: $xxlBreak){
+        @for $i from 1 to 6{
+          &:nth-child(#{$i}){
+            display: block;
+          }
+        }
+      }
+
 
       img {
         width: 100%;
@@ -96,8 +127,12 @@ body {
     img {
       border-radius: 3px;
       box-shadow: 1px 1px, 5px, black;
-      width: 15%;
+      width: 60px;
       object-fit: contain;
+      display: none;
+      @media screen and (min-width: $lgBreak) {
+        display: block;
+      }
     }
 
     #volumeBar {
@@ -189,6 +224,17 @@ body {
   right:30px;
 }
 
+.volumeControls {
+  svg{
+    display: none;
+    @media screen and (min-width: $lgBreak){
+      display: block;
+    }
+  }
+  #volumeIcon, #fullscreenIcon{
+    display: block;
+  }
+}
 
 /* PLAYLIST MOBILE */
 #playlist-mobile {

@@ -1,6 +1,6 @@
 // This script sets basic functionalities for player controls
 
-// Dom elements selection
+// Selezione elementi del DOM
 const playButton = document.querySelector('#playButton');
 const pauseButton = document.querySelector("#pauseButton");
 const heartEmpty = document.getElementById('heartEmpty');
@@ -30,6 +30,7 @@ function setFullscreen() {
     // })
 }
 
+// Toggla la visibità tra due pulsanti tramite la classe bootstrap "d-none"
 function setToggle(toShow, toHide) {
     toShow.addEventListener('click', () => {
         toShow.classList.toggle('d-none');
@@ -41,10 +42,7 @@ function setToggle(toShow, toHide) {
     })
 }
 
-// document.addEventListener('keydown', (event) => {
-//     console.log(event.key)
-// })
-
+// Carica gli script al caricamento della finestra
 window.onload = (event) => {
     event.preventDefault();
     // Alternates between showing play and pause button

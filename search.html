@@ -10,7 +10,7 @@
     />
     <title>Search</title>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/search.js" defer></script>
   </head>
   <body>
     <main>
@@ -18,7 +18,7 @@
       <div id="search-section" class="mt-5 mx-2">
         <h1 class="ms-3">Cerca</h1>
         <div class="container-fluid mt-4" id="search-component">
-          <form class="d-flex">
+          <form class="d-flex" id="searchForm">
             <div class="input-group">
               <span class="input-group-text bg-transparent border border-0"
                 ><i class="bi bi-search text-white fs-1"></i
@@ -27,6 +27,7 @@
                 type="text"
                 class="form-control bg-transparent border border-0 custom-focus"
                 placeholder="Cosa vuoi ascoltare?"
+                id="searchInput"
               />
             </div>
           </form>

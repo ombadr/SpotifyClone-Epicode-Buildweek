@@ -11893,11 +11893,6 @@ body {
   height: 87vh;
 }
 
-#playlistMobile {
-  overflow-y: auto;
-  height: 87vh;
-}
-
 /* HERO HOMEPAGE */
 .spotify-green-bg {
   background: #1db954;
@@ -11906,6 +11901,10 @@ body {
 /*LIKED SECTION */
 #liked {
   color: #838383;
+}
+#liked a.card-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
 }
 #liked p {
   font-size: 0.8rem;

@@ -1,11 +1,11 @@
 
 const BASE_URL = 'https://deezerdevs-deezer.p.rapidapi.com/'
 const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '349d0315bamshe22fa1098ac0240p133261jsnab757b4a040e',
-        'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
-    }
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '349d0315bamshe22fa1098ac0240p133261jsnab757b4a040e',
+    'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+  }
 }
 
 const ID = '122366' // Test album ID
@@ -39,54 +39,59 @@ const playlistMobileAlbumsContainer = document.querySelector('#playlistMobile')
 // GET LIKED ALBUMS
 
 async function getAlbumTracks(id) {
-    try {
-        const data = await fetch(BASE_URL + `album/${id}`, options)
-        const response = await data.json()
+  try {
+    const data = await fetch(BASE_URL + `album/${id}`, options)
+    const response = await data.json()
 
-        return response
-    } catch (e) {
-        console.error(e);
-    }
+    return response
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 
 async function getLikedAlbumTracks() {
-    try {
-        let albumsHTML = '';
+  try {
+    let albumsHTML = '';
 
-        for (let i = 0; i < likedAlbums.length; i++) {
-            const albumId = likedAlbums[i];
-            const albumTracks = await getAlbumTracks(albumId);
-            const albumHTML = createLikedAlbumHTML(albumTracks);
-            albumsHTML += albumHTML;
-            // console.log('Album tracks: ', albumTracks);
-        }
-
-        displayLikedAlbums(albumsHTML);
-    } catch (e) {
-        console.error(e);
+    for (let i = 0; i < likedAlbums.length; i++) {
+      const albumId = likedAlbums[i];
+      const albumTracks = await getAlbumTracks(albumId);
+      const albumHTML = createLikedAlbumHTML(albumTracks);
+      albumsHTML += albumHTML;
+      // console.log('Album tracks: ', albumTracks);
     }
+
+    displayLikedAlbums(albumsHTML);
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 function createLikedAlbumHTML(albumTracks) {
-    const { title, cover_big, artist } = albumTracks;
-    return `<div class="card">
-                  <img
-                    src="${cover_big}"
-                    class="card-img-top"
-                    alt="${title}"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">${artist.name}</h5>
-                    <p class="card-text">${title}</p>
-                  </div>
-                </div>`;
+  const { id, title, cover_big, artist } = albumTracks;
+  return `
+    <a href="/album.html?album=${id}" class="card-link">
+      <div class="card">
+        <img
+          src="${cover_big}"
+          class="card-img-top"
+          alt="${title}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">${artist.name}</h5>
+          <p class="card-text">${title}</p>
+        </div>
+      </div>
+    </a>
+  `;
 }
+
 
 
 
 function displayLikedAlbums(albumsHTML) {
-    likedAlbumCards.innerHTML = albumsHTML;
+  likedAlbumCards.innerHTML = albumsHTML;
 }
 
 getLikedAlbumTracks();
@@ -97,26 +102,26 @@ getLikedAlbumTracks();
 // GET TRACKS FOR THE HOMEPAGE
 
 async function getTrackFromID(trackID) {
-    try {
-        const data = await fetch(BASE_URL + 'track/' + trackID, options);
-        const response = await data.json();
+  try {
+    const data = await fetch(BASE_URL + 'track/' + trackID, options);
+    const response = await data.json();
 
-        return response;
-    } catch (e) {
-        console.error(e);
+    return response;
+  } catch (e) {
+    console.error(e);
 
-    }
+  }
 }
 
 let isFirstItem = true; // Check if track is the first item 
 
 function createTracks(track) {
-    const { title, artist, album } = track;
-    const activeClass = isFirstItem ? 'active' : ''
+  const { title, artist, album } = track;
+  const activeClass = isFirstItem ? 'active' : ''
 
-    isFirstItem = false
+  isFirstItem = false
 
-    return `<div class="carousel-item ${activeClass} card mb-3 border-0 bg-black bg-gradient">
+  return `<div class="carousel-item ${activeClass} card mb-3 border-0 bg-black bg-gradient">
         <div class="row">
             <div class="col-md-3 p-4">
                 <img src="${album.cover_big}" class="img-fluid" alt="copertina singolo"/>
@@ -152,24 +157,24 @@ function createTracks(track) {
 
 
 function displayTracks(tracksHTML) {
-    trackSliderItems.innerHTML = tracksHTML;
+  trackSliderItems.innerHTML = tracksHTML;
 }
 
 async function getTracksForSlider() {
-    try {
-        let tracksHTML = '';
-        for (let i = 0; i < homePageTracks.length; i++) {
-            const trackId = homePageTracks[i];
-            const track = await getTrackFromID(trackId);
-            if (track) {
-                const trackHTML = createTracks(track);
-                tracksHTML += trackHTML;
-            }
-        }
-        displayTracks(tracksHTML);
-    } catch (e) {
-        console.error(e);
+  try {
+    let tracksHTML = '';
+    for (let i = 0; i < homePageTracks.length; i++) {
+      const trackId = homePageTracks[i];
+      const track = await getTrackFromID(trackId);
+      if (track) {
+        const trackHTML = createTracks(track);
+        tracksHTML += trackHTML;
+      }
     }
+    displayTracks(tracksHTML);
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 
@@ -178,27 +183,27 @@ async function getTracksForSlider() {
 // END GET TRACKS FOR HOMEPAGE
 
 async function getSuggeritiAlbums() {
-    try {
-        let albumsHTML = '';
+  try {
+    let albumsHTML = '';
 
-        for (let i = 0; i < suggeritiAlbums.length; i++) {
-            const albumId = suggeritiAlbums[i];
-            const albumTracks = await getAlbumTracks(albumId);
-            const albumHTML = createSuggeritiAlbums(albumTracks);
-            albumsHTML += albumHTML;
-        }
-        displaySuggeritiAlbums(albumsHTML);
+    for (let i = 0; i < suggeritiAlbums.length; i++) {
+      const albumId = suggeritiAlbums[i];
+      const albumTracks = await getAlbumTracks(albumId);
+      const albumHTML = createSuggeritiAlbums(albumTracks);
+      albumsHTML += albumHTML;
     }
-    catch (e) {
-        console.error(e);
-    }
+    displaySuggeritiAlbums(albumsHTML);
+  }
+  catch (e) {
+    console.error(e);
+  }
 }
 
 
 function createSuggeritiAlbums(albumTracks) {
-    const { title, cover_big } = albumTracks
+  const { title, cover_big } = albumTracks
 
-    return `<div class="col">
+  return `<div class="col">
                     <div class="card bg-dark border-0 text-white">
                       <div class="row g-0">
                         <div class="col-md-4">
@@ -221,7 +226,7 @@ function createSuggeritiAlbums(albumTracks) {
 }
 
 function displaySuggeritiAlbums(albumsHTML) {
-    suggeritiAlbumsContainer.innerHTML = albumsHTML
+  suggeritiAlbumsContainer.innerHTML = albumsHTML
 }
 
 // getSuggeritiAlbums() // Activate this to start the API fetch
@@ -231,45 +236,45 @@ function displaySuggeritiAlbums(albumsHTML) {
 // SUGGERITI MOBILE
 
 async function getMobileMusicaSuggeriti() {
-    try {
-        let albumsHTML = '';
+  try {
+    let albumsHTML = '';
 
-        for (let i = 0; i < mobileMusicaPodcastAlbums.length; i++) {
-            const albumId = mobileMusicaPodcastAlbums[i];
-            const albumTracks = await getAlbumTracks(albumId);
-            const albumHTML = createMobileMusicaSuggeriti(albumTracks);
-            albumsHTML += albumHTML;
+    for (let i = 0; i < mobileMusicaPodcastAlbums.length; i++) {
+      const albumId = mobileMusicaPodcastAlbums[i];
+      const albumTracks = await getAlbumTracks(albumId);
+      const albumHTML = createMobileMusicaSuggeriti(albumTracks);
+      albumsHTML += albumHTML;
 
-        }
-        displayMobileMusicaSuggeriti(albumsHTML);
-
-    } catch (e) {
-        console.error(e)
     }
+    displayMobileMusicaSuggeriti(albumsHTML);
+
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 async function getMobilePodcastSuggeriti() {
-    try {
-        let albumsHTML = '';
+  try {
+    let albumsHTML = '';
 
-        for (let i = 0; i < podcastShowAlbums.length; i++) {
-            const albumId = podcastShowAlbums[i];
-            const albumTracks = await getAlbumTracks(albumId);
-            const albumHTML = createMobileMusicaSuggeriti(albumTracks);
-            albumsHTML += albumHTML;
+    for (let i = 0; i < podcastShowAlbums.length; i++) {
+      const albumId = podcastShowAlbums[i];
+      const albumTracks = await getAlbumTracks(albumId);
+      const albumHTML = createMobileMusicaSuggeriti(albumTracks);
+      albumsHTML += albumHTML;
 
-        }
-        displayMobilePodcastSuggeriti(albumsHTML);
-
-    } catch (e) {
-        console.error(e)
     }
+    displayMobilePodcastSuggeriti(albumsHTML);
+
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 function createMobileMusicaSuggeriti(albumTracks) {
-    const { title, cover_big } = albumTracks
+  const { title, cover_big } = albumTracks
 
-    return `<div class="col-6 mb-2">
+  return `<div class="col-6 mb-2">
                   <div class="card bg-dark border-0 text-white">
                     <div class="row g-0">
                       <div class="col-4">
@@ -293,9 +298,9 @@ function createMobileMusicaSuggeriti(albumTracks) {
 }
 
 function createMobilePodcastSuggeriti(albumTracks) {
-    const { title, cover_big } = albumTracks
+  const { title, cover_big } = albumTracks
 
-    return `<div class="col-6 mb-2">
+  return `<div class="col-6 mb-2">
                   <div class="card bg-dark border-0 text-white">
                     <div class="row g-0">
                       <div class="col-4">
@@ -320,11 +325,11 @@ function createMobilePodcastSuggeriti(albumTracks) {
 
 
 function displayMobileMusicaSuggeriti(albumsHTML) {
-    mobileMusicaSuggeriti.innerHTML = albumsHTML;
+  mobileMusicaSuggeriti.innerHTML = albumsHTML;
 }
 
 function displayMobilePodcastSuggeriti(albumsHTML) {
-    mobilePodcastSuggeriti.innerHTML = albumsHTML
+  mobilePodcastSuggeriti.innerHTML = albumsHTML
 }
 
 // getMobileMusicaSuggeriti() // activate this for the fetch request
@@ -336,26 +341,26 @@ function displayMobilePodcastSuggeriti(albumsHTML) {
 // PLAYLIST MOBILE
 
 async function getMobilePlaylistAlbums() {
-    try {
-        let albumsHTML = '';
+  try {
+    let albumsHTML = '';
 
-        for (let i = 0; i < playlistMobileAlbums.length; i++) {
-            const albumId = playlistMobileAlbums[i];
-            const albumTracks = await getAlbumTracks(albumId);
-            const albumHTML = createMobilePlaylistAlbums(albumTracks);
-            albumsHTML += albumHTML;
+    for (let i = 0; i < playlistMobileAlbums.length; i++) {
+      const albumId = playlistMobileAlbums[i];
+      const albumTracks = await getAlbumTracks(albumId);
+      const albumHTML = createMobilePlaylistAlbums(albumTracks);
+      albumsHTML += albumHTML;
 
-        }
-        displayMobilePlaylistAlbums(albumsHTML);
-    } catch (e) {
-        console.error(e)
     }
+    displayMobilePlaylistAlbums(albumsHTML);
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 function createMobilePlaylistAlbums(albumTracks) {
-    const { title, cover_big } = albumTracks
+  const { title, cover_big } = albumTracks
 
-    return `<div id="playlist-mobile" class="m-4 p-2 d-md-none">
+  return `<div id="playlist-mobile" class="m-4 p-2 d-md-none">
           <div class="d-flex mt-2 mx-2">
             <img
               src="${cover_big}"
@@ -382,7 +387,7 @@ function createMobilePlaylistAlbums(albumTracks) {
 }
 
 function displayMobilePlaylistAlbums(albumHTML) {
-    playlistMobileAlbumsContainer.innerHTML = albumHTML
+  playlistMobileAlbumsContainer.innerHTML = albumHTML
 }
 
 // getMobilePlaylistAlbums() // activate this for the fetch request

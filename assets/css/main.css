@@ -12170,9 +12170,6 @@ body {
   width: 30px;
   height: 30px;
 }
-#player-desktop #pauseButton {
-  display: none;
-}
 #player-desktop .playerBar {
   position: relative;
   bottom: 10px;

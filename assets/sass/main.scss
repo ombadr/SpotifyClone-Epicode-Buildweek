@@ -11,6 +11,12 @@ $darkTextColor: #838383;
 $lightTextColor: #f7f7f7;
 $spotifyGreen: #1db954;
 
+// Breakpoints
+$mdBreak: 768px;
+$lgBreak: 992px;
+$xlBreak: 1200px;
+$xxlBreak: 1400px;
+
 body {
   background-color: black;
   color: white;
@@ -48,6 +54,8 @@ body {
 
 /*LIKED SECTION */
 
+/*LIKED SECTION */
+
 #liked {
   color: $darkTextColor;
 
@@ -68,6 +76,31 @@ body {
       padding: 10px;
       background-color: $cardBackground;
       border: none;
+      display: block;
+
+      // Responsive behaviour based on number of cards
+      @media screen and (min-width: $lgBreak) {
+        display: none;
+        @for $i from 1 to 4 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: $xlBreak) {
+        @for $i from 1 to 5 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: $xxlBreak) {
+        @for $i from 1 to 6 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
 
       img {
         width: 100%;
@@ -94,6 +127,7 @@ body {
   background-color: $cardBackground;
   width: 100vw;
   height: 100px;
+  justify-content: space-between;
 
   svg,
   progress {
@@ -102,40 +136,148 @@ body {
     }
   }
 
-  div:nth-child(1),
-  div:nth-child(2),
-  div:nth-child(3) {
+  .nowPlaying,
+  .playbackControls,
+  .volumeControls {
     padding: 20px;
     align-items: center;
     gap: 10px;
+
     h6 {
       color: $lightTextColor;
       font-size: 0.8rem;
     }
+
     p {
       font-size: 0.8rem;
       color: $darkTextColor;
     }
+
     img {
       border-radius: 3px;
       box-shadow: 1px 1px, 5px, black;
-      width: 15%;
+      width: 60px;
       object-fit: contain;
+      display: none;
+      @media screen and (min-width: 860px) {
+        display: block;
+      }
     }
+
     #volumeBar {
       width: 90px;
       height: 10px;
     }
   }
-  div:nth-child(2) {
-    padding: 0;
+
+  .nowPlaying {
+    width: 300px;
+    gap: 20px;
+
     p {
       margin: 0;
     }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .playbackControls {
+    align-items: center;
+    position: relative;
+    right: 20px;
+    @media screen and (min-width: $lgBreak) {
+      position: static;
+    }
+
+    div {
+      align-items: center;
+      padding: 5px;
+      gap: 8px;
+
+      progress {
+        height: 8px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .playerButtons {
+      height: 40px;
+      position: relative;
+      bottom: 10px;
+
+      svg {
+        width: 30px;
+        height: 20px;
+
+        &:hover {
+          scale: 1.2;
+          transition-property: scale;
+          transition-duration: 100ms;
+          transition-timing-function: ease-in-out;
+        }
+      }
+    }
+  }
+
+  #playButton,
+  #pauseButton {
+    width: 30px;
+    height: 30px;
+  }
+
+  #pauseButton {
+    display: none;
+  }
+
+  .playerBar {
+    position: relative;
+    bottom: 10px;
+
     progress {
       width: 300px;
-      height: 10px;
     }
+  }
+
+  .playbackControls {
+    gap: 10px;
+  }
+}
+
+#heartFill {
+  display: none;
+}
+
+.volumeControls {
+  svg {
+    display: none;
+    @media screen and (min-width: $lgBreak) {
+      display: block;
+    }
+  }
+  #volumeIcon,
+  #fullscreenIcon {
+    display: block;
+  }
+}
+
+/* SUGGERITI MOBILE */
+.nav-tabs {
+  --bs-nav-tabs-border-color: black;
+  .nav-link {
+    color: white;
+  }
+}
+
+.suggeriti-mobile-cards {
+  h5 {
+    font-size: 12px;
+    font-weight: bold;
   }
 }
 
@@ -196,6 +338,9 @@ body {
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 768px) {
+  #player-desktop {
+    display: none !important;
+  }
   #player-title-artist {
     h6 {
       display: none;

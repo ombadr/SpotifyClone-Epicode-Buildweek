@@ -12065,7 +12065,7 @@ body {
   height: 10px;
 }
 #player-desktop .nowPlaying {
-  width: 33%;
+  width: 300px;
   gap: 20px;
 }
 #player-desktop .nowPlaying p {
@@ -12089,9 +12089,6 @@ body {
 #player-desktop .playbackControls div p {
   margin: 0;
 }
-#player-desktop .playbackControls .volumeControls {
-  gap: 0px;
-}
 #player-desktop .playbackControls .playerButtons {
   height: 40px;
   position: relative;
@@ -12107,7 +12104,8 @@ body {
   transition-duration: 100ms;
   transition-timing-function: ease-in-out;
 }
-#player-desktop #playButton, #player-desktop #pauseButton {
+#player-desktop #playButton,
+#player-desktop #pauseButton {
   width: 30px;
   height: 30px;
 }
@@ -12123,6 +12121,15 @@ body {
 }
 #player-desktop .playbackControls {
   gap: 10px;
+}
+
+#heartFill {
+  display: none;
+}
+
+.playbackControls {
+  position: relative;
+  right: 30px;
 }
 
 /* PLAYLIST MOBILE */

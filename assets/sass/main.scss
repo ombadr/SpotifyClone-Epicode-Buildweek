@@ -107,12 +107,14 @@ body {
   }
 
   .nowPlaying {
-    width: 33%;
+    width: 300px;
     gap: 20px;
+
     p {
       margin: 0;
     }
-    svg{
+
+    svg {
       width: 20px;
       height: 20px;
     }
@@ -134,9 +136,6 @@ body {
         margin: 0;
       }
     }
-    .volumeControls {
-      gap: 0px;
-    }
 
     .playerButtons {
       height: 40px;
@@ -156,25 +155,40 @@ body {
       }
     }
   }
-  
-  #playButton, #pauseButton {
+
+  #playButton,
+  #pauseButton {
     width: 30px;
     height: 30px;
   }
-  #pauseButton{
+
+  #pauseButton {
     display: none;
   }
+
   .playerBar {
     position: relative;
     bottom: 10px;
-    progress{
+
+    progress {
       width: 300px;
+
     }
   }
+
   .playbackControls {
     gap: 10px;
   }
 }
+
+#heartFill {
+  display: none;
+}
+.playbackControls{
+  position: relative;
+  right:30px;
+}
+
 
 /* PLAYLIST MOBILE */
 #playlist-mobile {

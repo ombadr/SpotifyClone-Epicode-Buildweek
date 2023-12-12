@@ -11861,6 +11861,11 @@ body {
 }
 
 /*HOMEPAGE*/
+/* HERO HOMEPAGE */
+.spotify-green-bg {
+  background: #1db954;
+}
+
 /*LIKED SECTION */
 #liked {
   color: #838383;

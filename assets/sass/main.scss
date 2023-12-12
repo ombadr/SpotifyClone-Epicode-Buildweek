@@ -9,6 +9,7 @@ $cardBackground: #171717;
 $lighterBackground: #2b2b2b;
 $darkTextColor: #838383;
 $lightTextColor: #f7f7f7;
+$spotifyGreen: #1db954;
 
 body {
   background-color: black;
@@ -16,6 +17,12 @@ body {
 }
 
 /*HOMEPAGE*/
+
+/* HERO HOMEPAGE */
+
+.spotify-green-bg {
+  background: $spotifyGreen;
+}
 
 /*LIKED SECTION */
 

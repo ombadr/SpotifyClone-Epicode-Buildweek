@@ -15,15 +15,23 @@
   <body>
     <header>
       <!--TOP-BAR MOBILE-->
-      <div id="top-bar">
-        <h1>Top bar navbar</h1>
+      <div
+        id="top-bar"
+        class="d-flex justify-content-between mx-2 mt-4 align-items-center d-md-none"
+      >
+        <h1>Buonasera</h1>
+        <div class="d-flex">
+          <i class="bi bi-bell fs-1 m-2"></i>
+          <i class="bi bi-clock-history fs-1 m-2"></i>
+          <i class="bi bi-gear fs-1 m-2"></i>
+        </div>
       </div>
     </header>
     <main>
       <div id="desktop-wrapper" class="container-fluid">
         <div class="row">
           <!--NAVBAR DESKTOP-->
-          <div id="navbar-desktop" class="col-lg-3">
+          <div id="navbar-desktop" class="col-lg-3 d-none d-md-block">
             <div class="dropdown">
               <span
                 class="dots dropdown-toggle"
@@ -155,7 +163,7 @@
           </div>
 
           <!--CENTER SECTION-->
-          <section class="col-lg-7">
+          <section class="col-lg-7 d-none d-md-block">
             <!--HERO-HOMEPAGE massimo-->
             <div id="hero-homepage">
               <div class="container">
@@ -478,7 +486,7 @@
             <!-- FINE SECTION LIKED. Include bootstrap cards in flex containers -->
           </section>
           <!--FRIENDS-->
-          <div id="friends" class="col-lg-2">
+          <div id="friends" class="col-lg-2 d-none d-md-block">
             <h1>Friends</h1>
             <div class="top d-flex justify-content-between align-items-center">
               <p class="mb-0">Attività amici</p>

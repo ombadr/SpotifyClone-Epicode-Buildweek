@@ -10,7 +10,8 @@
     />
     <title>Album</title>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="assets/js/index.js" defer></script>
+    <script type="module" src="assets/js/album.js" defer></script>
+    <script type="module" src="assets/js/utils/utils.js" defer></script>
   </head>
   <body>
     <main>
@@ -342,89 +343,96 @@
                   <div class="col-lg-3">RIPRODUZIONI</div>
                   <div class="col-lg-3"><i class="bi bi-clock"></i></div>
                 </div>
-                <div class="row mt-4">
-                  <div class="col-lg-1">1</div>
-                  <div class="col-lg-5 flex-grow-1">
-                    <p>
-                      Montanelli - Intro<br /><span
-                        >Pinguini Tattici Nucleari</span
-                      >
-                    </p>
+
+                <div id="albumTracks">
+                  <!--ADD HERE DYNAMICALLY-->
+                  <!--TRACK 1-->
+                  <div class="row">
+                    <div class="col-lg-1">1</div>
+                    <div class="col-lg-5 flex-grow-1">
+                      <p>
+                        Montanelli - Intro<br /><span
+                          >Pinguini Tattici Nucleari</span
+                        >
+                      </p>
+                    </div>
+                    <div class="col-lg-3 track">694.578</div>
+                    <div class="col-lg-3">1:28</div>
                   </div>
-                  <div class="col-lg-3 track">694.578</div>
-                  <div class="col-lg-3">1:28</div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-1">2</div>
-                  <div class="col-lg-5 flex-grow-1">
-                    <p>Sciare<br /><span>Pinguini Tattici Nucleari</span></p>
+
+                  <!--FINE TRACK 1-->
+                  <div class="row">
+                    <div class="col-lg-1">2</div>
+                    <div class="col-lg-5 flex-grow-1">
+                      <p>Sciare<br /><span>Pinguini Tattici Nucleari</span></p>
+                    </div>
+                    <div class="col-lg-3">5.585.178</div>
+                    <div class="col-lg-3">4:41</div>
                   </div>
-                  <div class="col-lg-3">5.585.178</div>
-                  <div class="col-lg-3">4:41</div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-1">3</div>
-                  <div class="col-lg-5 flex-grow-1">
-                    <p>
-                      Gioventù Bruciata<br /><span
-                        >Pinguini Tattici Nucleari</span
-                      >
-                    </p>
+                  <div class="row">
+                    <div class="col-lg-1">3</div>
+                    <div class="col-lg-5 flex-grow-1">
+                      <p>
+                        Gioventù Bruciata<br /><span
+                          >Pinguini Tattici Nucleari</span
+                        >
+                      </p>
+                    </div>
+                    <div class="col-lg-3">3.412.342</div>
+                    <div class="col-lg-3">5:24</div>
                   </div>
-                  <div class="col-lg-3">3.412.342</div>
-                  <div class="col-lg-3">5:24</div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-1">4</div>
-                  <div class="col-lg-5 flex-grow-1">
-                    <p>
-                      Ninnananna per genitori disattenti<br /><span
-                        >Pinguini Tattici Nucleari</span
-                      >
-                    </p>
+                  <div class="row">
+                    <div class="col-lg-1">4</div>
+                    <div class="col-lg-5 flex-grow-1">
+                      <p>
+                        Ninnananna per genitori disattenti<br /><span
+                          >Pinguini Tattici Nucleari</span
+                        >
+                      </p>
+                    </div>
+                    <div class="col-lg-3">2.36.629</div>
+                    <div class="col-lg-3">4:01</div>
                   </div>
-                  <div class="col-lg-3">2.36.629</div>
-                  <div class="col-lg-3">4:01</div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-1">5</div>
-                  <div class="col-lg-5 flex-grow-1">
-                    <p>
-                      L'uomo che inventò il fuoco<br /><span
-                        >Pinguini Tattici Nucleari</span
-                      >
-                    </p>
+                  <div class="row">
+                    <div class="col-lg-1">5</div>
+                    <div class="col-lg-5 flex-grow-1">
+                      <p>
+                        L'uomo che inventò il fuoco<br /><span
+                          >Pinguini Tattici Nucleari</span
+                        >
+                      </p>
+                    </div>
+                    <div class="col-lg-3">3.417.862</div>
+                    <div class="col-lg-3">5:23</div>
                   </div>
-                  <div class="col-lg-3">3.417.862</div>
-                  <div class="col-lg-3">5:23</div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-1">6</div>
-                  <div class="col-lg-5 flex-grow-1">
-                    <p>Irene<br /><span>Pinguini Tattici Nucleari</span></p>
+                  <div class="row">
+                    <div class="col-lg-1">6</div>
+                    <div class="col-lg-5 flex-grow-1">
+                      <p>Irene<br /><span>Pinguini Tattici Nucleari</span></p>
+                    </div>
+                    <div class="col-lg-3">17.249.689</div>
+                    <div class="col-lg-3">5:11</div>
                   </div>
-                  <div class="col-lg-3">17.249.689</div>
-                  <div class="col-lg-3">5:11</div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-1">7</div>
-                  <div class="col-lg-5 flex-grow-1">
-                    <p>
-                      Senti che cantare questi!<br /><span
-                        >Pinguini Tattici Nucleari</span
-                      >
-                    </p>
+                  <div class="row">
+                    <div class="col-lg-1">7</div>
+                    <div class="col-lg-5 flex-grow-1">
+                      <p>
+                        Senti che cantare questi!<br /><span
+                          >Pinguini Tattici Nucleari</span
+                        >
+                      </p>
+                    </div>
+                    <div class="col-lg-3">760.496</div>
+                    <div class="col-lg-3">1:11</div>
                   </div>
-                  <div class="col-lg-3">760.496</div>
-                  <div class="col-lg-3">1:11</div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-1">8</div>
-                  <div class="col-lg-5 flex-grow-1">
-                    <p>Pula<br /><span>Pinguini Tattici Nucleari</span></p>
+                  <div class="row">
+                    <div class="col-lg-1">8</div>
+                    <div class="col-lg-5 flex-grow-1">
+                      <p>Pula<br /><span>Pinguini Tattici Nucleari</span></p>
+                    </div>
+                    <div class="col-lg-3">899.318</div>
+                    <div class="col-lg-3">5:46</div>
                   </div>
-                  <div class="col-lg-3">899.318</div>
-                  <div class="col-lg-3">5:46</div>
                 </div>
               </div>
             </div>

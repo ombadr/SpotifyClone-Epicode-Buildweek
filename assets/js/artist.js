@@ -35,7 +35,7 @@ async function fetchSongs() {
             const trackList = await getTrackList(trackListUrl)
             console.log('List of tracks:', trackList)
 
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 10; i++) { // max 10 tracks
                 console.log(trackList.data[i].title)
                 let trackHTML = createPopularSongs(trackList.data[i], i + 1)
                 tracksHTML += trackHTML
@@ -73,14 +73,7 @@ async function getTrackList(trackListUrl) {
 
 // POPULAR SONGS
 
-async function getPopularSongs() {
-    try {
 
-
-    } catch (e) {
-        console.error(e);
-    }
-}
 
 function createPopularSongs(albumTracks, counter) {
     const { title, duration, album } = albumTracks

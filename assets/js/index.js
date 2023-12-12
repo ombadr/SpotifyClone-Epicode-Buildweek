@@ -13,8 +13,8 @@ const ID = '122366' // Test album ID
 const artist = '50 cent' // Test artist
 
 
-getAlbumTracks(ID)
-getTracksFromSearch(artist)
+// getAlbumTracks(ID)
+// getTracksFromSearch(artist)
 
 async function getAlbumTracks(id) {
     try {

@@ -25,7 +25,84 @@
           <!--NAVBAR DESKTOP-->
           <div id="navbar-desktop" class="col-lg-3">
             <h1>Navbar desktop</h1>
-          </div>
+            <div class="dropdown">
+              <span class="dots" onclick="toggleDropdown()">. . .</span>
+              <div id="myDropdown" class="dropdown-content">
+                <button onclick="seleziona('File')">File</button>
+                <button onclick="seleziona('Modifica')">Modifica</button>
+                <button onclick="seleziona('Visualizzazione')">Visualizzazione</button>
+                <button onclick="seleziona('Riproduzione')">Riproduzione</button>
+                <button onclick="seleziona('Assistenza')">Assistenza</button>
+              </div>
+            </div>
+           
+              <script>
+                function toggleDropdown() {
+                let dropdown = document.getElementById("myDropdown");
+                dropdown.classList.toggle("show");
+              }              
+              function seleziona(opzione) {                
+              }
+              
+              </script>
+              <div class="row">
+                <div class="col-12">
+                    <div class="icon-column">
+                        <i class="bi bi-house-door-fill"></i>
+                        <span>Home</span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="icon-column">
+                        <i class="bi bi-search"></i>
+                        <span>Cerca</span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="icon-column">
+                        <i class="bi bi-spotify"></i>
+                        <span>La tua libreria</span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="icon-column">
+                        <i class="bi bi-plus-square-fill"></i>
+                        <span>Crea playlist</span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="icon-column">
+                        <i class="bi bi-heart-fill"></i>
+                        <span>Brani che ti piacciono</span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="icon-column">
+                        <i class="bi bi-bookmark-heart-fill"></i>
+                        <span>I tuoi episodi</span>
+                    </div>
+                </div>
+            </div>
+           <div class="row mt-3">
+              <div class="col-12">               
+                  <span class="playlistPrivate" onclick="selezionaPlaylist('early stage emily syndrome')">early stage emily syndrome</span>
+              </div>
+                 <div class="col-12"> <span class="playlistPrivate" onclick="selezionaPlaylist('Be the Young')">Be the Young</span>
+                </div>
+                  <div class="col-12"><span class="playlistPrivate" onclick="selezionaPlaylist('Gigi D&#39;Alessio')">Gigi D'Alessio</span></div>
+                  <div class="col-12"><span class="playlistPrivate" onclick="selezionaPlaylist('that fucking mood')">that fucking mood</span></div>
+                  <div class="col-12"><span class="playlistPrivate" onclick="selezionaPlaylist('landing page')">landing page</span></div>
+                  <div class="col-12"><span class="playlistPrivate" onclick="selezionaPlaylist('2021 lol')">2021 lol</span></div>
+                  <div class="col-12"><span class="playlistPrivate" onclick="selezionaPlaylist('Frah Quintale mix')">Frah Quintale mix</span></div>
+                  <div class="col-12"><span class="playlistPrivate" onclick="selezionaPlaylist('Lidia Emily')">Lidia Emily</span></div>
+                  <div class="col-12"><span class="playlistPrivate" onclick="selezionaPlaylist('Francesco Guccini')">Francesco Guccini</span></div>
+                </div>
+              </div>
+                      
+          
 
           <!--CENTER SECTION-->
           <section class="col-lg-7">
@@ -146,13 +223,13 @@
                 </div>
                 <div class="text-center d-flex flex-column align-items-start">
                   <div class="d-flex justify-content-between w-100">
-                    <h5 id="nomeAvatar" class="mb-0">lightdark02</h5>
+                    <h5 id="nomeAvatar1" class="mb-0">lightdark02</h5>
                     <h6 class="align-self-end mb-0">8 ore</h6>
                   </div>
-                  <div id="nomeCanzone">
+                  <div id="nomeCanzone1">
                     <h6>Aimed to Kill . Jade LeMac</h6>
                   </div>
-                  <div id="nomeAlbum">
+                  <div id="nomeAlbum1">
                     <i class="bi bi-record-circle"></i>
                     <h6 class="d-inline">Aimed to Kill</h6>
                   </div>
@@ -166,13 +243,13 @@
                   </div>
                   <div class="text-center d-flex flex-column align-items-start">
                     <div class="d-flex justify-content-between w-100">
-                      <h5 id="nomeAvatar" class="mb-0">Valeria Traverso</h5>
+                      <h5 id="nomeAvatar2" class="mb-0">Valeria Traverso</h5>
                       <h6 class="align-self-end mb-0">3 giorni</h6>
                     </div>
-                    <div id="nomeCanzone">
+                    <div id="nomeCanzone2">
                       <h6>New Kings . Sleeping Wolf</h6>
                     </div>
-                    <div id="nomeAlbum">
+                    <div id="nomeAlbum2">
                       <i class="bi bi-music-note-beamed"></i>
                       <h6 class="d-inline">Twint Badass mood</h6>
                     </div>

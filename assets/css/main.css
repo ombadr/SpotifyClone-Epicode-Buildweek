@@ -12003,6 +12003,10 @@ body {
   border: none;
   display: block;
 }
+#liked .playlists .card:hover {
+  cursor: pointer;
+  background-color: #2b2b2b;
+}
 @media screen and (min-width: 992px) {
   #liked .playlists .card {
     display: none;

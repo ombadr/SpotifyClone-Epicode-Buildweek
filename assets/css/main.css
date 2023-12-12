@@ -12105,7 +12105,7 @@ body {
      object-fit: contain;
   display: none;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 860px) {
   #player-desktop .nowPlaying img,
   #player-desktop .playbackControls img,
   #player-desktop .volumeControls img {
@@ -12131,6 +12131,13 @@ body {
 }
 #player-desktop .playbackControls {
   align-items: center;
+  position: relative;
+  right: 20px;
+}
+@media screen and (min-width: 992px) {
+  #player-desktop .playbackControls {
+    position: static;
+  }
 }
 #player-desktop .playbackControls div {
   align-items: center;
@@ -12179,11 +12186,6 @@ body {
 
 #heartFill {
   display: none;
-}
-
-.playbackControls {
-  position: relative;
-  right: 30px;
 }
 
 .volumeControls svg {

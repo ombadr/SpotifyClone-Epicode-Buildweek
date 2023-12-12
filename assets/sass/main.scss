@@ -130,7 +130,7 @@ body {
       width: 60px;
       object-fit: contain;
       display: none;
-      @media screen and (min-width: $lgBreak) {
+      @media screen and (min-width: 860px) {
         display: block;
       }
     }
@@ -157,6 +157,11 @@ body {
 
   .playbackControls {
     align-items: center;
+    position: relative;
+    right: 20px;
+    @media screen and (min-width: $lgBreak){
+      position: static;
+    }
 
     div {
       align-items: center;
@@ -219,10 +224,7 @@ body {
 #heartFill {
   display: none;
 }
-.playbackControls{
-  position: relative;
-  right:30px;
-}
+
 
 .volumeControls {
   svg{

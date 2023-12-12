@@ -11861,9 +11861,154 @@ body {
 }
 
 /*HOMEPAGE*/
+<<<<<<< HEAD
 .spotify-green-bg{
   background-color: #1DB954;
 }
+=======
+/*LIKED SECTION */
+#liked {
+  color: #838383;
+}
+#liked p {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+#liked h2, #liked .h2 {
+  color: #f7f7f7;
+  margin-bottom: 30px;
+}
+#liked .playlists {
+  gap: 10px;
+}
+#liked .playlists .card {
+  padding: 10px;
+  background-color: #171717;
+  border: none;
+}
+#liked .playlists .card img {
+  width: 100%;
+}
+#liked .playlists .card h5, #liked .playlists .card .h5 {
+  color: #f7f7f7;
+  font-size: 1rem;
+}
+#liked .playlists .card p {
+  color: #838383;
+  font-size: 0.8rem;
+}
+
+/* PLAYER DESKTOP */
+#player-desktop {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  background-color: #171717;
+  width: 100vw;
+  height: 100px;
+}
+#player-desktop svg:hover,
+#player-desktop progress:hover {
+  cursor: pointer;
+}
+#player-desktop div:nth-child(1),
+#player-desktop div:nth-child(2),
+#player-desktop div:nth-child(3) {
+  padding: 20px;
+  align-items: center;
+  gap: 10px;
+}
+#player-desktop div:nth-child(1) h6, #player-desktop div:nth-child(1) .h6,
+#player-desktop div:nth-child(2) h6,
+#player-desktop div:nth-child(2) .h6,
+#player-desktop div:nth-child(3) h6,
+#player-desktop div:nth-child(3) .h6 {
+  color: #f7f7f7;
+  font-size: 0.8rem;
+}
+#player-desktop div:nth-child(1) p,
+#player-desktop div:nth-child(2) p,
+#player-desktop div:nth-child(3) p {
+  font-size: 0.8rem;
+  color: #838383;
+}
+#player-desktop div:nth-child(1) img,
+#player-desktop div:nth-child(2) img,
+#player-desktop div:nth-child(3) img {
+  border-radius: 3px;
+  box-shadow: 1px 1px, 5px, black;
+  width: 15%;
+  object-fit: contain;
+}
+#player-desktop div:nth-child(1) #volumeBar,
+#player-desktop div:nth-child(2) #volumeBar,
+#player-desktop div:nth-child(3) #volumeBar {
+  width: 90px;
+  height: 10px;
+}
+#player-desktop div:nth-child(2) {
+  padding: 0;
+}
+#player-desktop div:nth-child(2) p {
+  margin: 0;
+}
+#player-desktop div:nth-child(2) progress {
+  width: 300px;
+  height: 10px;
+}
+
+/* PLAYLIST MOBILE */
+#playlist-mobile {
+  border-radius: 20px;
+  background-color: #242424;
+}
+
+.bi-heart-fill {
+  color: #1ed75f;
+}
+
+/* PLAYER MOBILE */
+#player-mobile {
+  background-color: #242424;
+  border-radius: 10px;
+  bottom: 100px;
+}
+
+/* NAVBAR MOBILE */
+#navbar-mobile {
+  background-color: #242424;
+}
+
+>>>>>>> ef7a22d5cb4d0192ef5c2ffcd5002cccf19f9110
 /*ALBUM*/
 /*ARTIST*/
-/*SEARCH*//*# sourceMappingURL=main.css.map */
+/*SEARCH*/
+#search-component input {
+  color: white;
+}
+#search-component input::placeholder {
+  color: #6c757d;
+  font-weight: bold;
+}
+#search-component .custom-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+/* CATEGORIES */
+.categories-card {
+  overflow: hidden;
+}
+.categories-card img {
+  transform: translateX(16px);
+  rotate: 20deg;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 768px) {
+  #player-title-artist h6, #player-title-artist .h6 {
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */

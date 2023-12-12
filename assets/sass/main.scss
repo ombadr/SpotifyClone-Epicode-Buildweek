@@ -40,6 +40,19 @@ body {
   height: 100vh;
 }
 
+.friends-card {
+  h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  span {
+    font-size: 11px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
 /*CENTER SECTION */
 #center-section {
   overflow-y: auto;

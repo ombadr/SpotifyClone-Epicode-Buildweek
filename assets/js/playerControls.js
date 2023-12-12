@@ -2,6 +2,7 @@
 
 // Global constants and variables
 let barFill = 0;
+let barDuration = 60;
 let seconds = 0;
 
 // Selezione elementi del DOM
@@ -67,7 +68,7 @@ function setPlayStop() {
     playButton.addEventListener('click', () => {
         const startPlay = setInterval(() => {
             progressBar.setAttribute('Value', barFill);
-            if (barFill < 100) { barFill += 1 / 100; }
+            if (barFill < 100) { barFill += (1*100)/barDuration / 100; }
             else {
                 clearInterval(startPlay);
                 barFill = 0;
@@ -84,6 +85,7 @@ function setPlayStop() {
                 seconds < 10 ? songTimer.innerHTML = `0:0${seconds}` : songTimer.innerHTML = `0:${seconds}`;
             } else {
                 seconds = 0;
+                songTimer.innerHTML = "0:00"
                 clearInterval(pointInTime);
             }
         }, 1000);

@@ -12159,6 +12159,26 @@ body {
 
 /*ALBUM*/
 /*ARTIST*/
+.custom-bg {
+  background-image: url("/assets/imgs/main/image-15.jpg");
+  background-size: cover;
+}
+
+/*Aggiunta classe custom per img di bg di div hero artist */
+#buttonFollowingBar {
+  background-color: #1db954;
+}
+
+/*Colore bottone play following bar pagina artist*/
+.custom-gradient-background {
+  background: linear-gradient(to bottom, #cc9900, #444444, #000000);
+}
+
+/*aggiunta classe custom per il bg color della sezione album*/
+.sfumaAlbum {
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
 /*SEARCH*/
 #search-component input {
   color: white;

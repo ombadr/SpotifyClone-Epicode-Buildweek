@@ -44,18 +44,268 @@
           <section class="col-lg-7">
             <!--HERO ALBUM-->
             <div id="hero-album">
-              <h1>Hero Album</h1>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 mt-2">
+                    <button
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2 m-1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-left"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 m-1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="dropdown d-flex justify-content-end m-1">
+                      <img src="" alt="" />
+                      <button
+                        class="dropdown-toggle rounded-pill border-0 bg-black text-white mx-2"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        User 1
+                      </button>
+                      <ul class="dropdown-menu bg-black bg-gradient">
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 2</a
+                          >
+                        </li>
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 3</a
+                          >
+                        </li>
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 4</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3 border-0 bg-transparent">
+                <div class="row">
+                  <div class="col-md-4 p-4 mx-0">
+                    <img
+                      src="/assets/imgs/main/image-8.jpg"
+                      class="img-fluid border-0 sfumaAlbum"
+                      alt="copertina alb"
+                    />
+                  </div>
+                  <div class="col-md-8 pt-5 p-0">
+                    <div class="card-body text-light p-1">
+                      <p><b>Album</b></p>
+                      <h5 class="card-title mb-5 p-3 display-1">
+                        <b>Gioventù Bruciata</b>
+                      </h5>
+                      <p class="card-text mt-5 p-1">
+                        <img
+                          src="/assets/imgs/main/image-12.jpg"
+                          alt="foto artisti"
+                          class="rounded"
+                          width="20"
+                          height="20"
+                        /><b>Pinguini Tattici Nucleari - 2017 - 12 brani,</b
+                        ><b class="text-muted">53 min , 20 sec.</b>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <!--FINE HERO ALBUM-->
 
             <!--ALBUM ACTIONS-->
-            <div id="album-actions">
-              <h1>Album Actions</h1>
+            <div id="following-bar" class="bg-transparent p-1">
+              <button
+                id="buttonFollowingBar"
+                class="rounded-circle border-0 p-3 m-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  class="bi bi-play-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"
+                  />
+                </svg>
+              </button>
+              <button class="border-0 bg-transparent text-secondary p-3 m-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  class="bi bi-suit-heart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"
+                  />
+                </svg>
+              </button>
+              <button class="border-0 bg-transparent text-secondary p-3 m-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  class="bi bi-arrow-down-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+                  />
+                </svg>
+              </button>
+              <button class="border-0 bg-transparent text-secondary p-3 m-3">
+                . . .
+              </button>
             </div>
+            <!--FINE ALBUM ACTIONS-->
 
             <!--ALBUM TRACKS-->
             <div id="album-tracks">
               <h1>Album tracks</h1>
+              <div class="container">
+                <div class="row mb-2">
+                  <div class="col-lg-6"># TITOLO</div>
+                  <div class="col-lg-3">RIPRODUZIONI</div>
+                  <div class="col-lg-3"><i class="bi bi-clock"></i></div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-lg-1">1</div>
+                  <div class="col-lg-5 flex-grow-1">
+                    <p>
+                      Montanelli - Intro<br /><span
+                        >Pinguini Tattici Nucleari</span
+                      >
+                    </p>
+                  </div>
+                  <div class="col-lg-3 track">694.578</div>
+                  <div class="col-lg-3">1:28</div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-1">2</div>
+                  <div class="col-lg-5 flex-grow-1">
+                    <p>Sciare<br /><span>Pinguini Tattici Nucleari</span></p>
+                  </div>
+                  <div class="col-lg-3">5.585.178</div>
+                  <div class="col-lg-3">4:41</div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-1">3</div>
+                  <div class="col-lg-5 flex-grow-1">
+                    <p>
+                      Gioventù Bruciata<br /><span
+                        >Pinguini Tattici Nucleari</span
+                      >
+                    </p>
+                  </div>
+                  <div class="col-lg-3">3.412.342</div>
+                  <div class="col-lg-3">5:24</div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-1">4</div>
+                  <div class="col-lg-5 flex-grow-1">
+                    <p>
+                      Ninnananna per genitori disattenti<br /><span
+                        >Pinguini Tattici Nucleari</span
+                      >
+                    </p>
+                  </div>
+                  <div class="col-lg-3">2.36.629</div>
+                  <div class="col-lg-3">4:01</div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-1">5</div>
+                  <div class="col-lg-5 flex-grow-1">
+                    <p>
+                      L'uomo che inventò il fuoco<br /><span
+                        >Pinguini Tattici Nucleari</span
+                      >
+                    </p>
+                  </div>
+                  <div class="col-lg-3">3.417.862</div>
+                  <div class="col-lg-3">5:23</div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-1">6</div>
+                  <div class="col-lg-5 flex-grow-1">
+                    <p>Irene<br /><span>Pinguini Tattici Nucleari</span></p>
+                  </div>
+                  <div class="col-lg-3">17.249.689</div>
+                  <div class="col-lg-3">5:11</div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-1">7</div>
+                  <div class="col-lg-5 flex-grow-1">
+                    <p>
+                      Senti che cantare questi!<br /><span
+                        >Pinguini Tattici Nucleari</span
+                      >
+                    </p>
+                  </div>
+                  <div class="col-lg-3">760.496</div>
+                  <div class="col-lg-3">1:11</div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-1">8</div>
+                  <div class="col-lg-5 flex-grow-1">
+                    <p>Pula<br /><span>Pinguini Tattici Nucleari</span></p>
+                  </div>
+                  <div class="col-lg-3">899.318</div>
+                  <div class="col-lg-3">5:46</div>
+                </div>
+              </div>
             </div>
+            <style>
+              .col-lg-1 {
+                width: 2rem;
+              }
+            </style>
           </section>
 
           <!--FRIENDS-->

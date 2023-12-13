@@ -13,6 +13,42 @@ const popularTracks = document.getElementById('popularTracks')
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchSongs()
+
+
+    // MARCO'S MOBILE SCRIPT
+
+    let shuffleIcon = document.getElementById("shuffleIcon");
+    let shuffleDot = document.getElementById("shuffleDot");
+    let playIcon = document.getElementById("playIcon");
+    let followBtn = document.getElementById("followBtn");
+    let shuffleActive = false;
+    let playActive = false;
+
+    shuffleIcon.addEventListener("click", function () {
+        shuffleActive = !shuffleActive;
+
+        shuffleDot.style.display = shuffleActive ? "block" : "none";
+        shuffleIcon.classList.toggle("green", shuffleActive);
+    });
+
+    followBtn.addEventListener("click", function () {
+        followBtn.classList.toggle("followed");
+    });
+
+    playIcon.addEventListener("click", function () {
+        playActive = !playActive;
+
+        if (playActive) {
+            playIcon.classList.remove("bi-play-circle-fill");
+            playIcon.classList.add("bi-pause-circle-fill");
+        } else {
+            playIcon.classList.remove("bi-pause-circle-fill");
+            playIcon.classList.add("bi-play-circle-fill");
+        }
+    });
+
+    // END MARCO'S MOBILE SCRIPT
+
 })
 
 async function fetchSongs() {

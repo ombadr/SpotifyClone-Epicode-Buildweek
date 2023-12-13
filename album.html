@@ -18,20 +18,51 @@
       <!--HERO MOBILE WRAPPER-->
       <div id="hero-mobile-wrapper" class="d-md-none">
         <!--HERO MOBILE-->
-        <div id="hero-mobile">
-          <h1>Hero mobile</h1>
+        <i class="backbtn-album bi bi-arrow-left"></i>
+        <div id="hero-mobile-artist">
+          <img
+            class="hero-img-artist"
+            src="assets/imgs/artist/img-hero.jpg"
+            alt="album"
+          />
         </div>
 
         <!--ALBUM-TITLE-MOBILE-->
         <div id="album-title-mobile">
-          <h1>Album Title Mobile</h1>
+          <h1 class="titleAlbum">Gioventù Brucata</h1>
+
+          <div id="artist-wrapper-album">
+            <img
+              class="album-img"
+              src="assets/imgs/artist/img-hero.jpg"
+              alt="artist"
+            />
+
+            <h2>Pinguini Tattici Nucleari</h2>
+          </div>
+
+          <p class="albumData">Album · <span>2017</span></p>
+
+          <div class="icon-wrapper-album">
+            <div class="save-wrapper-album">
+              <i class="bi bi-heart"></i>
+              <i class="greyIcon bi bi-arrow-down-circle"></i>
+              <i class="greyIcon bi bi-three-dots-vertical"></i>
+            </div>
+
+            <div class="play-wrapper-album">
+              <i id="shuffleIcon" class="shuffleIcon bi bi-shuffle"></i>
+              <span id="shuffleDot-album"></span>
+
+              <i id="playIcon" class="playIcon bi bi-play-circle-fill"></i>
+            </div>
+          </div>
         </div>
       </div>
 
       <!--ALBUM TRACKS MOBILE-->
       <div id="album-track-mobile" class="d-md-none">
-        <h1>Album track mobile</h1>
-        <div class="container">
+        <div class="container spacingAntiBarTracksMobile">
           <div class="row mt-4">
             <div class="col-11">
               <p class="songName">
@@ -156,8 +187,6 @@
           </div>
         </div>
       </div>
-
-      <style></style>
 
       <!--DESKTOP WRAPPER-->
       <div class="container-fluid d-none d-md-block" id="desktop-wrapper">
@@ -464,7 +493,7 @@
             <!--ALBUM TRACKS-->
             <div id="album-tracks">
               <h1>Album tracks</h1>
-              <div class="container">
+              <div class="container spacingAntiBar">
                 <div class="row mb-2">
                   <div class="col-lg-6"># TITOLO</div>
                   <div class="col-lg-3">RIPRODUZIONI</div>

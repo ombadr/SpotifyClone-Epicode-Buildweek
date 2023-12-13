@@ -16,15 +16,24 @@
   <body>
     <main>
       <!--HERO MOBILE-->
+
       <div id="hero-mobile" class="d-md-none">
         <div id="hero-overlay">
-          <h1>Pinguini Tattici Nucleari</h1>
+          <div id="heroMobileArtist">
+            <!--RENDER THIS DYNAMICALLY-->
+            <h1>Pinguini Tattici Nucleari</h1>
+          </div>
         </div>
       </div>
 
       <!--LISTENERS MOBILE-->
       <div id="listeners-mobile" class="d-md-none">
-        <p id="listeners-counter">3.961.093 ascoltatori mensili</p>
+        <p id="listeners-counter">
+          <span id="listenersMobileNumber"
+            ><!--RENDER THIS NUMBER DYNAMICALLY-->3.961.093</span
+          >
+          ascoltatori mensili
+        </p>
         <!-- questo numero potrebbe variare randomicamente per simulare dei dati veri-->
 
         <div id="icon-wrapper">
@@ -48,6 +57,8 @@
 
       <!--LIKED MOBILE-->
       <div id="liked-mobile" class="d-md-none">
+        <!--GENERATE THIS DYNAMICALLY-->
+
         <div id="likedIcon">
           <img
             class="liked-img"
@@ -71,7 +82,187 @@
       </div>
 
       <!--POPULAR MOBILE-->
-      <div id="popular-mobile" class="d-md-none"><h1>Popular mobile</h1></div>
+      <div id="popular-mobile" class="d-md-none mb-5">
+        <h2 class="mx-3">Popolari</h2>
+        <div class="container spacingAntiBar">
+          <!--Aggiunta classe per staccare ultima card dalla barra sottostante-->
+          <div class="row" id="tracksPopularMobile">
+            <!--RENDER HERE DYNAMICALLY-->
+
+            <!--CARD-->
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>1</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-13.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Ricordi</h3>
+                <p>10.345.675</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>2</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-12.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Pastello Bianco</h3>
+                <p>26.389.675</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>3</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-11.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Giovani Wannabe</h3>
+                <p>16.924.341</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>4</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-10.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Pastello Viola</h3>
+                <p>31.345.675</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>5</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-15.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Bla bla</h3>
+                <p>9.096.564</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>6</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-16.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Ricordi</h3>
+                <p>11.345.675</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FINE POPULAR MOBILE-->
 
       <!--DESKTOP WRAPPER-->
       <div id="desktop-wrapper" class="container-fluid">
@@ -343,8 +534,9 @@
               </button>
             </div>
             <!--FINE FOLLOWING BAR-->
+            <!--POPULAR ARTIST DESKTOP-->
             <div class="row">
-              <div id="popular" class="col-lg-8 mt-3">
+              <div id="popular" class="col-lg-8 mt-3 spacingAntiBar">
                 <div class="section-title">Popular</div>
                 <div class="row tracks" id="popularTracks">
                   <!--ADD HERE DYNAMICALLY-->
@@ -420,7 +612,109 @@
                   </div>
 
                   <div class="track d-flex align-items-center p-2">
-                    <div class="col-lg-1 trackNumber">5</div>
+                    <div class="col-lg-1 trackNumber p-0">5</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">6</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">7</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">8</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">9</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">10</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber">11</div>
                     <div
                       class="col-lg-2 trackArt"
                       style="width: 40px; height: 40px"

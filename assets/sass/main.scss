@@ -191,10 +191,24 @@ body {
       }
     }
 
-    #volumeBar {
+    #volumeBar, #coverBar {
       width: 90px;
       height: 10px;
     }
+
+    .volumeControls {
+      position: relative;
+    }
+    #coverBarContainer{
+      position: absolute;
+      background-color: $cardBackground;
+      // background-color: red;
+      right: 154px;
+      z-index: 10;
+    }
+  }
+  .rightSideButtons {
+    z-index: 20;
   }
 
   .nowPlaying {
@@ -295,6 +309,10 @@ body {
     border: none;
     background: none;
     color: $playerButtonsColor;
+    svg{
+      position: relative;
+      z-index: 10;
+    }
 
     &:hover {
       cursor: pointer;
@@ -304,11 +322,13 @@ body {
   .volumeContainer {
     position: relative;
     top: 2px;
+    &:hover{
+      cursor: pointer;
+    }
 
     .volumeFlex {
       align-items: center;
       height: $progressBarHeight;
-      background-color: red;
       background-color: $playerButtonsColor;
       border-radius: 10px;
 
@@ -349,6 +369,7 @@ body {
   .volumeIconAndSlider {
     height: 45px;
   }
+
 
 }
 

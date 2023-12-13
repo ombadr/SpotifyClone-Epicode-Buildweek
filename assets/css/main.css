@@ -12153,11 +12153,29 @@ body {
     display: block;
   }
 }
-#player-desktop .nowPlaying #volumeBar,
+#player-desktop .nowPlaying #volumeBar, #player-desktop .nowPlaying #coverBar,
 #player-desktop .playbackControls #volumeBar,
-#player-desktop .volumeControls #volumeBar {
+#player-desktop .playbackControls #coverBar,
+#player-desktop .volumeControls #volumeBar,
+#player-desktop .volumeControls #coverBar {
   width: 90px;
   height: 10px;
+}
+#player-desktop .nowPlaying .volumeControls,
+#player-desktop .playbackControls .volumeControls,
+#player-desktop .volumeControls .volumeControls {
+  position: relative;
+}
+#player-desktop .nowPlaying #coverBarContainer,
+#player-desktop .playbackControls #coverBarContainer,
+#player-desktop .volumeControls #coverBarContainer {
+  position: absolute;
+  background-color: #171717;
+  right: 154px;
+  z-index: 10;
+}
+#player-desktop .rightSideButtons {
+  z-index: 20;
 }
 #player-desktop .nowPlaying {
   width: 300px;
@@ -12243,6 +12261,10 @@ body {
   background: none;
   color: rgb(215, 215, 215);
 }
+.volumeControls .rightSideButtons svg {
+  position: relative;
+  z-index: 10;
+}
 .volumeControls .rightSideButtons:hover {
   cursor: pointer;
 }
@@ -12250,10 +12272,12 @@ body {
   position: relative;
   top: 2px;
 }
+.volumeControls .volumeContainer:hover {
+  cursor: pointer;
+}
 .volumeControls .volumeContainer .volumeFlex {
   align-items: center;
   height: 5px;
-  background-color: red;
   background-color: rgb(215, 215, 215);
   border-radius: 10px;
 }

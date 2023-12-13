@@ -15,6 +15,7 @@ const exitFullscreenIcon = document.getElementById('exitFullscreenIcon');
 const progressBar = document.getElementById('progressBar');
 const songTimer = document.getElementById('songTimer');
 const volumeContainer = document.querySelector('.volumeContainer');
+const fullBar = document.querySelector('.fullBar');
 
 
 
@@ -108,5 +109,83 @@ volumeContainer.addEventListener('mouseenter',(event) => {
     volumeContainer.classList.remove('coloredVolumeBar');
 })
 
-const song = new Audio('https://cdns-preview-1.dzcdn.net/stream/c-14041499f5b7a75d738db0484a207d2e-5.mp3')
-// song.play()
+
+volumeContainer.addEventListener('click', function (event) {
+    // Get the click location within the component
+    const clickX = event.clientX - volumeContainer.getBoundingClientRect().left;
+    const containerSize = volumeContainer.clientWidth;
+    // const clickY = event.clientY - volumeContainer.getBoundingClientRect().top;
+    const newX = volumeContainer.clientWidth - clickX;
+    
+    // Moves the bar
+    fullBar.style.right = newX + 'px';
+
+    // Calculate percentage
+    const percentageFromRight = (newX * 100) / containerSize;
+    const volumePercentage = 100 - percentageFromRight;
+    volumeContainer.style['--progress-bar-transform'] = volumePercentage;
+    
+
+    // Inject percentage
+
+
+    // Log the click coordinates
+//     console.log(`Clicked at X: ${clickX}`);
+//     console.log(`${newX} px moved to the right`);
+//     console.log(`${percentageFromRight}% moved to the right`);
+//     console.log(volumePercentage);
+});
+
+
+let isDragging = false;
+let initialX;
+let initialY;
+let offsetX = 0;
+let offsetY = 0;
+
+// Event listeners for mouse/touch events
+fullBar.addEventListener('mousedown', startDrag);
+// fullBar.addEventListener('touchstart', startDrag);
+
+// Functions for handling the drag-and-drop behavior
+function startDrag(e) {
+    e.preventDefault();
+
+    if (e.type === 'mousedown') {
+        initialX = e.clientX;
+        initialY = e.clientY;
+    }
+
+    offsetX = fullBar.offsetLeft - initialX;
+    // offsetY = fullBar.offsetTop - initialY;
+
+    isDragging = true;
+
+    // Attach event listeners to handle dragging and dropping
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('touchmove', drag);
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('touchend', stopDrag);
+}
+
+function drag(e) {
+    if (!isDragging) return;
+
+    e.preventDefault();
+
+    if (e.type === 'mousemove') {
+        const currentX = e.clientX;
+        fullBar.style.left = currentX + offsetX + 'px';
+    } else if (e.type === 'touchmove') {
+        const currentX = e.touches[0].clientX;
+        fullBar.style.left = currentX + offsetX + 'px';
+    }
+}
+
+function stopDrag() {
+    isDragging = false;
+
+    // Remove the event listeners when dragging is finished
+    document.removeEventListener('mousemove', drag);
+    document.removeEventListener('mouseup', stopDrag);
+}

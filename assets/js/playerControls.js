@@ -14,6 +14,7 @@ const fullscreenIcon = document.getElementById('fullscreenIcon');
 const exitFullscreenIcon = document.getElementById('exitFullscreenIcon');
 const progressBar = document.getElementById('progressBar');
 const songTimer = document.getElementById('songTimer');
+const volumeContainer = document.querySelector('.volumeContainer');
 
 
 
@@ -98,3 +99,14 @@ function setPlayStop() {
 }
 
 
+volumeContainer.addEventListener('mouseenter',(event) => {
+    event.preventDefault();
+    volumeContainer.classList.add('coloredVolumeBar');
+})
+    volumeContainer.addEventListener('mouseleave', (event) => {
+    event.preventDefault();
+    volumeContainer.classList.remove('coloredVolumeBar');
+})
+
+const song = new Audio('https://cdns-preview-1.dzcdn.net/stream/c-14041499f5b7a75d738db0484a207d2e-5.mp3')
+// song.play()

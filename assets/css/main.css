@@ -11982,6 +11982,43 @@ body {
 }
 
 /*HOMEPAGE*/
+/* NAVBAR DESKTOP */
+.dropdown-toggle {
+  cursor: pointer;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+
+#navbar-desktop,
+#friends {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.friends-card h4, .friends-card .h4 {
+  font-size: 15px;
+  font-weight: bold;
+}
+.friends-card span {
+  font-size: 11px;
+}
+.friends-card p {
+  font-size: 12px;
+}
+
+/*CENTER SECTION */
+#center-section {
+  overflow-y: auto;
+  height: 87vh;
+}
+
+/* HERO HOMEPAGE */
+.spotify-green-bg {
+  background: #1db954;
+}
+
 /*LIKED SECTION */
 #liked {
   color: #838383;
@@ -12005,7 +12042,7 @@ body {
 }
 #liked .playlists .card:hover {
   cursor: pointer;
-  background-color: #2b2b2b;
+  background-color: #212121;
 }
 @media screen and (min-width: 992px) {
   #liked .playlists .card {
@@ -12197,8 +12234,73 @@ body {
     display: block;
   }
 }
-.volumeControls #volumeIcon, .volumeControls #fullscreenIcon {
+.volumeControls #volumeIcon,
+.volumeControls #fullscreenIcon {
   display: block;
+}
+.volumeControls .rightSideButtons {
+  border: none;
+  background: none;
+  color: rgb(215, 215, 215);
+}
+.volumeControls .rightSideButtons:hover {
+  cursor: pointer;
+}
+.volumeControls .volumeContainer {
+  position: relative;
+  top: 2px;
+}
+.volumeControls .volumeContainer .volumeFlex {
+  align-items: center;
+  height: 5px;
+  background-color: red;
+  background-color: rgb(215, 215, 215);
+  border-radius: 10px;
+}
+.volumeControls .volumeContainer .volumeFlex .emptyBar {
+  background-color: #838383;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  position: relative;
+}
+.volumeControls .volumeContainer .volumeFlex .emptyBar .fullBar {
+  position: absolute;
+  border-radius: 10px;
+  height: 5px;
+  background-color: #f7f7f7;
+  width: 100%;
+}
+.volumeControls .coloredVolumeBar .volumeFlex .emptyBar .fullBar {
+  background-color: #1db954;
+}
+.volumeControls .coloredVolumeBar .volumeFlex .emptyBar .fullBar::after {
+  content: "";
+  display: inline-block;
+  width: 15px; /* Adjust the size of the sphere as needed */
+  height: 15px; /* Should be equal to width to create a perfect circle */
+  background-color: white; /* Color of the sphere */
+  border-radius: 50%; /* Make it a circle */
+  position: absolute;
+  top: 50%; /* Position it vertically in the middle */
+  right: 0; /* Position it at the end of the div */
+  transform: translateY(-50%);
+}
+.volumeControls .volumeIconAndSlider {
+  height: 45px;
+}
+
+/* SUGGERITI MOBILE */
+.nav-tabs {
+  --bs-nav-tabs-border-color: black;
+}
+.nav-tabs .nav-link {
+  color: white;
+}
+
+.suggeriti-mobile-cards h5, .suggeriti-mobile-cards .h5 {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 /* PLAYLIST MOBILE */
@@ -12255,6 +12357,9 @@ body {
 
 /*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
+  #player-desktop {
+    display: none !important;
+  }
   #player-title-artist h6, #player-title-artist .h6 {
     display: none;
   }

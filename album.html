@@ -17,16 +17,43 @@
       <!--HERO MOBILE WRAPPER-->
       <div id="hero-mobile-wrapper">
         <!--HERO MOBILE-->
-        <div id="hero-mobile">
-          <h1>Hero mobile</h1>
+        <i class=" backbtn-album bi bi-arrow-left"></i>
+        <div id="hero-mobile-artist">
+          <img class="hero-img-artist" src="assets/imgs/album/album.jpg" alt="album">
         </div>
 
         <!--ALBUM-TITLE-MOBILE-->
         <div id="album-title-mobile">
-          <h1>Album Title Mobile</h1>
+          <h1 class="titleAlbum">Gioventù Brucata</h1>
+
+          <div id="artist-wrapper-album">
+            <img class="album-img" src="assets/imgs/artist/img-hero.jpg" alt="artist">
+  
+            <h2>Pinguini Tattici Nucleari</h2>
+          </div>
+
+          <p class="albumData">Album · <span>2017</span></p>
+
+          <div class="icon-wrapper-album">
+
+            <div class="save-wrapper-album">
+              <i class="bi bi-heart"></i>
+              <i class="greyIcon bi bi-arrow-down-circle"></i>
+              <i class="greyIcon bi bi-three-dots-vertical"></i>
+            </div>
+
+            <div class="play-wrapper-album">
+              <i id="shuffleIcon" class="shuffleIcon bi bi-shuffle"></i>
+              <span id="shuffleDot-album"></span>
+
+              <i id="playIcon" class="playIcon bi bi-play-circle-fill"></i>
+            </div>
+
+            </div>
+
         </div>
       </div>
-
+      
       <!--ALBUM TRACKS MOBILE-->
       <div id="album-track-mobile">
         <h1>Album track mobile</h1>
@@ -80,5 +107,51 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let shuffleIcon = document.getElementById("shuffleIcon");
+        let shuffleDot = document.getElementById("shuffleDot-album");
+        let playIcon = document.getElementById("playIcon");
+        let shuffleActive = false;
+        let playActive = false;
+    
+        shuffleIcon.addEventListener("click", function () {
+          shuffleActive = !shuffleActive;
+    
+          shuffleDot.style.display = shuffleActive ? "block" : "none";
+          shuffleIcon.classList.toggle("green", shuffleActive);
+        });
+  
+        playIcon.addEventListener("click", function () {
+          playActive = !playActive;
+    
+          if (playActive) {
+            playIcon.classList.remove("bi-play-circle-fill");
+            playIcon.classList.add("bi-pause-circle-fill");
+          } else {
+            playIcon.classList.remove("bi-pause-circle-fill");
+            playIcon.classList.add("bi-play-circle-fill");
+          }
+        });
+  
+        let heartIcon = document.querySelector('.bi-heart');
+        let arrowIcon = document.querySelector('.bi-arrow-down-circle');
+    
+        heartIcon.addEventListener('click', function () {
+          if (heartIcon.classList.contains('bi-heart')) {
+            heartIcon.classList.remove('bi-heart');
+            heartIcon.classList.add('bi-heart-fill');
+          } else {
+            heartIcon.classList.remove('bi-heart-fill');
+            heartIcon.classList.add('bi-heart');
+          }
+        });
+    
+        arrowIcon.addEventListener('click', function () {
+          arrowIcon.classList.toggle('arrow-active');
+        });
+      });
+    </script>
   </body>
 </html>

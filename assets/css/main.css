@@ -12158,6 +12158,12 @@ body {
 
 /*ALBUM*/
 /*ARTIST*/
+/*POPULAR MOBILE
+CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
+.spacingAntiBar {
+  padding-bottom: 6rem !important;
+}
+
 /* HERO MOBILE */
 body {
   background-color: #212121;

@@ -1,4 +1,3 @@
-
 const BASE_URL = 'https://deezerdevs-deezer.p.rapidapi.com/'
 const options = {
   method: 'GET',
@@ -15,13 +14,12 @@ const artist = '50 cent' // Test artist
 
 // 5 random albums
 
-let likedAlbums = ['122366', '7090505', '496520481', '62646932', '9410100'] // 5 random albums for liked section in homepage
+let likedAlbums = ['122366', '7090505', '496520481', '244223', '9410100'] // 5 random albums for liked section in homepage
 let homePageTracks = ['92720102', '1141668', '1662139552'] // 3 random tracks for homepage
 let suggeritiAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257'] // 6 randoms albums for suggeriti section in homepage
 
-let mobileMusicaPodcastAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257']
-
-let podcastShowAlbums = ['2732901', '108938', '1238967', '340077257', '297188862', '103248']
+let mobileMusicaAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257']
+let mobilePodcastShowAlbums = ['2732901', '108938', '1238967', '340077257', '297188862', '103248']
 
 let playlistMobileAlbums = ['2732901', '108938', '1238967']
 
@@ -32,6 +30,36 @@ const suggeritiAlbumsContainer = document.querySelector('#suggeritiAlbums')
 const mobileMusicaSuggeriti = document.querySelector('#mobileMusicaSuggeriti')
 const mobilePodcastSuggeriti = document.querySelector('#mobilePodcastSuggeriti')
 const playlistMobileAlbumsContainer = document.querySelector('#playlistMobile')
+
+// FETCH FUNCTIONS (RUN THESE FUNCTIONS TO USE THE API)
+// getTracksForSlider() // get three tracks from the api for the slider in homepage
+// getSuggeritiAlbums() // get suggested albums for the homepage
+// getLikedAlbumTracks() // get liked album tracks in homepage
+
+// getMobileMusicaSuggeriti() // get musica suggerita for the mobile
+// getMobilePodcastSuggeriti() // get podcast suggeriti for the mobile
+// getMobilePlaylistAlbums() // get playlist for the mobile
+
+async function fetchHomepageData() {
+  try {
+    await getTracksForSlider();
+
+    await getSuggeritiAlbums();
+
+    await getLikedAlbumTracks();
+
+    await getMobileMusicaSuggeriti();
+    await getMobilePodcastSuggeriti();
+
+    await getMobilePlaylistAlbums();
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchHomepageData();
+
+// END FETCH FUNCTIONS
 
 // getAlbumTracks(ID)
 // getTracksFromSearch(artist)
@@ -94,7 +122,7 @@ function displayLikedAlbums(albumsHTML) {
   likedAlbumCards.innerHTML = albumsHTML;
 }
 
-getLikedAlbumTracks();
+// getLikedAlbumTracks(); // activate this to start the fetch request
 
 // END LIKED ALBUMS 
 
@@ -189,7 +217,7 @@ async function getSuggeritiAlbums() {
     for (let i = 0; i < suggeritiAlbums.length; i++) {
       const albumId = suggeritiAlbums[i];
       const albumTracks = await getAlbumTracks(albumId);
-      const albumHTML = createSuggeritiAlbums(albumTracks);
+      const albumHTML = createSuggeritiAlbums(albumTracks, albumId);
       albumsHTML += albumHTML;
     }
     displaySuggeritiAlbums(albumsHTML);
@@ -200,10 +228,11 @@ async function getSuggeritiAlbums() {
 }
 
 
-function createSuggeritiAlbums(albumTracks) {
+function createSuggeritiAlbums(albumTracks, albumId) {
   const { title, cover_big } = albumTracks
 
-  return `<div class="col">
+  return `<a href="/album.html?album=${albumId}" style="text-decoration: none">
+                <div class="col">
                     <div class="card bg-dark border-0 text-white">
                       <div class="row g-0">
                         <div class="col-md-4">
@@ -222,14 +251,15 @@ function createSuggeritiAlbums(albumTracks) {
                         </div>
                       </div>
                     </div>
-                  </div>`;
+                  </div>
+                  </a>`;
 }
 
 function displaySuggeritiAlbums(albumsHTML) {
   suggeritiAlbumsContainer.innerHTML = albumsHTML
 }
 
-// getSuggeritiAlbums() // Activate this to start the API fetch
+getSuggeritiAlbums() // Activate this to start the API fetch
 
 // END SUGGERITI ALBUMS
 
@@ -239,10 +269,10 @@ async function getMobileMusicaSuggeriti() {
   try {
     let albumsHTML = '';
 
-    for (let i = 0; i < mobileMusicaPodcastAlbums.length; i++) {
-      const albumId = mobileMusicaPodcastAlbums[i];
+    for (let i = 0; i < mobileMusicaAlbums.length; i++) {
+      const albumId = mobileMusicaAlbums[i];
       const albumTracks = await getAlbumTracks(albumId);
-      const albumHTML = createMobileMusicaSuggeriti(albumTracks);
+      const albumHTML = createMobileMusicaSuggeriti(albumTracks, albumId);
       albumsHTML += albumHTML;
 
     }
@@ -257,10 +287,10 @@ async function getMobilePodcastSuggeriti() {
   try {
     let albumsHTML = '';
 
-    for (let i = 0; i < podcastShowAlbums.length; i++) {
-      const albumId = podcastShowAlbums[i];
+    for (let i = 0; i < mobilePodcastShowAlbums.length; i++) {
+      const albumId = mobilePodcastShowAlbums[i];
       const albumTracks = await getAlbumTracks(albumId);
-      const albumHTML = createMobileMusicaSuggeriti(albumTracks);
+      const albumHTML = createMobilePodcastSuggeriti(albumTracks, albumId);
       albumsHTML += albumHTML;
 
     }
@@ -271,10 +301,11 @@ async function getMobilePodcastSuggeriti() {
   }
 }
 
-function createMobileMusicaSuggeriti(albumTracks) {
+function createMobileMusicaSuggeriti(albumTracks, albumId) {
   const { title, cover_big } = albumTracks
 
   return `<div class="col-6 mb-2">
+            <a href = "/album.html?album=${albumId}" style = "text-decoration: none" >
                   <div class="card bg-dark border-0 text-white">
                     <div class="row g-0">
                       <div class="col-4">
@@ -294,13 +325,16 @@ function createMobileMusicaSuggeriti(albumTracks) {
                       </div>
                     </div>
                   </div>
-                </div>`;
+                  </a>
+                </div>
+                `;
 }
 
-function createMobilePodcastSuggeriti(albumTracks) {
+function createMobilePodcastSuggeriti(albumTracks, albumId) {
   const { title, cover_big } = albumTracks
 
   return `<div class="col-6 mb-2">
+            <a href = "/album.html?album=${albumId}" style = "text-decoration: none" >
                   <div class="card bg-dark border-0 text-white">
                     <div class="row g-0">
                       <div class="col-4">
@@ -320,6 +354,7 @@ function createMobilePodcastSuggeriti(albumTracks) {
                       </div>
                     </div>
                   </div>
+                  </a>
                 </div>`;
 }
 
@@ -347,7 +382,7 @@ async function getMobilePlaylistAlbums() {
     for (let i = 0; i < playlistMobileAlbums.length; i++) {
       const albumId = playlistMobileAlbums[i];
       const albumTracks = await getAlbumTracks(albumId);
-      const albumHTML = createMobilePlaylistAlbums(albumTracks);
+      const albumHTML = createMobilePlaylistAlbums(albumTracks, albumId);
       albumsHTML += albumHTML;
 
     }
@@ -357,10 +392,11 @@ async function getMobilePlaylistAlbums() {
   }
 }
 
-function createMobilePlaylistAlbums(albumTracks) {
+function createMobilePlaylistAlbums(albumTracks, albumId) {
   const { title, cover_big } = albumTracks
 
   return `<div id="playlist-mobile" class="m-4 p-2 d-md-none">
+   <a href = "/album.html?album=${albumId}" style="text-decoration: none; color: white" >
           <div class="d-flex mt-2 mx-2">
             <img
               src="${cover_big}"
@@ -383,6 +419,7 @@ function createMobilePlaylistAlbums(albumTracks) {
               <i class="bi bi-play-circle-fill fs-1"></i>
             </div>
           </div>
+          </a>
         </div>`;
 }
 

@@ -32,35 +32,35 @@
         <h1>Album track mobile</h1>
         <div class="container">          
           <div class="row mt-4">
-            <div class="col-11"><p class="songName">Montanelli - Intro<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-11"><p class="songName">Montanelli - Intro</p><span class="artistName">Pinguini Tattici Nucleari</span></div>
             <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
           </div>
           <div class="row">            
-            <div class="col-11"><p class="songName">Sciare<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-11"><p class="songName">Sciare</p><span class="artistName">Pinguini Tattici Nucleari</span></div>
             <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
           </div>
           <div class="row">
-            <div class="col-11"><p class="songName">Gioventù Bruciata<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-11"><p class="songName">Gioventù Bruciata</p><span class="artistName">Pinguini Tattici Nucleari</span></div>
             <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
           </div>
           <div class="row">
-            <div class="col-11"><p class="songName">Ninnananna per genitori disattenti<br><span class="artistName"><i class="bi bi-file-arrow-down-fill"></i> <i class="bi bi-explicit-fill"></i> Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-11"><p class="songName">Ninnananna per genitori disattenti</p><span class="artistName"><i class="bi bi-file-arrow-down-fill"></i> <i class="bi bi-explicit-fill"></i> Pinguini Tattici Nucleari</span></div>
             <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
           </div>
           <div class="row">
-            <div class="col-11"><p class="songName">L'uomo che inventò il fuoco<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-11"><p class="songName">L'uomo che inventò il fuoco</p><span class="artistName">Pinguini Tattici Nucleari</span></div>
             <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
           </div>
           <div class="row">
-            <div class="col-11"><p class="songName">Irene<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-11"><p class="songName">Irene</p><span class="artistName">Pinguini Tattici Nucleari</span></div>
             <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
           </div>
           <div class="row">
-            <div class="col-11"><p class="songName">Senti che cantare questi!<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-11"><p class="songName">Senti che cantare questi!</p><span class="artistName">Pinguini Tattici Nucleari</span></div>
             <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
           </div>
           <div class="row">
-            <div class="col-11"><p class="songName">Pula<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-11"><p class="songName">Pula</p><span class="artistName">Pinguini Tattici Nucleari</span></div>
             <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
           </div>
         </div>        
@@ -73,15 +73,122 @@
                 }
               }  
 
-        .songName{
-          font-size: medium;
-          font-weight: bold;
-        }
-        .artistName{
-          font-size: small;
-          color: gray;
-        }
-      </style>
+    
+    .dropdown-menu {
+      display: block;
+      position: fixed;
+      color: antiquewhite;
+      background-color: rgb(34, 34, 34);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      z-index: 100;
+      padding: 10px;
+      overflow: visible;
+    }
+
+    .dropdown-menu::-webkit-scrollbar{
+      display: none;
+    }
+
+    /* Stili specifici sotto i 500px */
+    @media (max-width: 500px) {
+      .dropdown-menu {
+        width: 100%;
+        height: 50%;
+        bottom: 0;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        z-index: 100;
+        padding: 10px;
+        overflow: auto;
+      }
+    }
+
+    /* Altri stili per la presentazione */
+    .songName {
+      font-size: medium;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    .artistName {
+      font-size: small;
+      color: gray;
+    }
+
+    /* Altri stili per i bottoni nel menu a comparsa */
+    .dropdown-menu-button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.5rem;
+      color: antiquewhite;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .dropdown-menu-button:hover{
+      background-color: rgb(51, 50, 50);
+    }
+  </style>
+
+<script>
+
+function toggleDropdownMenu(element) {
+    
+    let menu = document.createElement('div');
+    menu.classList.add("dropdown-menu")
+    let firstRow = document.createElement('div');
+    firstRow.style.display = 'flex';
+    firstRow.classList.add("justify-content-beetwen")
+    let imageDiv = document.createElement('div');
+    let textDiv = document.createElement('div');
+    
+    let songName = element.previousElementSibling.querySelector('.songName').innerText;
+    let artistName = element.previousElementSibling.querySelector('.artistName').innerText;
+
+    imageDiv.style.width = '35px';
+    imageDiv.style.height = '35px';
+    imageDiv.style.backgroundColor = '#000';
+
+    textDiv.innerHTML = '<p>' + songName + '</p><p>' + artistName + '</p>';
+
+    firstRow.appendChild(imageDiv);
+    firstRow.appendChild(textDiv);
+
+    menu.appendChild(firstRow);
+    let buttons = [
+        {icon: 'bi bi-heart', text: 'Mi piace'},
+        {icon: 'bi bi-dash-circle', text: 'Nascondi questo brano'},
+        {icon: 'bi bi-music-note-beamed', text: 'Aggiungi alla playlist'},
+        {icon: 'bi bi-music-note-list', text: 'Aggiungi in coda'},
+        {icon: 'bi bi-person', text: 'Visualizza artista'},
+        {icon: 'bi bi-share', text: 'Condividi'}
+    ];
+    for (let i = 0; i < buttons.length; i++) {
+        let button = document.createElement('button');
+        button.classList.add("dropdown-menu-button")
+        let icon = document.createElement('i');
+        icon.className = buttons[i].icon;
+        button.appendChild(icon);
+        button.innerHTML += ' ' + buttons[i].text;
+        menu.appendChild(button);
+    }
+    document.addEventListener('click', function(event) {
+  let isClickInsideMenu = menu.contains(event.target);
+  let isClickOnTrigger = element.contains(event.target);
+
+  if (!isClickInsideMenu && !isClickOnTrigger) {
+    menu.remove();
+  }
+});
+
+    // Aggiunta del menu al DOM
+    document.body.appendChild(menu);
+}
+
+
+</script>
 
      
 

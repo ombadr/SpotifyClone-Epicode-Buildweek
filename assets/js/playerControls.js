@@ -70,7 +70,7 @@ function setPlayStop() {
     playButton.addEventListener('click', () => {
         const startPlay = setInterval(() => {
             progressBar.setAttribute('Value', barFill);
-            if (barFill < 100) { barFill += (1*100)/barDuration / 100; }
+            if (barFill < 100) { barFill += (1 * 100) / barDuration / 100; }
             else {
                 clearInterval(startPlay);
                 barFill = 0;
@@ -79,10 +79,10 @@ function setPlayStop() {
                 pauseButton.classList.add('d-none');
             }
         }, 10)
-        
+
         // Aggiorna is secondi a sinistra della barra
         const pointInTime = setInterval(() => {
-            if (seconds < 60){
+            if (seconds < 60) {
                 seconds++;
                 seconds < 10 ? songTimer.innerHTML = `0:0${seconds}` : songTimer.innerHTML = `0:${seconds}`;
             } else {
@@ -100,11 +100,11 @@ function setPlayStop() {
 }
 
 
-volumeContainer.addEventListener('mouseenter',(event) => {
+volumeContainer.addEventListener('mouseenter', (event) => {
     event.preventDefault();
     volumeContainer.classList.add('coloredVolumeBar');
 })
-    volumeContainer.addEventListener('mouseleave', (event) => {
+volumeContainer.addEventListener('mouseleave', (event) => {
     event.preventDefault();
     volumeContainer.classList.remove('coloredVolumeBar');
 })
@@ -116,7 +116,7 @@ volumeContainer.addEventListener('click', function (event) {
     const containerSize = volumeContainer.clientWidth;
     // const clickY = event.clientY - volumeContainer.getBoundingClientRect().top;
     const newX = volumeContainer.clientWidth - clickX;
-    
+
     // Moves the bar
     fullBar.style.right = newX + 'px';
 
@@ -124,7 +124,7 @@ volumeContainer.addEventListener('click', function (event) {
     const percentageFromRight = (newX * 100) / containerSize;
     const volumePercentage = 100 - percentageFromRight;
     volumeContainer.style['--progress-bar-transform'] = volumePercentage;
-    volume = volumePercentage/100;
+    volume = volumePercentage / 100;
 });
 
 // const song = new Audio ('https://cdns-preview-1.dzcdn.net/stream/c-14041499f5b7a75d738db0484a207d2e-5.mp3')
@@ -132,41 +132,45 @@ volumeContainer.addEventListener('click', function (event) {
 
 const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=rhapsody"
 const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '83ad2cb7a2msh577873a178d1b4cp1bd24bjsn31bf740783c2',
-		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '83ad2cb7a2msh577873a178d1b4cp1bd24bjsn31bf740783c2',
+        'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+    }
 };
 
 
 async function fetchData(url, options) {
     try {
-      // Make a GET request using the fetch function
-      const response = await fetch(url, options); // Replace with your API URL
-    
-      // Check if the response status is OK (status code 200)
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-  
-      // Parse the response as JSON
-      const data = await response.json();
-      const songLink = data.data[0].preview;
-      let song = new Audio (songLink);
-      playButton.addEventListener('click', () => {
-        song.volume = volume;
-        song.play();
-        console.log(song.paused)
-      })
-      pauseButton.addEventListener('click', () => {
-        song.pause();
-      })
-      
-    } catch (error) {
-      // Handle errors here
-      console.error('Error:', error);
-    }
-  }
+        // Make a GET request using the fetch function
+        const response = await fetch(url, options); // Replace with your API URL
 
-  fetchData(url, options);
+        // Check if the response status is OK (status code 200)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        // Parse the response as JSON
+        const data = await response.json();
+        const songLink = data.data[0].preview;
+        let song = new Audio(songLink);
+        // let checkVolume = setInverval(() => {
+        //     song.volume = volume;
+        // }, 50)
+        let checkVolume = setInterval(() => {
+            song.volume = volume}, 100)
+        playButton.addEventListener('click', () => {
+            song.play();
+            const checkSongStatus = setInterval(() => { if (song.ended) { clearInterval(checkSongStatus) } console.log(song.ended) }, 100)
+        })
+        pauseButton.addEventListener('click', () => {
+            song.pause();
+        })
+
+    } catch (error) {
+        // Handle errors here
+        console.error('Error:', error);
+    }
+}
+
+fetchData(url, options);

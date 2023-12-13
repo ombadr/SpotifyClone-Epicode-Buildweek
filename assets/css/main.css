@@ -12167,14 +12167,17 @@ body {
   color: gray;
 }
 
+.spacingAntiBarTracksMobile {
+  padding-bottom: 10rem !important;
+} /*CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
 /*ARTIST*/
 /*POPULAR MOBILE
 CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
 .spacingAntiBar {
   padding-bottom: 6rem !important;
 }
-/* HERO MOBILE */
 
+/* HERO MOBILE */
 #hero-mobile {
   position: relative;
   background: url(/assets/imgs/artist/img-hero.jpg) center/cover;

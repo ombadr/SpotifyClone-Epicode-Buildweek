@@ -12157,17 +12157,23 @@ body {
 }
 
 /*ALBUM*/
+.songName {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.artistName {
+  font-size: small;
+  color: gray;
+}
+
 /*ARTIST*/
 /*POPULAR MOBILE
 CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
 .spacingAntiBar {
   padding-bottom: 6rem !important;
 }
-
 /* HERO MOBILE */
-body {
-  background-color: #212121;
-}
 
 #hero-mobile {
   position: relative;
@@ -12304,11 +12310,6 @@ body {
 
 /*END LIKED MOBILE*/
 /*HERO ARTIST*/
-.custom-bg {
-  background-image: url("/assets/imgs/main/image-15.jpg");
-  background-size: cover;
-}
-
 /*Aggiunta classe custom per img di bg di div hero artist */
 #buttonFollowingBar {
   background-color: #1db954;

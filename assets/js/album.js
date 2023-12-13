@@ -1,4 +1,4 @@
-import { convertSecondsToMinSec, generateRandomNumber } from "./utils/utils.js"
+import { convertSecondsToMinSec, generateRandomNumber, formatTime } from "./utils/utils.js"
 
 const BASE_URL = 'https://deezerdevs-deezer.p.rapidapi.com/'
 const options = {
@@ -29,12 +29,35 @@ async function fetchSongs() {
 
         const artist = albumResults.artist.name
         const trackList = albumResults.tracklist
+        console.log(albumResults)
         console.log(artist)
 
+
         if (albumResults) {
+
             let tracksHTML = ''
+            let heroAlbumHTML = ''
+
             // const trackList = await getTrackList(trackListUrl)
             // console.log('List of tracks:', trackList)
+
+            const imageAlbum = albumResults.cover_big
+            const albumTitle = albumResults.title
+            const albumArtist = albumResults.artist.name
+            const releaseDate = albumResults.release_date
+            const artistImage = albumResults.artist.picture_small
+            const numberOfTracks = albumResults.nb_tracks
+            const albumDuration = albumResults.duration
+            const formattedDuration = formatTime(albumDuration)
+
+            const heroHTML = createHeroAlbum(imageAlbum, albumTitle, albumArtist, releaseDate, artistImage, numberOfTracks, formattedDuration)
+
+
+            displayHeroAlbum(heroHTML)
+
+
+            console.log(releaseDate)
+
 
             console.log(albumResults)
             for (let i = 0; i < 10; i++) { // max 10 tracks
@@ -95,7 +118,7 @@ function displayAlbumSongs(albumsHTML) {
 // TODO: finish render hero album
 
 
-function createHeroAlbum(image, title, artist, releaseDate, artistImage, numeberOfTracks, duration) {
+function createHeroAlbum(image, title, artist, releaseDate, artistImage, numberOfTracks, duration) {
 
     // duration format 53 min , 20 sec.
     return ` <div class="col-md-4 p-4 mx-0">
@@ -118,8 +141,8 @@ function createHeroAlbum(image, title, artist, releaseDate, artistImage, numeber
                           class="rounded"
                           width="20"
                           height="20"
-                        /><b>${artist} - ${releaseDate} - ${numeberOfTracks} brani,</b
-                        ><b class="text-muted">${duration}</b>
+                        /><b>${artist} - ${releaseDate} - ${numberOfTracks} brani,</b
+                        ><b class="text-light">${duration}</b>
                       </p>
                     </div>
                   </div>`

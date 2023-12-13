@@ -16,7 +16,7 @@
   <body>
     <main>
       <!--HERO MOBILE WRAPPER-->
-      <div id="hero-mobile-wrapper">
+      <div id="hero-mobile-wrapper" class="d-md-none">
         <!--HERO MOBILE-->
         <div id="hero-mobile">
           <h1>Hero mobile</h1>
@@ -29,15 +29,141 @@
       </div>
 
       <!--ALBUM TRACKS MOBILE-->
-      <div id="album-track-mobile">
+      <div id="album-track-mobile" class="d-md-none">
         <h1>Album track mobile</h1>
+        <div class="container">
+          <div class="row mt-4">
+            <div class="col-11">
+              <p class="songName">
+                Montanelli - Intro<br /><span class="artistName"
+                  >Pinguini Tattici Nucleari</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-11">
+              <p class="songName">
+                Sciare<br /><span class="artistName"
+                  >Pinguini Tattici Nucleari</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-11">
+              <p class="songName">
+                Gioventù Bruciata<br /><span class="artistName"
+                  >Pinguini Tattici Nucleari</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-11">
+              <p class="songName">
+                Ninnananna per genitori disattenti<br /><span class="artistName"
+                  ><i class="bi bi-file-arrow-down-fill"></i>
+                  <i class="bi bi-explicit-fill"></i> Pinguini Tattici
+                  Nucleari</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-11">
+              <p class="songName">
+                L'uomo che inventò il fuoco<br /><span class="artistName"
+                  >Pinguini Tattici Nucleari</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-11">
+              <p class="songName">
+                Irene<br /><span class="artistName"
+                  >Pinguini Tattici Nucleari</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-11">
+              <p class="songName">
+                Senti che cantare questi!<br /><span class="artistName"
+                  >Pinguini Tattici Nucleari</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-11">
+              <p class="songName">
+                Pula<br /><span class="artistName"
+                  >Pinguini Tattici Nucleari</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <style></style>
+
       <!--DESKTOP WRAPPER-->
-      <div class="container-fluid" id="desktop-wrapper">
+      <div class="container-fluid d-none d-md-block" id="desktop-wrapper">
         <div class="row">
           <!--NAVBAR DESKTOP-->
-          <div id="navbar-desktop" class="col-lg-2 d-none d-md-block mt-2">
+          <div id="navbar-desktop" class="col-lg-2 mt-2">
             <div class="dropdown">
               <span
                 class="dots dropdown-toggle"

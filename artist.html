@@ -309,8 +309,10 @@
           <!--CENTER SECTION-->
           <section class="col-lg-7 d-none d-md-block">
             <!--HERO ARTIST-->
-            <div id="hero-artist" class="custom-bg mb-0">
-              <div class="container">
+            <div id="hero-artist" class="mb-0">
+              <!--ADD HERE DYNAMICALLY -->
+
+              <div class="container" id="heroDesktopSection">
                 <div class="row">
                   <div class="col-md-6">
                     <button
@@ -385,24 +387,29 @@
                     </div>
                   </div>
                 </div>
+                <p class="d-inline-block text-primary mx-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-patch-check-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
+                    />
+                  </svg>
+                </p>
+                <p class="d-inline-block">Artista verificato</p>
+
+                <!--RENDER THIS DYNAMICALLY-->
+
+                <div id="heroDesktopTitle">
+                  <h1 class="display-1 mx-3"><b>Yellowcard</b></h1>
+                  <p class="mx-3 p-1">3.433.158 ascoltatori mensili</p>
+                </div>
               </div>
-              <p class="d-inline-block text-primary mx-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-patch-check-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
-                  />
-                </svg>
-              </p>
-              <p class="d-inline-block">Artista verificato</p>
-              <h1 class="display-1 mx-3"><b>Yellowcard</b></h1>
-              <p class="mx-3 p-1">3.433.158 ascoltatori mensili</p>
             </div>
             <!--FINE HERO ARTIST-->
             <!--FOLLOWING BAR-->
@@ -532,7 +539,8 @@
                   Visualizza altro
                 </button>
               </div>
-              <div class="col-lg-4 mt-3">
+              <div class="col-lg-4 mt-3" id="likedSectionContainerDesktop">
+                <!--RENDER THIS DYNAMICALLY-->
                 <div class="row">
                   <div class="sectionTitle">Brani che ti piacciono</div>
                   <div class="col-lg-4 mt-3">
@@ -560,6 +568,7 @@
                     <p style="font-size: x-small">Di Yellowcard</p>
                   </div>
                 </div>
+                <!--END-->
               </div>
             </div>
           </section>

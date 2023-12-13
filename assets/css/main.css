@@ -11876,10 +11876,21 @@ body {
   height: 100vh;
 }
 
+.friends-card h4, .friends-card .h4 {
+  font-size: 15px;
+  font-weight: bold;
+}
+.friends-card span {
+  font-size: 11px;
+}
+.friends-card p {
+  font-size: 12px;
+}
+
 /*CENTER SECTION */
 #center-section {
   overflow-y: auto;
-  height: 90vh;
+  height: 87vh;
 }
 
 /* HERO HOMEPAGE */
@@ -11888,9 +11899,12 @@ body {
 }
 
 /*LIKED SECTION */
-/*LIKED SECTION */
 #liked {
   color: #838383;
+}
+#liked a.card-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
 }
 #liked p {
   font-size: 0.8rem;
@@ -11908,6 +11922,10 @@ body {
   background-color: #171717;
   border: none;
   display: block;
+}
+#liked .playlists .card:hover {
+  cursor: pointer;
+  background-color: #2b2b2b;
 }
 @media screen and (min-width: 992px) {
   #liked .playlists .card {
@@ -12075,9 +12093,6 @@ body {
   width: 30px;
   height: 30px;
 }
-#player-desktop #pauseButton {
-  display: none;
-}
 #player-desktop .playerBar {
   position: relative;
   bottom: 10px;
@@ -12112,6 +12127,11 @@ body {
 }
 .nav-tabs .nav-link {
   color: white;
+}
+
+.suggeriti-mobile-cards h5, .suggeriti-mobile-cards .h5 {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 /* PLAYLIST MOBILE */

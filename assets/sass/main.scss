@@ -10,6 +10,7 @@ $lighterBackground: #2b2b2b;
 $darkTextColor: #838383;
 $lightTextColor: #f7f7f7;
 $spotifyGreen: #1db954;
+$hoverLighterBackground: #2b2b2b;
 
 // Breakpoints
 $mdBreak: 768px;
@@ -40,10 +41,23 @@ body {
   height: 100vh;
 }
 
+.friends-card {
+  h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  span {
+    font-size: 11px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
 /*CENTER SECTION */
 #center-section {
   overflow-y: auto;
-  height: 90vh;
+  height: 87vh;
 }
 
 /* HERO HOMEPAGE */
@@ -54,10 +68,13 @@ body {
 
 /*LIKED SECTION */
 
-/*LIKED SECTION */
-
 #liked {
   color: $darkTextColor;
+
+  a.card-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default text color */
+  }
 
   p {
     font-size: 0.8rem;
@@ -77,6 +94,10 @@ body {
       background-color: $cardBackground;
       border: none;
       display: block;
+      &:hover {
+        cursor: pointer;
+        background-color: $hoverLighterBackground;
+      }
 
       // Responsive behaviour based on number of cards
       @media screen and (min-width: $lgBreak) {
@@ -231,10 +252,6 @@ body {
     height: 30px;
   }
 
-  #pauseButton {
-    display: none;
-  }
-
   .playerBar {
     position: relative;
     bottom: 10px;
@@ -274,6 +291,13 @@ body {
   }
 }
 
+.suggeriti-mobile-cards {
+  h5 {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
 /* PLAYLIST MOBILE */
 #playlist-mobile {
   border-radius: 20px;
@@ -304,17 +328,18 @@ body {
   background-size: cover;
 }
 /*Aggiunta classe custom per img di bg di div hero artist */
-#buttonFollowingBar{
+#buttonFollowingBar {
   background-color: $spotifyGreen;
 }
-/*Colore bottone play following bar pagina artist*/ 
+/*Colore bottone play following bar pagina artist*/
 .custom-gradient-background {
   background: linear-gradient(to bottom, #cc9900, #444444, #000000);
 }
 /*aggiunta classe custom per il bg color della sezione album*/
-.sfumaAlbum{
-  box-shadow: 0 0 30px rgba(0, 0, 0,1);
+.sfumaAlbum {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 1);
 }
+
 /*SEARCH*/
 
 #search-component {

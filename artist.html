@@ -16,16 +16,62 @@
   <body>
     <main>
       <!--HERO MOBILE-->
-      <div id="hero-mobile"><h1>Hero mobile</h1></div>
+      <div id="hero-mobile" class="d-md-none">
+        <div id="hero-overlay">
+          <h1>Pinguini Tattici Nucleari</h1>
+        </div>
+      </div>
 
       <!--LISTENERS MOBILE-->
-      <div id="listeners-mobile"><h1>Listeners mobile</h1></div>
+      <div id="listeners-mobile" class="d-md-none">
+        <p id="listeners-counter">3.961.093 ascoltatori mensili</p>
+        <!-- questo numero potrebbe variare randomicamente per simulare dei dati veri-->
+
+        <div id="icon-wrapper">
+          <div id="follow-wrapper">
+            <button id="followBtn" type="button">Segui</button>
+
+            <i class="dotsIcon bi bi-three-dots-vertical"></i>
+            <!-- fare partire menù -->
+          </div>
+
+          <div id="shuffle-wrapper">
+            <div id="shuffle">
+              <i id="shuffleIcon" class="shuffleIcon bi bi-shuffle"></i>
+              <span id="shuffleDot"></span>
+            </div>
+
+            <i id="playIcon" class="playIcon bi bi-play-circle-fill"></i>
+          </div>
+        </div>
+      </div>
 
       <!--LIKED MOBILE-->
-      <div id="liked-mobile"><h1>Liked mobile</h1></div>
+      <div id="liked-mobile" class="d-md-none">
+        <div id="likedIcon">
+          <img
+            class="liked-img"
+            src="/assets/imgs/artist/img-hero.jpg"
+            alt="artist"
+            width="50"
+          />
+
+          <i
+            class="heartIcon bi bi-heart-fill"
+            width="10"
+            height="10"
+            fill="currentColor"
+          ></i>
+        </div>
+
+        <div id="likedText">
+          <h2 class="likedSong">Brani che ti piacciono</h2>
+          <p class="likedNum">8 brani di Pinguini Tattici Nucleari</p>
+        </div>
+      </div>
 
       <!--POPULAR MOBILE-->
-      <div id="popular-mobile"><h1>Popular mobile</h1></div>
+      <div id="popular-mobile" class="d-md-none"><h1>Popular mobile</h1></div>
 
       <!--DESKTOP WRAPPER-->
       <div id="desktop-wrapper" class="container-fluid">
@@ -163,8 +209,7 @@
           </div>
 
           <!--CENTER SECTION-->
-
-          <section class="col-lg-7">
+          <section class="col-lg-7 d-none d-md-block">
             <!--HERO ARTIST-->
             <div id="hero-artist" class="custom-bg mb-0">
               <div class="container">

@@ -10,6 +10,7 @@ const options = {
 }
 
 const albumTracks = document.getElementById('albumTracks')
+const heroAlbum = document.getElementById('heroAlbum')
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchSongs()
@@ -89,3 +90,45 @@ function createAlbumSongs(artist, title, duration, counter) {
 function displayAlbumSongs(albumsHTML) {
     albumTracks.innerHTML = albumsHTML
 }
+
+// HERO ALBUM
+// TODO: finish render hero album
+
+
+function createHeroAlbum(image, title, artist, releaseDate, artistImage, numeberOfTracks, duration) {
+
+    // duration format 53 min , 20 sec.
+    return ` <div class="col-md-4 p-4 mx-0">
+                    <img
+                      src="${image}"
+                      class="img-fluid border-0 sfumaAlbum"
+                      alt="copertina alb"
+                    />
+                  </div>
+                  <div class="col-md-8 pt-5 p-0">
+                    <div class="card-body text-light p-1">
+                      <p><b>Album</b></p>
+                      <h5 class="card-title mb-5 p-3 display-1">
+                        <b>${title}</b>
+                      </h5>
+                      <p class="card-text mt-5 p-1">
+                        <img
+                          src="${artistImage}"
+                          alt="foto artisti"
+                          class="rounded"
+                          width="20"
+                          height="20"
+                        /><b>${artist} - ${releaseDate} - ${numeberOfTracks} brani,</b
+                        ><b class="text-muted">${duration}</b>
+                      </p>
+                    </div>
+                  </div>`
+}
+
+
+function displayHeroAlbum(heroAlbumHTML) {
+    heroAlbum.innerHTML = heroAlbumHTML
+}
+
+// END HERO ALBUM
+

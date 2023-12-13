@@ -34,10 +34,6 @@ body {
   }
 }
 
-.navbarItems, .playlistPrivate{
-  font-size: 1.5rem !important;
-}
-
 #navbar-desktop,
 #friends {
   position: sticky;
@@ -184,15 +180,31 @@ body {
       width: 60px;
       object-fit: contain;
       display: none;
+
       @media screen and (min-width: 860px) {
         display: block;
       }
     }
 
-    #volumeBar {
+    #volumeBar,
+    #coverBar {
       width: 90px;
       height: 10px;
     }
+
+    .volumeControls {
+      position: relative;
+    }
+    #coverBarContainer {
+      position: absolute;
+      background-color: $cardBackground;
+      // background-color: red;
+      right: 154px;
+      z-index: 10;
+    }
+  }
+  .rightSideButtons {
+    z-index: 20;
   }
 
   .nowPlaying {
@@ -213,6 +225,7 @@ body {
     align-items: center;
     position: relative;
     right: 20px;
+
     @media screen and (min-width: $lgBreak) {
       position: static;
     }
@@ -277,13 +290,80 @@ body {
 .volumeControls {
   svg {
     display: none;
+
     @media screen and (min-width: $lgBreak) {
       display: block;
     }
   }
+
   #volumeIcon,
   #fullscreenIcon {
     display: block;
+  }
+
+  .rightSideButtons {
+    border: none;
+    background: none;
+    color: $playerButtonsColor;
+    svg {
+      position: relative;
+      z-index: 10;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .volumeContainer {
+    position: relative;
+    top: 2px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .volumeFlex {
+      align-items: center;
+      height: $progressBarHeight;
+      background-color: $playerButtonsColor;
+      border-radius: 10px;
+
+      .emptyBar {
+        background-color: $darkTextColor;
+        width: 100%;
+        height: $progressBarHeight;
+        border-radius: $progressBarRound;
+        position: relative;
+
+        .fullBar {
+          position: absolute;
+          border-radius: $progressBarRound;
+          height: $progressBarHeight;
+          background-color: $lightTextColor;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .coloredVolumeBar .volumeFlex .emptyBar .fullBar {
+    background-color: $spotifyGreen;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 15px; /* Adjust the size of the sphere as needed */
+      height: 15px; /* Should be equal to width to create a perfect circle */
+      background-color: white; /* Color of the sphere */
+      border-radius: 50%; /* Make it a circle */
+      position: absolute;
+      top: 50%; /* Position it vertically in the middle */
+      right: 0; /* Position it at the end of the div */
+      transform: translateY(-50%);
+    }
+  }
+
+  .volumeIconAndSlider {
+    height: 45px;
   }
 }
 
@@ -334,14 +414,124 @@ body {
   font-size: small;
   color: gray;
 }
+.spacingAntiBarTracksMobile {
+  padding-bottom: 10rem !important;
+} /*CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
+
+/*HERO MOBILE*/
+.backbtn-album {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  background-color: rgba(131, 131, 131, 0.5);
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album-title-mobile {
+  margin-top: 0.5rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+#hero-mobile-artist {
+  text-align: center;
+  padding: 2.6rem 0 0.5rem 0;
+  background: linear-gradient(to top, #212121 0%, #1db954);
+}
+
+.hero-img-artist {
+  width: 60%;
+}
+
+.album-img {
+  width: 5%;
+  border-radius: 50%;
+  margin: 0 0.3rem 0 0;
+}
+
+.icon-wrapper-album {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-wrapper-album {
+  flex-basis: 29%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.play-wrapper-album {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.titleAlbum {
+  font-size: 1.4rem;
+}
+
+#artist-wrapper-album {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  h2 {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+}
+
+.albumData {
+  color: #838383;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.greyIcon {
+  color: #838383;
+}
+
+.heart-active {
+  fill: #1db954 !important;
+}
+
+.arrow-active {
+  color: #fff !important;
+}
+
+#shuffleDot-album {
+  background-color: #1db954;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  display: none;
+  vertical-align: middle;
+  margin-left: 6px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(175%);
+}
 
 /*ARTIST*/
+
+/*POPULAR MOBILE
+CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
+.spacingAntiBar {
+  padding-bottom: 6rem !important;
+}
 
 /* HERO MOBILE */
 
 #hero-mobile {
   position: relative;
-  background: url(/assets/imgs/artist/img-hero.jpg) center/cover;
+  background: url('/assets/imgs/artist/img-hero.jpg') center/cover;
   height: 50vh;
   overflow: hidden;
 }
@@ -453,17 +643,17 @@ body {
   margin-right: 1rem;
 }
 
-.bi-heart-fill::before {
-  transform: translate(27px, -16px);
+.bi-heart-fill {
   background-color: #1db954;
   color: #212121;
   border-radius: 50%;
   font-size: 1rem;
   width: 22px;
   height: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-left: 2.5px;
+  margin-left: -5px;
+  margin-right: -1px;
+  display: inline-block;
 }
 
 .likedSong {

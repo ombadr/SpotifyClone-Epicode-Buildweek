@@ -10,123 +10,1119 @@
     />
     <title>Artist</title>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="assets/js/index.js"></script>
+    <script type="module" src="assets/js/artist.js" defer></script>
+    <script type="module" src="assets/js/utils/utils.js" defer></script>
   </head>
   <body>
     <main>
       <!--HERO MOBILE-->
-      <div id="hero-mobile"><h1>Hero mobile</h1></div>
+
+      <div id="hero-mobile" class="d-md-none">
+        <div id="hero-overlay">
+          <div id="heroMobileArtist">
+            <!--RENDER THIS DYNAMICALLY-->
+            <h1>Pinguini Tattici Nucleari</h1>
+          </div>
+        </div>
+      </div>
 
       <!--LISTENERS MOBILE-->
-      <div id="listeners-mobile"><h1>Listeners mobile</h1></div>
+      <div id="listeners-mobile" class="d-md-none">
+        <p id="listeners-counter">
+          <span id="listenersMobileNumber"
+            ><!--RENDER THIS NUMBER DYNAMICALLY-->3.961.093</span
+          >
+          ascoltatori mensili
+        </p>
+        <!-- questo numero potrebbe variare randomicamente per simulare dei dati veri-->
+
+        <div id="icon-wrapper">
+          <div id="follow-wrapper">
+            <button id="followBtn" type="button">Segui</button>
+
+            <i class="dotsIcon bi bi-three-dots-vertical"></i>
+            <!-- fare partire menù -->
+          </div>
+
+          <div id="shuffle-wrapper">
+            <div id="shuffle">
+              <i id="shuffleIcon" class="shuffleIcon bi bi-shuffle"></i>
+              <span id="shuffleDot"></span>
+            </div>
+
+            <i id="playIcon" class="playIcon bi bi-play-circle-fill"></i>
+          </div>
+        </div>
+      </div>
 
       <!--LIKED MOBILE-->
-      <div id="liked-mobile"><h1>Liked mobile</h1></div>
+      <div id="liked-mobile" class="d-md-none">
+        <!--GENERATE THIS DYNAMICALLY-->
+
+        <div id="likedIcon">
+          <img
+            class="liked-img"
+            src="/assets/imgs/artist/img-hero.jpg"
+            alt="artist"
+            width="50"
+          />
+
+          <i
+            class="heartIcon bi bi-heart-fill"
+            width="10"
+            height="10"
+            fill="currentColor"
+          ></i>
+        </div>
+
+        <div id="likedText">
+          <h2 class="likedSong">Brani che ti piacciono</h2>
+          <p class="likedNum">8 brani di Pinguini Tattici Nucleari</p>
+        </div>
+      </div>
 
       <!--POPULAR MOBILE-->
-      <div id="popular-mobile"><h1>Popular mobile</h1></div>
+      <div id="popular-mobile" class="d-md-none mb-5">
+        <h2 class="mx-3">Popolari</h2>
+        <div class="container spacingAntiBar">
+          <!--Aggiunta classe per staccare ultima card dalla barra sottostante-->
+          <div class="row" id="tracksPopularMobile">
+            <!--RENDER HERE DYNAMICALLY-->
+
+            <!--CARD-->
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>1</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-13.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Ricordi</h3>
+                <p>10.345.675</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>2</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-12.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Pastello Bianco</h3>
+                <p>26.389.675</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>3</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-11.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Giovani Wannabe</h3>
+                <p>16.924.341</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>4</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-10.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Pastello Viola</h3>
+                <p>31.345.675</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>5</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-15.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Bla bla</h3>
+                <p>9.096.564</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="d-flex p-2">
+              <div class="col-sm-1 p-3 d-flex align-items-center"><p>6</p></div>
+              <div class="col-sm-1" style="width: 80px; height: 80px">
+                <img
+                  src="/assets/imgs/main/image-16.jpg"
+                  class="img-fluid"
+                  alt="Immagine 1"
+                />
+              </div>
+              <div class="col-sm-9 p-2">
+                <h3>Ricordi</h3>
+                <p>11.345.675</p>
+              </div>
+              <div class="col-sm-1 ms-auto d-flex align-items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-three-dots-vertical"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FINE POPULAR MOBILE-->
 
       <!--DESKTOP WRAPPER-->
       <div id="desktop-wrapper" class="container-fluid">
         <div class="row">
           <!--NAVBAR DESKTOP-->
-          <div id="navbar-desktop" class="col-lg-3">
-            <h1>Navbar desktop</h1>
+          <div id="navbar-desktop" class="col-lg-3 d-none d-md-block mt-2">
+            <div class="dropdown">
+              <span
+                class="dots dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >. . .</span
+              >
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">File</a></li>
+                <li><a class="dropdown-item" href="#">Modifica</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Visualizzazione</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Riproduzione</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Assistenza</a>
+                </li>
+              </ul>
+            </div>
+            <div class="row mt-3">
+              <div class="col-12">
+                <div class="icon-column">
+                  <i class="bi bi-house-door-fill"></i>
+                  <span>Home</span>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="icon-column">
+                  <i class="bi bi-search"></i>
+                  <span>Cerca</span>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="icon-column">
+                  <i class="bi bi-spotify"></i>
+                  <span>La tua libreria</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-12">
+                <div class="icon-column">
+                  <i class="bi bi-plus-square-fill"></i>
+                  <span>Crea playlist</span>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="icon-column">
+                  <i class="bi bi-heart-fill"></i>
+                  <span>Brani che ti piacciono</span>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="icon-column">
+                  <i class="bi bi-bookmark-heart-fill"></i>
+                  <span>I tuoi episodi</span>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('early stage emily syndrome')"
+                  >early stage emily syndrome</span
+                >
+              </div>
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('Be the Young')"
+                  >Be the Young</span
+                >
+              </div>
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('Gigi D&#39;Alessio')"
+                  >Gigi D'Alessio</span
+                >
+              </div>
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('that fucking mood')"
+                  >that fucking mood</span
+                >
+              </div>
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('landing page')"
+                  >landing page</span
+                >
+              </div>
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('2021 lol')"
+                  >2021 lol</span
+                >
+              </div>
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('Frah Quintale mix')"
+                  >Frah Quintale mix</span
+                >
+              </div>
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('Lidia Emily')"
+                  >Lidia Emily</span
+                >
+              </div>
+              <div class="col-12">
+                <span
+                  class="playlistPrivate"
+                  onclick="selezionaPlaylist('Francesco Guccini')"
+                  >Francesco Guccini</span
+                >
+              </div>
+            </div>
           </div>
 
           <!--CENTER SECTION-->
-          <section class="col-lg-7">
-            <div id="hero-artist"><h1>Hero artist</h1></div>
-            <div id="following-bar">Following bar</div>
-            <div class="row">
-              <div id="popular" class="col-lg-8 mt-3">
-                <div class="section-title">Popular</div>
-                  <div class="row tracks">
-                    <div class="track d-flex align-items-center p-2">
-                      <div class="col-lg-1 trackNumber p-0">1</div> 
-                      <div class="col-lg-2 trackArt" style="width: 40px; height: 40px;">
-                        <img src="assets/imgs/main/image-12.jpg" alt="albumArt" class="img-fluid"/>
-                      </div>                                       
-                      <div class="col-lg-4 trackTitle p-1">Ocean Avenue</div>
-                      <div class="col-lg-4 trackPlays">276.616.912</div>
-                      <div class="col-lg-1 trackTime">3:18</div>
-                    </div>
-                      
-                    <div class="track d-flex align-items-center p-2">
-                      <div class="col-lg-1 trackNumber p-0">2</div> 
-                      <div class="col-lg-2 trackArt" style="width: 40px; height: 40px;">
-                        <img src="assets/imgs/main/image-12.jpg" alt="albumArt" class="img-fluid"/>
-                      </div>                                       
-                      <div class="col-lg-4 trackTitle p-1">Only One</div>                  
-                      <div class="col-lg-4 trackPlays">98.839.244</div>
-                      <div class="col-lg-1 trackTime">4:17</div>
-                    </div>
-                    
-                    <div class="track d-flex align-items-center p-2">
-                      <div class="col-lg-1 trackNumber p-0">3</div> 
-                      <div class="col-lg-2 trackArt" style="width: 40px; height: 40px;">
-                        <img src="assets/imgs/main/image-12.jpg" alt="albumArt" class="img-fluid"/>
-                      </div>                                       
-                      <div class="col-lg-4 trackTitle p-1">Breathing</div>                    
-                      <div class="col-lg-4 trackPlays">52.308.097</div>
-                      <div class="col-lg-1 trackTime">3:38</div>
-                    </div>
-                    
-                    <div class="track d-flex align-items-center p-2">
-                      <div class="col-lg-1 trackNumber p-0">4</div>
-                      <div class="col-lg-2 trackArt" style="width: 40px; height: 40px;">
-                        <img src="assets/imgs/main/image-11.jpg" alt="albumArt" class="img-fluid"/>
-                      </div>                                        
-                      <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>                    
-                      <div class="col-lg-4 trackPlays">48.278.178</div>
-                      <div class="col-lg-1 trackTime">3:28</div>
-                    </div>
-                    
-                    <div class="track d-flex align-items-center p-2">
-                      <div class="col-lg-1 trackNumber">5</div>
-                      <div class="col-lg-2 trackArt" style="width: 40px; height: 40px;">
-                        <img src="assets/imgs/main/image-12.jpg" alt="albumArt" class="img-fluid" />
-                      </div>                                         
-                      <div class="col-lg-4 trackTitle p-1">Way Away</div>                    
-                      <div class="col-lg-4 trackPlays">43.836.579</div>
-                      <div class="col-lg-1 trackTime">3:22</div>
+          <section class="col-lg-7 d-none d-md-block">
+            <!--HERO ARTIST-->
+            <div id="hero-artist" class="mb-0">
+              <!--ADD HERE DYNAMICALLY -->
+
+              <div class="container" id="heroDesktopSection">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-left"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="dropdown d-flex justify-content-end">
+                      <img src="" alt="" />
+                      <button
+                        class="dropdown-toggle rounded-pill border-0 bg-black text-white mx-2"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        User 1
+                      </button>
+                      <ul class="dropdown-menu bg-black bg-gradient">
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 2</a
+                          >
+                        </li>
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 3</a
+                          >
+                        </li>
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 4</a
+                          >
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  
-                  <button class="btn btn-primary-outline text-white">Visualizza altro</button>                            
-              </div>            
-                <div class="col-lg-4 mt-3">
-                 <div class="row">
-                    <div class="sectionTitle">Brani che ti piacciono</div>                
-                    <div class="col-lg-4 mt-3">                  
-                          <div class="circle-image" style="width: 50px;height: 50px;overflow: hidden;border-radius: 50%;"><img src="assets/imgs/main/random1.jpeg" alt="artistPhoto" class="img-fluid" style="width: 100%; height: auto; display: block;"/></div> 
-                    </div>  
-                    <div class="col-lg-8 mt-3 p-0">                 
-                        <p style="font-size: small; font-weight: bold;">Hai messo Mi piace a 11 brani</p>
-                        <p style="font-size: x-small;">Di Yellowcard</p>                    
-                    </div>
-                 </div>
                 </div>
-              
+                <p class="d-inline-block text-primary mx-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-patch-check-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
+                    />
+                  </svg>
+                </p>
+                <p class="d-inline-block">Artista verificato</p>
+
+                <!--RENDER THIS DYNAMICALLY-->
+
+                <div id="heroDesktopTitle">
+                  <h1 class="display-1 mx-3"><b>Yellowcard</b></h1>
+                  <p class="mx-3 p-1">3.433.158 ascoltatori mensili</p>
+                </div>
+              </div>
+            </div>
+            <!--FINE HERO ARTIST-->
+            <!--FOLLOWING BAR-->
+            <div id="following-bar" class="bg-secondary p-1">
+              <button
+                id="buttonFollowingBar"
+                class="rounded-circle border-0 p-3 m-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  class="bi bi-play-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="rounded border-white bg-secondary text-white p-2 m-3 w-10"
+              >
+                Following
+              </button>
+              <button class="border-0 bg-secondary text-white p-2 m-3">
+                . . .
+              </button>
+            </div>
+            <!--FINE FOLLOWING BAR-->
+            <!--POPULAR ARTIST DESKTOP-->
+            <div class="row">
+              <div id="popular" class="col-lg-8 mt-3 spacingAntiBar">
+                <div class="section-title">Popular</div>
+                <div class="row tracks" id="popularTracks">
+                  <!--ADD HERE DYNAMICALLY-->
+
+                  <!--TRACK 1-->
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">1</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-12.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Ocean Avenue</div>
+                    <div class="col-lg-4 trackPlays">276.616.912</div>
+                    <div class="col-lg-1 trackTime">3:18</div>
+                  </div>
+                  <!--END TRACK 1-->
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">2</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-12.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Only One</div>
+                    <div class="col-lg-4 trackPlays">98.839.244</div>
+                    <div class="col-lg-1 trackTime">4:17</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">3</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-12.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Breathing</div>
+                    <div class="col-lg-4 trackPlays">52.308.097</div>
+                    <div class="col-lg-1 trackTime">3:38</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">4</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">5</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">6</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">7</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">8</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">9</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber p-0">10</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-11.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Lights And Sounds</div>
+                    <div class="col-lg-4 trackPlays">48.278.178</div>
+                    <div class="col-lg-1 trackTime">3:28</div>
+                  </div>
+
+                  <div class="track d-flex align-items-center p-2">
+                    <div class="col-lg-1 trackNumber">11</div>
+                    <div
+                      class="col-lg-2 trackArt"
+                      style="width: 40px; height: 40px"
+                    >
+                      <img
+                        src="assets/imgs/main/image-12.jpg"
+                        alt="albumArt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="col-lg-4 trackTitle p-1">Way Away</div>
+                    <div class="col-lg-4 trackPlays">43.836.579</div>
+                    <div class="col-lg-1 trackTime">3:22</div>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary-outline text-white">
+                  Visualizza altro
+                </button>
+              </div>
+              <div class="col-lg-4 mt-3" id="likedSectionContainerDesktop">
+                <!--RENDER THIS DYNAMICALLY-->
+                <div class="row">
+                  <div class="sectionTitle">Brani che ti piacciono</div>
+                  <div class="col-lg-4 mt-3">
+                    <div
+                      class="circle-image"
+                      style="
+                        width: 50px;
+                        height: 50px;
+                        overflow: hidden;
+                        border-radius: 50%;
+                      "
+                    >
+                      <img
+                        src="assets/imgs/main/random1.jpeg"
+                        alt="artistPhoto"
+                        class="img-fluid"
+                        style="width: 100%; height: auto; display: block"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-8 mt-3 p-0">
+                    <p style="font-size: small; font-weight: bold">
+                      Hai messo Mi piace a 11 brani
+                    </p>
+                    <p style="font-size: x-small">Di Yellowcard</p>
+                  </div>
+                </div>
+                <!--END-->
+              </div>
             </div>
           </section>
           
           <!--FRIENDS-->
-          <div id="friends" class="col-lg-2">
-            <h1>Friends</h1>
+          <div id="friends" class="col-lg-2 d-none d-md-block mt-4">
+            <div class="top d-flex justify-content-between align-items-center">
+              <h4 class="mb-0">Attività amici</h4>
+              <div>
+                <i class="bi bi-people fs-3 text-secondary me-2"></i>
+                <i class="bi bi-x-lg text-secondary fs-3"></i>
+              </div>
+            </div>
+
+            <div class="container-fluid p-0">
+              <!--CARD 1-->
+              <div class="d-flex mt-3">
+                <img
+                  src="assets/imgs/main/image-5.jpg"
+                  alt="Image 5"
+                  height="40px"
+                  class="rounded-circle me-1"
+                />
+                <div class="container-fluid p-0 friends-card">
+                  <div class="d-flex justify-content-between">
+                    <h4 class="mb-0">Charlie Hookman</h4>
+                    <span class="mb-0">4 ore</span>
+                  </div>
+                  <p class="mb-0">In camera - Yumi Zouma</p>
+                  <p class="mb-0">EP III</p>
+                </div>
+              </div>
+
+              <!--FINE CARD 1-->
+
+              <!--CARD 2-->
+              <div class="d-flex mt-3">
+                <img
+                  src="assets/imgs/main/image-5.jpg"
+                  alt="Image 5"
+                  height="40px"
+                  class="rounded-circle me-1"
+                />
+                <div class="container-fluid p-0 friends-card">
+                  <div class="d-flex justify-content-between">
+                    <h4 class="mb-0">Charlie Hookman</h4>
+                    <span class="mb-0">4 ore</span>
+                  </div>
+                  <p class="mb-0">In camera - Yumi Zouma</p>
+                  <p class="mb-0">EP III</p>
+                </div>
+              </div>
+
+              <!--FINE CARD 2-->
+
+              <!--CARD 3-->
+              <div class="d-flex mt-3">
+                <img
+                  src="assets/imgs/main/image-5.jpg"
+                  alt="Image 5"
+                  height="40px"
+                  class="rounded-circle me-1"
+                />
+                <div class="container-fluid p-0 friends-card">
+                  <div class="d-flex justify-content-between">
+                    <h4 class="mb-0">Charlie Hookman</h4>
+                    <span class="mb-0">4 ore</span>
+                  </div>
+                  <p class="mb-0">In camera - Yumi Zouma</p>
+                  <p class="mb-0">EP III</p>
+                </div>
+              </div>
+
+              <!--FINE CARD 3-->
+            </div>
           </div>
+
+          <!--FINE FRIENDS-->
         </div>
       </div>
 
       <!--PLAYERS-->
       <!--PLAYER DESKTOP-->
-      <div id="player-desktop"><h1>Player desktop</h1></div>
+      <div class="d-flex justify-content-between" id="player-desktop">
+        <!-- <h1>Player desktop</h1> -->
+        <div class="nowPlaying d-flex">
+          <!-- Parte sinistra del player -->
+          <img src="assets/imgs/main/image-18.jpg" alt="Album picture" />
+          <div id="player-title-artist">
+            <h6>Song Title</h6>
+            <p>Artist name</p>
+          </div>
+          <!-- Heart empty -->
+          <svg
+            id="heartEmpty"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-heart"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+            />
+          </svg>
+          <!-- Heart fill -->
+          <svg
+            id="heartFilled"
+            class="d-none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="white"
+            class="bi bi-heart-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+            />
+          </svg>
+        </div>
+        <div class="playbackControls">
+          <!-- Parte centrale del player -->
+          <div class="playerButtons d-flex justify-content-center">
+            <!-- Shuffle -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-shuffle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
+              />
+              <path
+                d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"
+              />
+            </svg>
+            <!-- Skip backward -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-skip-start-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0z"
+              />
+            </svg>
+            <!-- Play icon -->
+            <svg
+              id="playButton"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-play-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"
+              />
+            </svg>
+            <!-- Pause icon -->
+            <svg
+              id="pauseButton"
+              class="d-none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-pause-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"
+              />
+            </svg>
+            <!-- Skip Forward -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-skip-end-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z"
+              />
+            </svg>
+            <!-- Repeat -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-repeat"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
+              />
+            </svg>
+          </div>
+          <div class="playerBar d-flex justify-content-center">
+            <p id="songTimer">0:00</p>
+            <label for="progressBar" class="d-none"></label>
+            <progress id="progressBar" value="0" max="100"></progress>
+            <p id="songDuration">1:00</p>
+          </div>
+        </div>
+        <div class="volumeControls d-flex">
+          <!-- Parte destra del player -->
+          <!-- Microfono -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-mic"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"
+            />
+            <path
+              d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"
+            />
+          </svg>
+          <!-- Hamburger -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
+          <!-- Player -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-music-player"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm1 0v3h6V3zm3 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
+            />
+            <path
+              d="M11 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-3 2a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+            />
+            <path
+              d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"
+            />
+          </svg>
+          <!-- Volume -->
+          <svg
+            id="volumeIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-volume-up"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"
+            />
+            <path
+              d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89z"
+            />
+            <path
+              d="M10.025 8a4.486 4.486 0 0 1-1.318 3.182L8 10.475A3.489 3.489 0 0 0 9.025 8c0-.966-.392-1.841-1.025-2.475l.707-.707A4.486 4.486 0 0 1 10.025 8M7 4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5A.5.5 0 0 0 1 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 7 12zM4.312 6.39 6 5.04v5.92L4.312 9.61A.5.5 0 0 0 4 9.5H2v-3h2a.5.5 0 0 0 .312-.11"
+            />
+          </svg>
+          <label for="volumeBar" class="d-none"></label>
+          <progress id="volumeBar" value="0" max="100"></progress>
+          <!-- Fullscreen -->
+          <svg
+            id="fullscreenIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrows-angle-expand"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707"
+            />
+          </svg>
+          <!-- Exit full screen -->
+          <svg
+            id="exitFullscreenIcon"
+            class="d-none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-arrows-angle-contract"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M.172 15.828a.5.5 0 0 0 .707 0l4.096-4.096V14.5a.5.5 0 1 0 1 0v-3.975a.5.5 0 0 0-.5-.5H1.5a.5.5 0 0 0 0 1h2.768L.172 15.121a.5.5 0 0 0 0 .707zM15.828.172a.5.5 0 0 0-.707 0l-4.096 4.096V1.5a.5.5 0 1 0-1 0v3.975a.5.5 0 0 0 .5.5H14.5a.5.5 0 0 0 0-1h-2.768L15.828.879a.5.5 0 0 0 0-.707z"
+            />
+          </svg>
+        </div>
+      </div>
 
       <!--PLAYER-MOBILE-->
-      <div id="player-mobile"><h1>Player mobile</h1></div>
+      <div
+        id="player-mobile"
+        class="d-flex align-items-center mx-3 fixed-bottom d-md-none"
+      >
+        <div class="my-0 mx-auto d-flex align-items-center">
+          <p class="mb-0 fw-bold">Natural parody by the Hillywood</p>
+          <div class="d-flex">
+            <i class="bi bi-speaker text-secondary fs-1 p-2"></i>
+            <i class="bi bi-heart text-secondary fs-1 p-2"></i>
+            <i class="bi bi-play-fill text-secondary fs-1 p-2"></i>
+          </div>
+        </div>
+      </div>
 
       <!--NAVBAR MOBILE-->
-      <div id="navbar-mobile"><h1>Navbar mobile</h1></div>
+      <div class="container-fluid fixed-bottom d-md-none" id="navbar-mobile">
+        <div class="row">
+          <div class="col-4 text-center">
+            <i class="bi bi-house-door-fill fs-1"></i>
+            <p>Home</p>
+          </div>
+          <div class="col-4 text-center text-secondary">
+            <i class="bi bi-search fs-1"></i>
+            <p>Cerca</p>
+          </div>
+          <div class="col-4 text-center text-secondary">
+            <i class="bi bi-collection fs-1"></i>
+            <p>La tua libreria</p>
+          </div>
+        </div>
+      </div>
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

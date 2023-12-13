@@ -10,8 +10,14 @@ const options = {
 }
 
 const popularTracks = document.getElementById('popularTracks')
+// const heroDesktopTitle = document.getElementById('heroDesktopTitle') // remove this
+const heroDesktopSection = document.getElementById('heroDesktopSection')
+const heroArtist = document.getElementById('hero-artist')
+const likedSectionContainerDesktop = document.getElementById('likedSectionContainerDesktop')
+
 
 document.addEventListener('DOMContentLoaded', () => {
+
     fetchSongs()
 
 
@@ -63,13 +69,23 @@ async function fetchSongs() {
         const searchResults = await getTracksFromSearch(artistFromUrl)
         const artist = searchResults.data[0].artist.name
         const trackListUrl = searchResults.data[0].artist.tracklist
+        const imageUrl = searchResults.data[0].album.cover_big
         console.log(artist)
         console.log(trackListUrl)
+        console.log('Image URL: ' + imageUrl)
 
         if (trackListUrl) {
             let tracksHTML = ''
             const trackList = await getTrackList(trackListUrl)
             console.log('List of tracks:', trackList)
+
+            const heroDesktopHTML = createHeroDesktop(artist)
+            displayHeroDesktop(heroDesktopHTML)
+            applyBackgroundImage(imageUrl)
+
+            const likedSectionContainerHTML = createLikedSectionContainer(artist, imageUrl)
+            displayLikedSectionContainer(likedSectionContainerHTML)
+
 
             for (let i = 0; i < 10; i++) { // max 10 tracks
                 console.log(trackList.data[i].title)
@@ -77,13 +93,16 @@ async function fetchSongs() {
                 tracksHTML += trackHTML
             }
             displayPopularSongs(tracksHTML)
+
         }
+
     } catch (e) {
         console.error(e)
     }
 
 
 }
+
 
 
 async function getTracksFromSearch(artist) {
@@ -140,3 +159,177 @@ function displayPopularSongs(albumsHTML) {
 }
 
 // END POPULAR SONGS
+
+// HERO ARTIST DESKTOP
+
+
+
+function createHeroDesktop(artist) {
+
+    const listeners = generateRandomNumber()
+
+
+
+    const heroDesktopHTML = `<div id="hero-artist" class="mb-0">
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-left"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="dropdown d-flex justify-content-end">
+                      <img src="" alt="" />
+                      <button
+                        class="dropdown-toggle rounded-pill border-0 bg-black text-white mx-2"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        User 1
+                      </button>
+                      <ul class="dropdown-menu bg-black bg-gradient">
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 2</a
+                          >
+                        </li>
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 3</a
+                          >
+                        </li>
+                        <li>
+                          <img src="" alt="" /><a
+                            class="dropdown-item text-white"
+                            href="#"
+                            >User 4</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="d-inline-block text-primary mx-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-patch-check-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
+                  />
+                </svg>
+              </p>
+              <p class="d-inline-block">Artista verificato</p>
+
+              <div>
+                <h1 class="display-1 mx-3"><b>${artist}</b></h1>
+                <p class="mx-3 p-1">${listeners} ascoltatori mensili</p>
+              </div>
+              </div>`
+
+
+
+    return heroDesktopHTML
+}
+
+
+function applyBackgroundImage(imageUrl) {
+    try {
+        console.log('Applying background image:', imageUrl);
+        heroArtist.style.backgroundImage = `url('${imageUrl}')`;
+        heroArtist.style.backgroundSize = 'cover';
+        console.log('Background image applied successfully');
+    } catch (error) {
+        console.error('Error setting background image:', error);
+    }
+}
+
+
+function displayHeroDesktop(heroHTML) {
+    heroDesktopSection.innerHTML = heroHTML
+
+
+}
+
+
+// END HERO ARTIST DESKTOP
+
+// LIKED SECTION CONTAINER
+
+function createLikedSectionContainer(artist, image) {
+    return `<div class="row">
+                  <div class="sectionTitle">Brani che ti piacciono</div>
+                  <div class="col-lg-4 mt-3">
+                    <div
+                      class="circle-image"
+                      style="
+                        width: 50px;
+                        height: 50px;
+                        overflow: hidden;
+                        border-radius: 50%;
+                      "
+                    >
+                      <img
+                        src="${image}"
+                        alt="artistPhoto"
+                        class="img-fluid"
+                        style="width: 100%; height: auto; display: block"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-8 mt-3 p-0">
+                    <p style="font-size: small; font-weight: bold">
+                      Hai messo Mi piace a 11 brani
+                    </p>
+                    <p style="font-size: x-small">Di ${artist}</p>
+                  </div>
+                </div>`
+}
+
+function displayLikedSectionContainer(likedSectionHTML) {
+    likedSectionContainerDesktop.innerHTML = likedSectionHTML
+}
+
+// END LIKED SECTION CONTAINER

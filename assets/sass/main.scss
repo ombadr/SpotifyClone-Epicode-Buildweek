@@ -326,10 +326,6 @@ body {
 
 /* HERO MOBILE */
 
-body {
-  background-color: #212121;
-}
-
 #hero-mobile {
   position: relative;
   background: url(/assets/imgs/artist/img-hero.jpg) center/cover;
@@ -470,10 +466,7 @@ body {
 /*END LIKED MOBILE*/
 
 /*HERO ARTIST*/
-.custom-bg {
-  background-image: url('/assets/imgs/main/image-15.jpg');
-  background-size: cover;
-}
+
 /*Aggiunta classe custom per img di bg di div hero artist */
 #buttonFollowingBar {
   background-color: $spotifyGreen;

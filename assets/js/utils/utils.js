@@ -15,3 +15,18 @@ export function generateRandomNumber() {
 
     return `${firstPart}.${secondPart}.${thirdPart}`;
 }
+
+
+export function formatTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) {
+        return "Invalid input";
+    }
+
+    const min = Math.floor(seconds / 60);
+    const sec = seconds % 60;
+
+    const formattedTime = `${min} min, ${sec} sec`;
+    return formattedTime;
+}
+
+

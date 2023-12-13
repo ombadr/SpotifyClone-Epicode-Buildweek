@@ -11,7 +11,6 @@ const ID = '122366' // Test album ID
 const artist = '50 cent' // Test artist
 
 
-
 // 5 random albums
 
 let likedAlbums = ['122366', '7090505', '496520481', '244223', '9410100'] // 5 random albums for liked section in homepage

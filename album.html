@@ -30,7 +30,60 @@
       <!--ALBUM TRACKS MOBILE-->
       <div id="album-track-mobile">
         <h1>Album track mobile</h1>
+        <div class="container">          
+          <div class="row mt-4">
+            <div class="col-11"><p class="songName">Montanelli - Intro<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
+          </div>
+          <div class="row">            
+            <div class="col-11"><p class="songName">Sciare<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
+          </div>
+          <div class="row">
+            <div class="col-11"><p class="songName">Gioventù Bruciata<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
+          </div>
+          <div class="row">
+            <div class="col-11"><p class="songName">Ninnananna per genitori disattenti<br><span class="artistName"><i class="bi bi-file-arrow-down-fill"></i> <i class="bi bi-explicit-fill"></i> Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
+          </div>
+          <div class="row">
+            <div class="col-11"><p class="songName">L'uomo che inventò il fuoco<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
+          </div>
+          <div class="row">
+            <div class="col-11"><p class="songName">Irene<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
+          </div>
+          <div class="row">
+            <div class="col-11"><p class="songName">Senti che cantare questi!<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
+          </div>
+          <div class="row">
+            <div class="col-11"><p class="songName">Pula<br><span class="artistName">Pinguini Tattici Nucleari</span></p></div>
+            <div class="col-1 p-1 dropdown-trigger" onclick="toggleDropdownMenu(this)"><i class="bi bi-three-dots-vertical" style="cursor: pointer;"></i></div>
+          </div>
+        </div>        
       </div>
+
+      <style>
+        @media (min-width: 500px) {
+                #album-track-mobile {
+                  display: none !important;
+                }
+              }  
+
+        .songName{
+          font-size: medium;
+          font-weight: bold;
+        }
+        .artistName{
+          font-size: small;
+          color: gray;
+        }
+      </style>
+
+     
 
       <!--DESKTOP WRAPPER-->
       <div class="container-fluid" id="desktop-wrapper">
@@ -53,6 +106,7 @@
             </div>
 
             <!--ALBUM TRACKS-->
+            
             <div id="album-tracks">
               <h1>Album tracks</h1>
               <div class="container">
@@ -110,12 +164,17 @@
                   <div class="col-lg-3">5:46</div>
                 </div>
               </div>
-              </div>
-            <style>    
+            </div>     
+            <style>
+              @media (max-width: 500px) {
+                #album-tracks {
+                  display: none !important;
+                }
+              }
               .col-lg-1{
                 width: 2rem;
               }
-            </style>
+            </style>       
           </section>
 
           <!--FRIENDS-->

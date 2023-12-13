@@ -1,9 +1,9 @@
 // This script sets basic functionalities for player controls
-
 // Global constants and variables
 let barFill = 0;
 let barDuration = 60;
 let seconds = 0;
+let volume = 1;
 
 // Selezione elementi del DOM
 const playButton = document.querySelector('#playButton');
@@ -124,68 +124,49 @@ volumeContainer.addEventListener('click', function (event) {
     const percentageFromRight = (newX * 100) / containerSize;
     const volumePercentage = 100 - percentageFromRight;
     volumeContainer.style['--progress-bar-transform'] = volumePercentage;
-    
-
-    // Inject percentage
-
-
-    // Log the click coordinates
-//     console.log(`Clicked at X: ${clickX}`);
-//     console.log(`${newX} px moved to the right`);
-//     console.log(`${percentageFromRight}% moved to the right`);
-//     console.log(volumePercentage);
+    volume = volumePercentage/100;
 });
 
+// const song = new Audio ('https://cdns-preview-1.dzcdn.net/stream/c-14041499f5b7a75d738db0484a207d2e-5.mp3')
+// song.play()
 
-let isDragging = false;
-let initialX;
-let initialY;
-let offsetX = 0;
-let offsetY = 0;
+const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=rhapsody"
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '83ad2cb7a2msh577873a178d1b4cp1bd24bjsn31bf740783c2',
+		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+	}
+};
 
-// Event listeners for mouse/touch events
-fullBar.addEventListener('mousedown', startDrag);
-// fullBar.addEventListener('touchstart', startDrag);
 
-// Functions for handling the drag-and-drop behavior
-function startDrag(e) {
-    e.preventDefault();
-
-    if (e.type === 'mousedown') {
-        initialX = e.clientX;
-        initialY = e.clientY;
+async function fetchData(url, options) {
+    try {
+      // Make a GET request using the fetch function
+      const response = await fetch(url, options); // Replace with your API URL
+    
+      // Check if the response status is OK (status code 200)
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      // Parse the response as JSON
+      const data = await response.json();
+      const songLink = data.data[0].preview;
+      let song = new Audio (songLink);
+      playButton.addEventListener('click', () => {
+        song.volume = volume;
+        song.play();
+        console.log(song.paused)
+      })
+      pauseButton.addEventListener('click', () => {
+        song.pause();
+      })
+      
+    } catch (error) {
+      // Handle errors here
+      console.error('Error:', error);
     }
+  }
 
-    offsetX = fullBar.offsetLeft - initialX;
-    // offsetY = fullBar.offsetTop - initialY;
-
-    isDragging = true;
-
-    // Attach event listeners to handle dragging and dropping
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('touchmove', drag);
-    document.addEventListener('mouseup', stopDrag);
-    document.addEventListener('touchend', stopDrag);
-}
-
-function drag(e) {
-    if (!isDragging) return;
-
-    e.preventDefault();
-
-    if (e.type === 'mousemove') {
-        const currentX = e.clientX;
-        fullBar.style.left = currentX + offsetX + 'px';
-    } else if (e.type === 'touchmove') {
-        const currentX = e.touches[0].clientX;
-        fullBar.style.left = currentX + offsetX + 'px';
-    }
-}
-
-function stopDrag() {
-    isDragging = false;
-
-    // Remove the event listeners when dragging is finished
-    document.removeEventListener('mousemove', drag);
-    document.removeEventListener('mouseup', stopDrag);
-}
+  fetchData(url, options);

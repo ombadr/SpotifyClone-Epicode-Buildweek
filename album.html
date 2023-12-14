@@ -10,8 +10,8 @@
     />
     <title>Album</title>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="assets/js/playerControls.js" defer></script>
     <script type="module" src="assets/js/album.js" defer></script>
+    <script type="module" src="assets/js/playerControls.js" defer></script>
     <script type="module" src="assets/js/utils/utils.js" defer></script>
   </head>
   <body>
@@ -250,7 +250,7 @@
                 >. . .</span
               >
 
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu d-md-none">
                 <li><a class="dropdown-item" href="#">File</a></li>
                 <li><a class="dropdown-item" href="#">Modifica</a></li>
                 <li>
@@ -1025,19 +1025,31 @@
 
       <!--NAVBAR MOBILE-->
 
-      <div class="container-fluid fixed-bottom d-md-none" id="navbar-mobile">
+      <div
+        class="container-fluid fixed-bottom d-md-none bg-black pt-2"
+        id="navbar-mobile"
+      >
         <div class="row">
           <div class="col-4 text-center">
-            <i class="bi bi-house-door-fill fs-1"></i>
-            <p>Home</p>
+            <a href="/index.html" style="text-decoration: none; color: inherit">
+              <i class="bi bi-house-door-fill fs-1"></i>
+              <p>Home</p>
+            </a>
           </div>
           <div class="col-4 text-center text-secondary">
-            <i class="bi bi-search fs-1"></i>
-            <p>Cerca</p>
+            <a
+              href="/search.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <i class="bi bi-search fs-1"></i>
+              <p>Cerca</p>
+            </a>
           </div>
           <div class="col-4 text-center text-secondary">
-            <i class="bi bi-collection fs-1"></i>
-            <p>La tua libreria</p>
+            <a href="/index.html" style="text-decoration: none; color: inherit">
+              <i class="bi bi-collection fs-1"></i>
+              <p>La tua libreria</p>
+            </a>
           </div>
         </div>
       </div>

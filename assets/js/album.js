@@ -1,7 +1,7 @@
 import { convertSecondsToMinSec, generateRandomNumber, formatTime } from "./utils/utils.js"
 
 const BASE_URL = 'https://deezerdevs-deezer.p.rapidapi.com/'
-const options = {
+let options = {
   method: 'GET',
   headers: {
     'X-RapidAPI-Key': '349d0315bamshe22fa1098ac0240p133261jsnab757b4a040e',

@@ -645,6 +645,19 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   align-items: center;
   padding: 1rem;
   padding-top: 0;
+
+  .bi-heart-fill {
+    background-color: #1db954;
+    color: #212121;
+    border-radius: 50%;
+    font-size: 1rem;
+    width: 22px;
+    height: 22px;
+    padding-left: 2.5px;
+    margin-left: -5px;
+    margin-right: -1px;
+    display: inline-block;
+  }
 }
 
 /* LIKED MOBILE */
@@ -655,19 +668,6 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
 
 #likedIcon {
   margin-right: 1rem;
-}
-
-.bi-heart-fill {
-  background-color: #1db954;
-  color: #212121;
-  border-radius: 50%;
-  font-size: 1rem;
-  width: 22px;
-  height: 22px;
-  padding-left: 2.5px;
-  margin-left: -5px;
-  margin-right: -1px;
-  display: inline-block;
 }
 
 .likedSong {

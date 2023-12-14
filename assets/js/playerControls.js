@@ -1,4 +1,6 @@
 // This script sets basic functionalities for player controls
+
+
 // Global constants and variables
 let barFill = 0;
 let barDuration = 60;
@@ -26,6 +28,7 @@ const playKey = 'Enter';
 const bandRequested = 'blindguardian'
 const songNumber = 6;
 
+const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + bandRequested;
 
 // Carica gli script al caricamento della finestra
 window.onload = (event) => {
@@ -45,14 +48,7 @@ window.onload = (event) => {
 
 
 
-const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + bandRequested;
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "83ad2cb7a2msh577873a178d1b4cp1bd24bjsn31bf740783c2",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-  },
-};
+
 
 async function fetchData(url, options) {
   try {
@@ -67,7 +63,7 @@ async function fetchData(url, options) {
     // Parse the response as JSON
     const data = await response.json();
     const song = data.data[songNumber];
-    
+
     // Sets info panel in song
     setSongInfo(song);
 
@@ -100,9 +96,9 @@ function setPlaySong(songData) {
     duration = song.duration;
     clearInterval(songDuration);
   }, 100);
-  let checkSongLoop = setInterval(() => 
+  let checkSongLoop = setInterval(() =>
     repeatButton.classList.contains('playerControlsHighlighted') ? (song.loop = true) : (song.loop = false)
-  , 500);
+    , 500);
   setInterval(() => {
     if (song.ended) {
       pauseButton.classList.add('d-none');
@@ -176,7 +172,7 @@ function displayCurrentTime(song) {
   } else {
     songTimer.innerHTML = `0:${seconds}`
   }
-  if(song.ended){
+  if (song.ended) {
     songTimer.innerHTML = "0:00";
     barFill = 0;
     progressBar.setAttribute('Value', 0);
@@ -184,15 +180,15 @@ function displayCurrentTime(song) {
 }
 
 // Returns the value of the song in percentage
-function barFillerValue(currentTime, duration){
+function barFillerValue(currentTime, duration) {
   return currentTime * 100 / duration;
 }
 
 // Setta a 0 il valore della canzone quando il tasto viene premuto
-function setSkipBackward (song){
+function setSkipBackward(song) {
   backWardButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if(song.currentTime > 2)
+    if (song.currentTime > 2)
       song.currentTime = 0;
   })
 }
@@ -222,7 +218,7 @@ function setToggle(toShow, toHide) {
 }
 
 // Sets volume bar functionalities
-function setVolumeBar(){
+function setVolumeBar() {
   volumeContainer.addEventListener("mouseenter", (event) => {
     event.preventDefault();
     volumeContainer.classList.add("coloredVolumeBar");
@@ -231,17 +227,17 @@ function setVolumeBar(){
     event.preventDefault();
     volumeContainer.classList.remove("coloredVolumeBar");
   });
-  
+
   volumeContainer.addEventListener("click", function (event) {
     // Get the click location within the component
     const clickX = event.clientX - volumeContainer.getBoundingClientRect().left;
     const containerSize = volumeContainer.clientWidth;
     // const clickY = event.clientY - volumeContainer.getBoundingClientRect().top;
     const newX = volumeContainer.clientWidth - clickX;
-  
+
     // Moves the bar
     fullBar.style.right = newX + "px";
-  
+
     // Calculate percentage
     const percentageFromRight = (newX * 100) / containerSize;
     const volumePercentage = 100 - percentageFromRight;
@@ -252,7 +248,7 @@ function setVolumeBar(){
 }
 
 // Sets shuffle and repeat controls
-function setShuffleAndRepeat(){
+function setShuffleAndRepeat() {
   shuffleButton.addEventListener('click', (event) => {
     event.preventDefault();
     shuffleButton.classList.toggle('playerControlsHighlighted')
@@ -264,7 +260,7 @@ function setShuffleAndRepeat(){
 }
 
 // Set picture, title and artist info. To recall when needed
-function setSongInfo (song) {
+function setSongInfo(song) {
   let artistName = song.artist.name;
   let title = song.title;
   let imageUrl = song.artist.picture_small;

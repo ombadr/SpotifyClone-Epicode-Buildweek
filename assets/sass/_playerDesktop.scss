@@ -1,0 +1,241 @@
+/* PLAYER DESKTOP */
+
+#player-desktop {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    background-color: $cardBackground;
+    width: 100vw;
+    height: 100px;
+    justify-content: space-between;
+  
+    svg,
+    progress {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    .nowPlaying,
+    .playbackControls,
+    .volumeControls {
+      padding: 20px;
+      align-items: center;
+      gap: 10px;
+  
+      h6 {
+        color: $lightTextColor;
+        font-size: 0.8rem;
+      }
+  
+      p {
+        font-size: 0.8rem;
+        color: $darkTextColor;
+      }
+  
+      img {
+        border-radius: 3px;
+        box-shadow: 1px 1px, 5px, black;
+        width: 60px;
+        object-fit: contain;
+        display: none;
+  
+        @media screen and (min-width: 860px) {
+          display: block;
+        }
+      }
+  
+      #volumeBar, #coverBar {
+        width: 90px;
+        height: 10px;
+      }
+  
+      .volumeControls {
+        position: relative;
+      }
+      #coverBarContainer{
+        position: absolute;
+        background-color: $cardBackground;
+        // background-color: red;
+        right: 154px;
+        z-index: 10;
+      }
+    }
+    .rightSideButtons {
+      z-index: 20;
+    }
+  
+    .nowPlaying {
+      width: 300px;
+      gap: 20px;
+  
+      p {
+        margin: 0;
+      }
+  
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  
+    .playbackControls {
+      align-items: center;
+      position: relative;
+      right: 20px;
+  
+      @media screen and (min-width: $lgBreak) {
+        position: static;
+      }
+  
+      div {
+        align-items: center;
+        padding: 5px;
+        gap: 8px;
+  
+        progress {
+          height: 8px;
+        }
+  
+        p {
+          margin: 0;
+        }
+      }
+  
+      .playerButtons {
+        height: 40px;
+        position: relative;
+        bottom: 10px;
+  
+        svg {
+          width: 30px;
+          height: 20px;
+  
+          &:hover {
+            scale: 1.2;
+            transition-property: scale;
+            transition-duration: 100ms;
+            transition-timing-function: ease-in-out;
+          }
+        }
+      }
+    }
+  
+    #playButton,
+    #pauseButton {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .playerBar {
+      position: relative;
+      bottom: 10px;
+  
+      progress {
+        width: 300px;
+      }
+    }
+  
+    .playbackControls {
+      gap: 10px;
+    }
+  }
+  
+  #heartFill {
+    display: none;
+  }
+  
+  .volumeControls {
+    svg {
+      display: none;
+  
+      @media screen and (min-width: $lgBreak) {
+        display: block;
+      }
+    }
+  
+    #volumeIcon,
+    #fullscreenIcon {
+      display: block;
+    }
+  
+    .rightSideButtons {
+      border: none;
+      background: none;
+      color: $playerButtonsColor;
+      svg{
+        position: relative;
+        z-index: 10;
+      }
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    .volumeContainer {
+      position: relative;
+      top: 2px;
+      &:hover{
+        cursor: pointer;
+      }
+  
+      .volumeFlex {
+        align-items: center;
+        height: $progressBarHeight;
+        background-color: $playerButtonsColor;
+        border-radius: 10px;
+  
+        .emptyBar {
+          background-color: $darkTextColor;
+          width: 100%;
+          height: $progressBarHeight;
+          border-radius: $progressBarRound;
+          position: relative;
+  
+          .fullBar {
+            position: absolute;
+            border-radius: $progressBarRound;
+            height: $progressBarHeight;
+            background-color: $lightTextColor;
+            width: 100%;
+          }
+        }
+      }
+    }
+  
+    .coloredVolumeBar .volumeFlex .emptyBar .fullBar{
+      background-color: $spotifyGreen;
+      &::after{
+        content: "";
+        display: inline-block;
+        width: 15px; /* Adjust the size of the sphere as needed */
+        height: 15px; /* Should be equal to width to create a perfect circle */
+        background-color: white; /* Color of the sphere */
+        border-radius: 50%; /* Make it a circle */
+        position: absolute;
+        top: 50%; /* Position it vertically in the middle */
+        right: 0; /* Position it at the end of the div */
+        transform: translateY(-50%);
+      }
+    }
+  
+    .volumeIconAndSlider {
+      height: 45px;
+    }
+  
+  
+  }
+  
+  .playerControls {
+    border: none;
+    background-color: transparent;
+    color: $lightTextColor;
+  }
+  
+  .playerControlsHighlighted {
+    color: $spotifyGreen;
+  }
+  
+  
+  

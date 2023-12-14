@@ -10,6 +10,7 @@ let duration = 0;
 const playButton = document.querySelector("#playButton");
 const pauseButton = document.querySelector("#pauseButton");
 const backWardButton = document.getElementById('backwardButton');
+const forwardButton = document.getElementById('forwardButton')
 const shuffleButton = document.getElementById('shuffleBtn');
 const repeatButton = document.getElementById('repeatBtn');
 const heartEmpty = document.getElementById("heartEmpty");
@@ -23,8 +24,8 @@ const volumeContainer = document.querySelector(".volumeContainer");
 const fullBar = document.querySelector(".fullBar");
 const nowPlaying = document.querySelector('.nowPlaying');
 const playKey = 'Enter';
-const bandRequested = 'blindguardian'
-const songNumber = 6;
+let bandRequested = 'blindguardian'
+let songNumber = 6;
 
 
 // Carica gli script al caricamento della finestra
@@ -41,6 +42,8 @@ window.onload = (event) => {
   setFullscreen();
   setVolumeBar();
   setShuffleAndRepeat();
+  // Sets funciton of forward button
+  setSkipForward();
 };
 
 
@@ -67,7 +70,7 @@ async function fetchData(url, options) {
     // Parse the response as JSON
     const data = await response.json();
     const song = data.data[songNumber];
-    
+
     // Sets info panel in song
     setSongInfo(song);
 
@@ -100,9 +103,9 @@ function setPlaySong(songData) {
     duration = song.duration;
     clearInterval(songDuration);
   }, 100);
-  let checkSongLoop = setInterval(() => 
+  let checkSongLoop = setInterval(() =>
     repeatButton.classList.contains('playerControlsHighlighted') ? (song.loop = true) : (song.loop = false)
-  , 500);
+    , 500);
   setInterval(() => {
     if (song.ended) {
       pauseButton.classList.add('d-none');
@@ -115,20 +118,11 @@ function setPlaySong(songData) {
     }
   }, 500)
 
-  // Uses a key to trigger play and pause
-  TOFIX:
-  // if (document.activeElement === document.body){
-  //   document.addEventListener('keydown', (event) => {
-  //     if (event.key === playKey){
-  //       song.paused === true? song.play() : song.pause();
-  //       pauseButton.classList.toggle('d-none');     
-  //       playButton.classList.toggle('d-none');     
-  //     }
-  //   })
-  // }
-
   // Sets function of backward button
   setSkipBackward(song);
+
+  // Sets skip forward button
+  setSkipForward();
 
   // Sets button to play song
   playButton.addEventListener("click", () => {
@@ -176,7 +170,7 @@ function displayCurrentTime(song) {
   } else {
     songTimer.innerHTML = `0:${seconds}`
   }
-  if(song.ended){
+  if (song.ended) {
     songTimer.innerHTML = "0:00";
     barFill = 0;
     progressBar.setAttribute('Value', 0);
@@ -184,16 +178,23 @@ function displayCurrentTime(song) {
 }
 
 // Returns the value of the song in percentage
-function barFillerValue(currentTime, duration){
+function barFillerValue(currentTime, duration) {
   return currentTime * 100 / duration;
 }
 
 // Setta a 0 il valore della canzone quando il tasto viene premuto
-function setSkipBackward (song){
+function setSkipBackward(song) {
   backWardButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if(song.currentTime > 2)
+    if (song.currentTime > 2)
       song.currentTime = 0;
+  })
+}
+
+function setSkipForward(song) {
+  forwardButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    songNumber++;
   })
 }
 
@@ -222,7 +223,7 @@ function setToggle(toShow, toHide) {
 }
 
 // Sets volume bar functionalities
-function setVolumeBar(){
+function setVolumeBar() {
   volumeContainer.addEventListener("mouseenter", (event) => {
     event.preventDefault();
     volumeContainer.classList.add("coloredVolumeBar");
@@ -231,17 +232,17 @@ function setVolumeBar(){
     event.preventDefault();
     volumeContainer.classList.remove("coloredVolumeBar");
   });
-  
+
   volumeContainer.addEventListener("click", function (event) {
     // Get the click location within the component
     const clickX = event.clientX - volumeContainer.getBoundingClientRect().left;
     const containerSize = volumeContainer.clientWidth;
     // const clickY = event.clientY - volumeContainer.getBoundingClientRect().top;
     const newX = volumeContainer.clientWidth - clickX;
-  
+
     // Moves the bar
     fullBar.style.right = newX + "px";
-  
+
     // Calculate percentage
     const percentageFromRight = (newX * 100) / containerSize;
     const volumePercentage = 100 - percentageFromRight;
@@ -252,7 +253,7 @@ function setVolumeBar(){
 }
 
 // Sets shuffle and repeat controls
-function setShuffleAndRepeat(){
+function setShuffleAndRepeat() {
   shuffleButton.addEventListener('click', (event) => {
     event.preventDefault();
     shuffleButton.classList.toggle('playerControlsHighlighted')
@@ -264,7 +265,7 @@ function setShuffleAndRepeat(){
 }
 
 // Set picture, title and artist info. To recall when needed
-function setSongInfo (song) {
+function setSongInfo(song) {
   let artistName = song.artist.name;
   let title = song.title;
   let imageUrl = song.artist.picture_small;

@@ -11,6 +11,10 @@ const options = {
 
 const albumTracks = document.getElementById('albumTracks')
 const heroAlbum = document.getElementById('heroAlbum')
+// MOBILE
+const albumTrackMobileContainer = document.getElementById('albumTrackMobileContainer')
+const heroMobileAlbumImage = document.getElementById('hero-mobile-artist')
+const albumTitleMobile = document.getElementById('titleMobileWrapper')
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -39,6 +43,7 @@ async function fetchSongs() {
 
       let tracksHTML = ''
       let heroAlbumHTML = ''
+      let albumTracksMobileHTML = ''
 
       // const trackList = await getTrackList(trackListUrl)
       // console.log('List of tracks:', trackList)
@@ -54,6 +59,12 @@ async function fetchSongs() {
 
       const heroHTML = createHeroAlbum(imageAlbum, albumTitle, albumArtist, releaseDate, artistImage, numberOfTracks, formattedDuration)
 
+      const albumTitleHTML = createAlbumTitleMobile(albumTitle, artistImage, albumArtist, releaseDate.substring(0, 4))
+      displayAlbumTitleMobile(albumTitleHTML)
+
+      // mobile
+      const heroMobileAlbumImageHTML = createHeroMobileAlbumImage(imageAlbum)
+      displayHeroMobileAlbumImage(heroMobileAlbumImageHTML)
 
       displayHeroAlbum(heroHTML)
 
@@ -69,9 +80,16 @@ async function fetchSongs() {
         const title = albumResults.tracks.data[i].title
         const duration = albumResults.tracks.data[i].duration
         const trackHTML = createAlbumSongs(artist, title, duration, i + 1)
+
+        const albumTrackMobileHTML = createAlbumTrackMobile(title, artist)
+
+
+
         tracksHTML += trackHTML
+        albumTracksMobileHTML += albumTrackMobileHTML
       }
       displayAlbumSongs(tracksHTML)
+      displayAlbumTrackMobile(albumTracksMobileHTML)
 
     }
 
@@ -157,3 +175,66 @@ function displayHeroAlbum(heroAlbumHTML) {
 
 // END HERO ALBUM
 
+// ALBUM TRACK MOBILE
+
+function createAlbumTrackMobile(title, artist) {
+  return `<div class="row">
+            <div class="col-11">
+              <p class="songName">${title}</p>
+              <span class="artistName">${artist}</span>
+            </div>
+            <div
+              class="col-1 p-1 dropdown-trigger"
+              onclick="toggleDropdownMenu(this)"
+            >
+              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
+            </div>
+          </div>`
+}
+
+function displayAlbumTrackMobile(albumTrackMobileHTML) {
+  albumTrackMobileContainer.innerHTML = albumTrackMobileHTML
+}
+
+// END ALBUM TRACK MOBILE
+
+// HERO ALBUM MOBILE
+
+function createHeroMobileAlbumImage(image) {
+  return `<img
+            class="hero-img-artist"
+            src="${image}"
+            alt="album"
+          />`
+}
+
+function displayHeroMobileAlbumImage(heroMobileAlbumImageHTML) {
+  heroMobileAlbumImage.innerHTML = heroMobileAlbumImageHTML
+}
+
+
+// END HERO ALBUM MOBILE
+
+// ALBUM TITLE MOBILE 
+
+function createAlbumTitleMobile(title, image, artist, releaseDate) {
+  return `<h1 class="titleAlbum">${title}</h1>
+
+            <div id="artist-wrapper-album">
+              <img
+                class="album-img"
+                src="${image}"
+                alt="${artist}"
+              />
+
+              <h2>${artist}</h2>
+            </div>
+
+            <p class="albumData">Album · <span>${releaseDate}</span></p>`
+}
+
+function displayAlbumTitleMobile(albumTitleMobileHTML) {
+  albumTitleMobile.innerHTML = albumTitleMobileHTML
+}
+
+// END ALBUM TITLE MOBILE

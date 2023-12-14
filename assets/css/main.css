@@ -11976,6 +11976,245 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/* PLAYER DESKTOP */
+#player-desktop {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  background-color: #171717;
+  width: 100vw;
+  height: 100px;
+  justify-content: space-between;
+}
+#player-desktop svg:hover,
+#player-desktop progress:hover {
+  cursor: pointer;
+}
+#player-desktop .nowPlaying,
+#player-desktop .playbackControls,
+#player-desktop .volumeControls {
+  padding: 20px;
+  align-items: center;
+  gap: 10px;
+}
+#player-desktop .nowPlaying h6, #player-desktop .nowPlaying .h6,
+#player-desktop .playbackControls h6,
+#player-desktop .playbackControls .h6,
+#player-desktop .volumeControls h6,
+#player-desktop .volumeControls .h6 {
+  color: #f7f7f7;
+  font-size: 0.8rem;
+}
+#player-desktop .nowPlaying p,
+#player-desktop .playbackControls p,
+#player-desktop .volumeControls p {
+  font-size: 0.8rem;
+  color: #838383;
+}
+#player-desktop .nowPlaying img,
+#player-desktop .playbackControls img,
+#player-desktop .volumeControls img {
+  border-radius: 3px;
+  box-shadow: 1px 1px, 5px, black;
+  width: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  #player-desktop .nowPlaying img,
+  #player-desktop .playbackControls img,
+  #player-desktop .volumeControls img {
+    display: block;
+  }
+}
+#player-desktop .nowPlaying #volumeBar,
+#player-desktop .nowPlaying #coverBar,
+#player-desktop .playbackControls #volumeBar,
+#player-desktop .playbackControls #coverBar,
+#player-desktop .volumeControls #volumeBar,
+#player-desktop .volumeControls #coverBar {
+  width: 90px;
+  height: 10px;
+}
+#player-desktop .nowPlaying .volumeControls,
+#player-desktop .playbackControls .volumeControls,
+#player-desktop .volumeControls .volumeControls {
+  position: relative;
+}
+#player-desktop .nowPlaying #coverBarContainer,
+#player-desktop .playbackControls #coverBarContainer,
+#player-desktop .volumeControls #coverBarContainer {
+  position: absolute;
+  background-color: #171717;
+  right: 154px;
+  z-index: 10;
+}
+#player-desktop .rightSideButtons {
+  z-index: 20;
+}
+#player-desktop .nowPlaying {
+  width: 300px;
+  gap: 10px;
+}
+#player-desktop .nowPlaying p {
+  margin: 0;
+}
+#player-desktop .nowPlaying svg {
+  width: 35px;
+  height: 35px;
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  #player-desktop .nowPlaying svg {
+    display: block;
+  }
+}
+#player-desktop .nowPlaying #player-title-artist {
+  min-width: 100px;
+}
+#player-desktop .playbackControls {
+  align-items: center;
+  position: relative;
+  right: 20px;
+}
+@media screen and (min-width: 992px) {
+  #player-desktop .playbackControls {
+    position: static;
+  }
+}
+#player-desktop .playbackControls div {
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+}
+#player-desktop .playbackControls div progress {
+  height: 8px;
+}
+#player-desktop .playbackControls div p {
+  margin: 0;
+}
+#player-desktop .playbackControls .playerButtons {
+  height: 40px;
+  position: relative;
+  bottom: 10px;
+}
+#player-desktop .playbackControls .playerButtons svg {
+  width: 30px;
+  height: 20px;
+}
+#player-desktop .playbackControls .playerButtons svg:hover {
+  scale: 1.2;
+  transition-property: scale;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+#player-desktop #playButton,
+#player-desktop #pauseButton {
+  width: 30px;
+  height: 30px;
+}
+#player-desktop .playerBar {
+  position: relative;
+  bottom: 10px;
+}
+#player-desktop .playerBar progress {
+  width: 300px;
+}
+#player-desktop .playbackControls {
+  gap: 10px;
+}
+
+#heartFill {
+  display: none;
+}
+
+.volumeControls svg {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .volumeControls svg {
+    display: block;
+  }
+}
+.volumeControls #volumeIcon,
+.volumeControls #fullscreenIcon {
+  display: block;
+}
+.volumeControls .rightSideButtons {
+  border: none;
+  background: none;
+  color: rgb(215, 215, 215);
+}
+.volumeControls .rightSideButtons svg {
+  position: relative;
+  z-index: 10;
+}
+.volumeControls .rightSideButtons:hover {
+  cursor: pointer;
+}
+.volumeControls .volumeContainer {
+  position: relative;
+  top: 2px;
+}
+.volumeControls .volumeContainer:hover {
+  cursor: pointer;
+}
+.volumeControls .volumeContainer .volumeFlex {
+  align-items: center;
+  height: 5px;
+  background-color: rgb(215, 215, 215);
+  border-radius: 10px;
+}
+.volumeControls .volumeContainer .volumeFlex .emptyBar {
+  background-color: #838383;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  position: relative;
+}
+.volumeControls .volumeContainer .volumeFlex .emptyBar .fullBar {
+  position: absolute;
+  border-radius: 10px;
+  height: 5px;
+  background-color: #f7f7f7;
+  width: 100%;
+}
+.volumeControls .coloredVolumeBar .volumeFlex .emptyBar .fullBar {
+  background-color: #1db954;
+}
+.volumeControls .coloredVolumeBar .volumeFlex .emptyBar .fullBar::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  /* Adjust the size of the sphere as needed */
+  height: 15px;
+  /* Should be equal to width to create a perfect circle */
+  background-color: white;
+  /* Color of the sphere */
+  border-radius: 50%;
+  /* Make it a circle */
+  position: absolute;
+  top: 50%;
+  /* Position it vertically in the middle */
+  right: 0;
+  /* Position it at the end of the div */
+  transform: translateY(-50%);
+}
+.volumeControls .volumeIconAndSlider {
+  height: 45px;
+}
+
+.playerControls {
+  border: none;
+  background-color: transparent;
+  color: #f7f7f7;
+}
+
+.playerControlsHighlighted {
+  color: #1db954;
+}
+
 body {
   background-color: black;
   color: white;
@@ -12099,229 +12338,6 @@ body {
 #liked .playlists .card p {
   color: #838383;
   font-size: 0.8rem;
-}
-
-/* PLAYER DESKTOP */
-#player-desktop {
-  position: fixed;
-  z-index: 10;
-  bottom: 0;
-  background-color: #171717;
-  width: 100vw;
-  height: 100px;
-  justify-content: space-between;
-}
-#player-desktop svg:hover,
-#player-desktop progress:hover {
-  cursor: pointer;
-}
-#player-desktop .nowPlaying,
-#player-desktop .playbackControls,
-#player-desktop .volumeControls {
-  padding: 20px;
-  align-items: center;
-  gap: 10px;
-}
-#player-desktop .nowPlaying h6, #player-desktop .nowPlaying .h6,
-#player-desktop .playbackControls h6,
-#player-desktop .playbackControls .h6,
-#player-desktop .volumeControls h6,
-#player-desktop .volumeControls .h6 {
-  color: #f7f7f7;
-  font-size: 0.8rem;
-}
-#player-desktop .nowPlaying p,
-#player-desktop .playbackControls p,
-#player-desktop .volumeControls p {
-  font-size: 0.8rem;
-  color: #838383;
-}
-#player-desktop .nowPlaying img,
-#player-desktop .playbackControls img,
-#player-desktop .volumeControls img {
-  border-radius: 3px;
-  box-shadow: 1px 1px, 5px, black;
-  width: 60px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  display: none;
-}
-@media screen and (min-width: 860px) {
-  #player-desktop .nowPlaying img,
-  #player-desktop .playbackControls img,
-  #player-desktop .volumeControls img {
-    display: block;
-  }
-}
-#player-desktop .nowPlaying #volumeBar, #player-desktop .nowPlaying #coverBar,
-#player-desktop .playbackControls #volumeBar,
-#player-desktop .playbackControls #coverBar,
-#player-desktop .volumeControls #volumeBar,
-#player-desktop .volumeControls #coverBar {
-  width: 90px;
-  height: 10px;
-}
-#player-desktop .nowPlaying .volumeControls,
-#player-desktop .playbackControls .volumeControls,
-#player-desktop .volumeControls .volumeControls {
-  position: relative;
-}
-#player-desktop .nowPlaying #coverBarContainer,
-#player-desktop .playbackControls #coverBarContainer,
-#player-desktop .volumeControls #coverBarContainer {
-  position: absolute;
-  background-color: #171717;
-  right: 154px;
-  z-index: 10;
-}
-#player-desktop .rightSideButtons {
-  z-index: 20;
-}
-#player-desktop .nowPlaying {
-  width: 300px;
-  gap: 20px;
-}
-#player-desktop .nowPlaying p {
-  margin: 0;
-}
-#player-desktop .nowPlaying svg {
-  width: 20px;
-  height: 20px;
-}
-#player-desktop .playbackControls {
-  align-items: center;
-  position: relative;
-  right: 20px;
-}
-@media screen and (min-width: 992px) {
-  #player-desktop .playbackControls {
-    position: static;
-  }
-}
-#player-desktop .playbackControls div {
-  align-items: center;
-  padding: 5px;
-  gap: 8px;
-}
-#player-desktop .playbackControls div progress {
-  height: 8px;
-}
-#player-desktop .playbackControls div p {
-  margin: 0;
-}
-#player-desktop .playbackControls .playerButtons {
-  height: 40px;
-  position: relative;
-  bottom: 10px;
-}
-#player-desktop .playbackControls .playerButtons svg {
-  width: 30px;
-  height: 20px;
-}
-#player-desktop .playbackControls .playerButtons svg:hover {
-  scale: 1.2;
-  transition-property: scale;
-  transition-duration: 100ms;
-  transition-timing-function: ease-in-out;
-}
-#player-desktop #playButton,
-#player-desktop #pauseButton {
-  width: 30px;
-  height: 30px;
-}
-#player-desktop .playerBar {
-  position: relative;
-  bottom: 10px;
-}
-#player-desktop .playerBar progress {
-  width: 300px;
-}
-#player-desktop .playbackControls {
-  gap: 10px;
-}
-
-#heartFill {
-  display: none;
-}
-
-.volumeControls svg {
-  display: none;
-}
-@media screen and (min-width: 992px) {
-  .volumeControls svg {
-    display: block;
-  }
-}
-.volumeControls #volumeIcon,
-.volumeControls #fullscreenIcon {
-  display: block;
-}
-.volumeControls .rightSideButtons {
-  border: none;
-  background: none;
-  color: rgb(215, 215, 215);
-}
-.volumeControls .rightSideButtons svg {
-  position: relative;
-  z-index: 10;
-}
-.volumeControls .rightSideButtons:hover {
-  cursor: pointer;
-}
-.volumeControls .volumeContainer {
-  position: relative;
-  top: 2px;
-}
-.volumeControls .volumeContainer:hover {
-  cursor: pointer;
-}
-.volumeControls .volumeContainer .volumeFlex {
-  align-items: center;
-  height: 5px;
-  background-color: rgb(215, 215, 215);
-  border-radius: 10px;
-}
-.volumeControls .volumeContainer .volumeFlex .emptyBar {
-  background-color: #838383;
-  width: 100%;
-  height: 5px;
-  border-radius: 10px;
-  position: relative;
-}
-.volumeControls .volumeContainer .volumeFlex .emptyBar .fullBar {
-  position: absolute;
-  border-radius: 10px;
-  height: 5px;
-  background-color: #f7f7f7;
-  width: 100%;
-}
-.volumeControls .coloredVolumeBar .volumeFlex .emptyBar .fullBar {
-  background-color: #1db954;
-}
-.volumeControls .coloredVolumeBar .volumeFlex .emptyBar .fullBar::after {
-  content: "";
-  display: inline-block;
-  width: 15px; /* Adjust the size of the sphere as needed */
-  height: 15px; /* Should be equal to width to create a perfect circle */
-  background-color: white; /* Color of the sphere */
-  border-radius: 50%; /* Make it a circle */
-  position: absolute;
-  top: 50%; /* Position it vertically in the middle */
-  right: 0; /* Position it at the end of the div */
-  transform: translateY(-50%);
-}
-.volumeControls .volumeIconAndSlider {
-  height: 45px;
-}
-
-.playerControls {
-  border: none;
-  background-color: transparent;
-  color: #f7f7f7;
-}
-
-.playerControlsHighlighted {
-  color: #1db954;
 }
 
 /* SUGGERITI MOBILE */

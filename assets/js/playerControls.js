@@ -27,7 +27,6 @@ const playKey = 'Enter';
 let bandRequested = 'blindguardian'
 let songNumber = 6;
 
-
 // Carica gli script al caricamento della finestra
 window.onload = (event) => {
   event.preventDefault();
@@ -42,8 +41,6 @@ window.onload = (event) => {
   setFullscreen();
   setVolumeBar();
   setShuffleAndRepeat();
-  // Sets funciton of forward button
-  setSkipForward();
 };
 
 
@@ -69,13 +66,11 @@ async function fetchData(url, options) {
 
     // Parse the response as JSON
     const data = await response.json();
-    const song = data.data[songNumber];
-
-    // Sets info panel in song
-    setSongInfo(song);
+    const song = data.data;
+    setSongInfo(song[songNumber]);
 
     // Sets player to play song
-    setPlaySong(song);
+    setPlaySong(song[songNumber]);
 
   } catch (error) {
     // Handle errors here
@@ -87,7 +82,7 @@ async function fetchData(url, options) {
 // Plays and stops song when triggered
 function setPlaySong(songData) {
   let song = new Audio(songData.preview);
-  setInterval(() => {
+  let storeVolume = setInterval(() => {
     // Check every 100ms what the volume is and updates it in real time
     song.volume = localStorage.getItem('Volume');
   }, 250);
@@ -106,7 +101,7 @@ function setPlaySong(songData) {
   let checkSongLoop = setInterval(() =>
     repeatButton.classList.contains('playerControlsHighlighted') ? (song.loop = true) : (song.loop = false)
     , 500);
-  setInterval(() => {
+  let endSong = setInterval(() => {
     if (song.ended) {
       pauseButton.classList.add('d-none');
       playButton.classList.remove('d-none');
@@ -120,9 +115,6 @@ function setPlaySong(songData) {
 
   // Sets function of backward button
   setSkipBackward(song);
-
-  // Sets skip forward button
-  setSkipForward();
 
   // Sets button to play song
   playButton.addEventListener("click", () => {
@@ -188,13 +180,6 @@ function setSkipBackward(song) {
     event.preventDefault();
     if (song.currentTime > 2)
       song.currentTime = 0;
-  })
-}
-
-function setSkipForward(song) {
-  forwardButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    songNumber++;
   })
 }
 

@@ -11994,6 +11994,11 @@ body {
   font-size: 1.5rem !important;
 }
 
+#navbarDropdown{
+  background-color: #242424;
+  color: #f7f7f7;
+}
+
 #navbar-desktop,
 #friends {
   position: sticky;

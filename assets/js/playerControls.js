@@ -22,12 +22,15 @@ const songDurationDisplay = document.getElementById('songDuration');
 const volumeContainer = document.querySelector(".volumeContainer");
 const fullBar = document.querySelector(".fullBar");
 const nowPlaying = document.querySelector('.nowPlaying');
-
+const playKey = 'Enter';
+const bandRequested = 'blindguardian'
+const songNumber = 6;
 
 
 // Carica gli script al caricamento della finestra
 window.onload = (event) => {
   event.preventDefault();
+  fetchData(url, options);
   // Alternates between showing play and pause button
   setToggle(playButton, pauseButton);
   // Alternates between showing filled and empty heart for favorites
@@ -42,7 +45,7 @@ window.onload = (event) => {
 
 
 
-const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=rhapsody";
+const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + bandRequested;
 const options = {
   method: "GET",
   headers: {
@@ -63,28 +66,27 @@ async function fetchData(url, options) {
 
     // Parse the response as JSON
     const data = await response.json();
-    const song = data.data[0];
+    const song = data.data[songNumber];
     
     // Sets info panel in song
     setSongInfo(song);
 
     // Sets player to play song
     setPlaySong(song);
-    
+
   } catch (error) {
     // Handle errors here
     console.error("Error:", error);
   }
 }
 
-fetchData(url, options);
 
 // Plays and stops song when triggered
 function setPlaySong(songData) {
   let song = new Audio(songData.preview);
   setInterval(() => {
     // Check every 100ms what the volume is and updates it in real time
-    song.volume = volume;
+    song.volume = localStorage.getItem('Volume');
   }, 250);
 
   // Updates song current time
@@ -113,11 +115,20 @@ function setPlaySong(songData) {
     }
   }, 500)
 
+  // Uses a key to trigger play and pause
+  TOFIX:
+  // if (document.activeElement === document.body){
+  //   document.addEventListener('keydown', (event) => {
+  //     if (event.key === playKey){
+  //       song.paused === true? song.play() : song.pause();
+  //       pauseButton.classList.toggle('d-none');     
+  //       playButton.classList.toggle('d-none');     
+  //     }
+  //   })
+  // }
+
   // Sets function of backward button
   setSkipBackward(song);
-
-  // Inject current time to progress bar
-
 
   // Sets button to play song
   playButton.addEventListener("click", () => {
@@ -236,6 +247,7 @@ function setVolumeBar(){
     const volumePercentage = 100 - percentageFromRight;
     volumeContainer.style["--progress-bar-transform"] = volumePercentage;
     volume = volumePercentage / 100;
+    localStorage.setItem('Volume', volume);
   });
 }
 
@@ -251,7 +263,7 @@ function setShuffleAndRepeat(){
   })
 }
 
-
+// Set picture, title and artist info. To recall when needed
 function setSongInfo (song) {
   let artistName = song.artist.name;
   let title = song.title;
@@ -260,3 +272,4 @@ function setSongInfo (song) {
   nowPlaying.querySelector('div h6').innerHTML = artistName;
   nowPlaying.querySelector('div p').innerHTML = title;
 }
+

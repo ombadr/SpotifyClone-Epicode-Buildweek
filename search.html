@@ -10,7 +10,7 @@
     />
     <title>Search</title>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/search.js" defer></script>
   </head>
   <body>
     <main>
@@ -18,7 +18,7 @@
       <div id="search-section" class="mt-5 mx-2">
         <h1 class="ms-3">Cerca</h1>
         <div class="container-fluid mt-4" id="search-component">
-          <form class="d-flex">
+          <form class="d-flex" id="searchForm">
             <div class="input-group">
               <span class="input-group-text bg-transparent border border-0"
                 ><i class="bi bi-search text-white fs-1"></i
@@ -27,6 +27,7 @@
                 type="text"
                 class="form-control bg-transparent border border-0 custom-focus"
                 placeholder="Cosa vuoi ascoltare?"
+                id="searchInput"
               />
             </div>
           </form>
@@ -34,13 +35,14 @@
       </div>
 
       <!--CATEGORIES SECTION-->
-      <section>
+      <section id="card-section-search">
         <h2 class="text-center mt-2">Sfoglia tutto</h2>
         <div id="categories" class="container-fluid">
           <div class="row justify-content-center">
             <!--CARD 1-->
             <div
-              class="col-5 col-md-3 bg-primary m-2 rounded categories-card p-0"
+              class="col-5 col-md-3 m-2 rounded categories-card p-0"
+              id="card1"
             >
               <p class="fw-bold ms-3 mt-2 fs-5">Podcast</p>
               <div class="text-end">
@@ -54,12 +56,13 @@
 
             <!--CARD 2-->
             <div
-              class="col-5 col-md-3 bg-primary m-2 rounded categories-card p-0"
+              class="col-5 col-md-3 m-2 rounded categories-card p-0"
+              id="card2"
             >
               <p class="fw-bold ms-3 mt-2 fs-5">Create per te</p>
               <div class="text-end">
                 <img
-                  src="assets/imgs/search/image-4.jpg"
+                  src="assets/imgs/search/image-5.jpg"
                   alt="Image 4"
                   height="100px"
                 />
@@ -68,12 +71,13 @@
 
             <!--CARD 3-->
             <div
-              class="col-5 col-md-3 bg-primary m-2 rounded categories-card p-0"
+              class="col-5 col-md-3 m-2 rounded categories-card p-0"
+              id="card3"
             >
               <p class="fw-bold ms-3 mt-2 fs-5">Nuove uscite</p>
               <div class="text-end">
                 <img
-                  src="assets/imgs/search/image-4.jpg"
+                  src="assets/imgs/search/image-6.jpg"
                   alt="Image 4"
                   height="100px"
                 />
@@ -82,12 +86,13 @@
 
             <!--CARD 4-->
             <div
-              class="col-5 col-md-3 bg-primary m-2 rounded categories-card p-0"
+              class="col-5 col-md-3 m-2 rounded categories-card p-0"
+              id="card4"
             >
               <p class="fw-bold ms-3 mt-2 fs-5">Pop</p>
               <div class="text-end">
                 <img
-                  src="assets/imgs/search/image-4.jpg"
+                  src="assets/imgs/search/image-7.jpg"
                   alt="Image 4"
                   height="100px"
                 />
@@ -96,12 +101,13 @@
 
             <!--CARD 5-->
             <div
-              class="col-5 col-md-3 bg-primary m-2 rounded categories-card p-0"
+              class="col-5 col-md-3 m-2 rounded categories-card p-0"
+              id="card5"
             >
               <p class="fw-bold ms-3 mt-2 fs-5">Hip Hop</p>
               <div class="text-end">
                 <img
-                  src="assets/imgs/search/image-4.jpg"
+                  src="assets/imgs/search/image-8.jpg"
                   alt="Image 4"
                   height="100px"
                 />
@@ -110,12 +116,13 @@
 
             <!--CARD 6-->
             <div
-              class="col-5 col-md-3 bg-primary m-2 rounded categories-card p-0"
+              class="col-5 col-md-3 m-2 rounded categories-card p-0"
+              id="card6"
             >
               <p class="fw-bold ms-3 mt-2 fs-5">Dance/Elettronica</p>
               <div class="text-end">
                 <img
-                  src="assets/imgs/search/image-4.jpg"
+                  src="assets/imgs/search/image-9.jpg"
                   alt="Image 4"
                   height="100px"
                 />
@@ -124,12 +131,13 @@
 
             <!--CARD 7-->
             <div
-              class="col-5 col-md-3 bg-primary m-2 rounded categories-card p-0"
+              class="col-5 col-md-3 m-2 rounded categories-card p-0"
+              id="card7"
             >
               <p class="fw-bold ms-3 mt-2 fs-5">Latina</p>
               <div class="text-end">
                 <img
-                  src="assets/imgs/search/image-4.jpg"
+                  src="assets/imgs/search/image-10.jpg"
                   alt="Image 4"
                   height="100px"
                 />
@@ -138,12 +146,13 @@
 
             <!--CARD 8-->
             <div
-              class="col-5 col-md-3 bg-primary m-2 rounded categories-card p-0"
+              class="col-5 col-md-3 m-2 rounded categories-card p-0"
+              id="card8"
             >
               <p class="fw-bold ms-3 mt-2 fs-5">Classifiche</p>
               <div class="text-end">
                 <img
-                  src="assets/imgs/search/image-4.jpg"
+                  src="assets/imgs/search/image-11.jpg"
                   alt="Image 4"
                   height="100px"
                 />

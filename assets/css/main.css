@@ -11860,10 +11860,77 @@ body {
   color: white;
 }
 
+::-webkit-scrollbar {
+  background-color: #2b2b2b;
+}
+
+::-ms-scrollbar {
+  background-color: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1db954;
+  border-radius: 50px;
+}
+
 /*HOMEPAGE*/
+/* NAVBAR DESKTOP */
+.dropdown-toggle {
+  cursor: pointer;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+
+#navbar-desktop,
+#friends {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.friends-card h4, .friends-card .h4 {
+  font-size: 15px;
+  font-weight: bold;
+}
+.friends-card span {
+  font-size: 11px;
+}
+.friends-card p {
+  font-size: 12px;
+}
+
+/*CENTER SECTION */
+#center-section {
+  overflow-y: auto;
+  height: 87vh;
+}
+
+/* HERO HOMEPAGE */
+.spotify-green-bg {
+  background: #1db954;
+}
+
+#playBtn-index, #saveBtn-index {
+  transition: transform 0.1s ease-in-out;
+}
+
+#playBtn-index:hover, #saveBtn-index:hover {
+  transform: scale(1.1);
+}
+
+#saveBtn-index:hover {
+  background-color: white !important;
+  color: black !important;
+}
+
 /*LIKED SECTION */
 #liked {
   color: #838383;
+}
+#liked a.card-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
 }
 #liked p {
   font-size: 0.8rem;
@@ -11880,6 +11947,56 @@ body {
   padding: 10px;
   background-color: #171717;
   border: none;
+  display: block;
+}
+#liked .playlists .card:hover {
+  cursor: pointer;
+  background-color: #212121;
+}
+@media screen and (min-width: 992px) {
+  #liked .playlists .card {
+    display: none;
+  }
+  #liked .playlists .card:nth-child(1) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(2) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(3) {
+    display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #liked .playlists .card:nth-child(1) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(2) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(3) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(4) {
+    display: block;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #liked .playlists .card:nth-child(1) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(2) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(3) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(4) {
+    display: block;
+  }
+  #liked .playlists .card:nth-child(5) {
+    display: block;
+  }
 }
 #liked .playlists .card img {
   width: 100%;
@@ -11901,55 +12018,222 @@ body {
   background-color: #171717;
   width: 100vw;
   height: 100px;
+  justify-content: space-between;
 }
 #player-desktop svg:hover,
 #player-desktop progress:hover {
   cursor: pointer;
 }
-#player-desktop div:nth-child(1),
-#player-desktop div:nth-child(2),
-#player-desktop div:nth-child(3) {
+#player-desktop .nowPlaying,
+#player-desktop .playbackControls,
+#player-desktop .volumeControls {
   padding: 20px;
   align-items: center;
   gap: 10px;
 }
-#player-desktop div:nth-child(1) h6, #player-desktop div:nth-child(1) .h6,
-#player-desktop div:nth-child(2) h6,
-#player-desktop div:nth-child(2) .h6,
-#player-desktop div:nth-child(3) h6,
-#player-desktop div:nth-child(3) .h6 {
+#player-desktop .nowPlaying h6, #player-desktop .nowPlaying .h6,
+#player-desktop .playbackControls h6,
+#player-desktop .playbackControls .h6,
+#player-desktop .volumeControls h6,
+#player-desktop .volumeControls .h6 {
   color: #f7f7f7;
   font-size: 0.8rem;
 }
-#player-desktop div:nth-child(1) p,
-#player-desktop div:nth-child(2) p,
-#player-desktop div:nth-child(3) p {
+#player-desktop .nowPlaying p,
+#player-desktop .playbackControls p,
+#player-desktop .volumeControls p {
   font-size: 0.8rem;
   color: #838383;
 }
-#player-desktop div:nth-child(1) img,
-#player-desktop div:nth-child(2) img,
-#player-desktop div:nth-child(3) img {
+#player-desktop .nowPlaying img,
+#player-desktop .playbackControls img,
+#player-desktop .volumeControls img {
   border-radius: 3px;
   box-shadow: 1px 1px, 5px, black;
-  width: 15%;
+  width: 60px;
   object-fit: contain;
+  display: none;
 }
-#player-desktop div:nth-child(1) #volumeBar,
-#player-desktop div:nth-child(2) #volumeBar,
-#player-desktop div:nth-child(3) #volumeBar {
+@media screen and (min-width: 860px) {
+  #player-desktop .nowPlaying img,
+  #player-desktop .playbackControls img,
+  #player-desktop .volumeControls img {
+    display: block;
+  }
+}
+#player-desktop .nowPlaying #volumeBar,
+#player-desktop .nowPlaying #coverBar,
+#player-desktop .playbackControls #volumeBar,
+#player-desktop .playbackControls #coverBar,
+#player-desktop .volumeControls #volumeBar,
+#player-desktop .volumeControls #coverBar {
   width: 90px;
   height: 10px;
 }
-#player-desktop div:nth-child(2) {
-  padding: 0;
+#player-desktop .nowPlaying .volumeControls,
+#player-desktop .playbackControls .volumeControls,
+#player-desktop .volumeControls .volumeControls {
+  position: relative;
 }
-#player-desktop div:nth-child(2) p {
+#player-desktop .nowPlaying #coverBarContainer,
+#player-desktop .playbackControls #coverBarContainer,
+#player-desktop .volumeControls #coverBarContainer {
+  position: absolute;
+  background-color: #171717;
+  right: 154px;
+  z-index: 10;
+}
+#player-desktop .rightSideButtons {
+  z-index: 20;
+}
+#player-desktop .nowPlaying {
+  width: 300px;
+  gap: 20px;
+}
+#player-desktop .nowPlaying p {
   margin: 0;
 }
-#player-desktop div:nth-child(2) progress {
+#player-desktop .nowPlaying svg {
+  width: 20px;
+  height: 20px;
+}
+#player-desktop .playbackControls {
+  align-items: center;
+  position: relative;
+  right: 20px;
+}
+@media screen and (min-width: 992px) {
+  #player-desktop .playbackControls {
+    position: static;
+  }
+}
+#player-desktop .playbackControls div {
+  align-items: center;
+  padding: 5px;
+  gap: 8px;
+}
+#player-desktop .playbackControls div progress {
+  height: 8px;
+}
+#player-desktop .playbackControls div p {
+  margin: 0;
+}
+#player-desktop .playbackControls .playerButtons {
+  height: 40px;
+  position: relative;
+  bottom: 10px;
+}
+#player-desktop .playbackControls .playerButtons svg {
+  width: 30px;
+  height: 20px;
+}
+#player-desktop .playbackControls .playerButtons svg:hover {
+  scale: 1.2;
+  transition-property: scale;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+#player-desktop #playButton,
+#player-desktop #pauseButton {
+  width: 30px;
+  height: 30px;
+}
+#player-desktop .playerBar {
+  position: relative;
+  bottom: 10px;
+}
+#player-desktop .playerBar progress {
   width: 300px;
-  height: 10px;
+}
+#player-desktop .playbackControls {
+  gap: 10px;
+}
+
+#heartFill {
+  display: none;
+}
+
+.volumeControls svg {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .volumeControls svg {
+    display: block;
+  }
+}
+.volumeControls #volumeIcon,
+.volumeControls #fullscreenIcon {
+  display: block;
+}
+.volumeControls .rightSideButtons {
+  border: none;
+  background: none;
+  color: rgb(215, 215, 215);
+}
+.volumeControls .rightSideButtons svg {
+  position: relative;
+  z-index: 10;
+}
+.volumeControls .rightSideButtons:hover {
+  cursor: pointer;
+}
+.volumeControls .volumeContainer {
+  position: relative;
+  top: 2px;
+}
+.volumeControls .volumeContainer:hover {
+  cursor: pointer;
+}
+.volumeControls .volumeContainer .volumeFlex {
+  align-items: center;
+  height: 5px;
+  background-color: rgb(215, 215, 215);
+  border-radius: 10px;
+}
+.volumeControls .volumeContainer .volumeFlex .emptyBar {
+  background-color: #838383;
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  position: relative;
+}
+.volumeControls .volumeContainer .volumeFlex .emptyBar .fullBar {
+  position: absolute;
+  border-radius: 10px;
+  height: 5px;
+  background-color: #f7f7f7;
+  width: 100%;
+}
+.volumeControls .coloredVolumeBar .volumeFlex .emptyBar .fullBar {
+  background-color: #1db954;
+}
+.volumeControls .coloredVolumeBar .volumeFlex .emptyBar .fullBar::after {
+  content: "";
+  display: inline-block;
+  width: 15px; /* Adjust the size of the sphere as needed */
+  height: 15px; /* Should be equal to width to create a perfect circle */
+  background-color: white; /* Color of the sphere */
+  border-radius: 50%; /* Make it a circle */
+  position: absolute;
+  top: 50%; /* Position it vertically in the middle */
+  right: 0; /* Position it at the end of the div */
+  transform: translateY(-50%);
+}
+.volumeControls .volumeIconAndSlider {
+  height: 45px;
+}
+
+/* SUGGERITI MOBILE */
+.nav-tabs {
+  --bs-nav-tabs-border-color: black;
+}
+.nav-tabs .nav-link {
+  color: white;
+}
+
+.suggeriti-mobile-cards h5, .suggeriti-mobile-cards .h5 {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 /* PLAYLIST MOBILE */
@@ -11975,6 +12259,20 @@ body {
 }
 
 /*ALBUM*/
+.songName {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.artistName {
+  font-size: small;
+  color: gray;
+}
+
+.spacingAntiBarTracksMobile {
+  padding-bottom: 10rem !important;
+} /*CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
+/*HERO MOBILE*/
 .backbtn-album {
   position: fixed;
   top: 1rem;
@@ -12076,14 +12374,16 @@ body {
 }
 
 /*ARTIST*/
-/* HERO MOBILE */
-body {
-  background-color: #212121;
+/*POPULAR MOBILE
+CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
+.spacingAntiBar {
+  padding-bottom: 6rem !important;
 }
 
+/* HERO MOBILE */
 #hero-mobile {
   position: relative;
-  background: url(/assets/imgs/artist/img-hero.jpg) center/cover;
+  background: url("/assets/imgs/artist/img-hero.jpg") center/cover;
   height: 50vh;
   overflow: hidden;
 }
@@ -12150,7 +12450,7 @@ body {
   align-items: center;
 }
 
-.shuffleDot {
+#shuffleDot {
   background-color: #1db954;
   height: 5px;
   width: 5px;
@@ -12159,7 +12459,8 @@ body {
   transform: translate(6px, -3px);
 }
 
-.dotsIcon, .shuffleIcon {
+.dotsIcon,
+.shuffleIcon {
   color: inherit;
   font-size: 1.3rem;
 }
@@ -12168,7 +12469,7 @@ body {
   color: #1db954;
 }
 
-.playIcon {
+#playIcon {
   margin-left: 0.8rem;
   color: #1db954;
   font-size: 2.5rem;
@@ -12190,17 +12491,17 @@ body {
   margin-right: 1rem;
 }
 
-.heartIcon::before {
-  transform: translate(27px, -16px);
+.bi-heart-fill {
   background-color: #1db954;
   color: #212121;
   border-radius: 50%;
   font-size: 1rem;
   width: 22px;
   height: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-left: 2.5px;
+  margin-left: -5px;
+  margin-right: -1px;
+  display: inline-block;
 }
 
 .likedSong {
@@ -12211,6 +12512,39 @@ body {
 .likedNum {
   font-size: 0.85rem;
   color: #b3b3b3;
+}
+
+/*END LIKED MOBILE*/
+/*HERO ARTIST*/
+/*Aggiunta classe custom per img di bg di div hero artist */
+#buttonFollowingBar {
+  background-color: #1db954;
+}
+
+/*Colore bottone play following bar pagina artist*/
+.custom-gradient-background {
+  background: linear-gradient(to bottom, #cc9900, #444444, #000000);
+}
+
+/*aggiunta classe custom per il bg color della sezione album*/
+.sfumaAlbum {
+  box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
+#following-bar {
+  background-color: #2b2b2b;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+}
+
+#follow-btn-artist {
+  padding: 0.3rem 0.8rem;
+  background: inherit;
+  border: 1px solid white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 /*SEARCH*/
@@ -12226,6 +12560,43 @@ body {
   box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
 }
 
+#card1 {
+  background-color: #e13300;
+}
+
+#card2 {
+  background-color: #e8125c;
+}
+
+#card3 {
+  background-color: #1e3264;
+}
+
+#card4 {
+  background-color: #158a08;
+}
+
+#card5 {
+  background-color: #bc5800;
+}
+
+#card6 {
+  background-color: #8964a7;
+}
+
+#card7 {
+  background-color: #94845f;
+}
+
+#card-section-search {
+  margin-bottom: 11rem;
+}
+
+@media screen and (min-width: 768px) {
+  #card-section-search {
+    margin-bottom: 9rem;
+  }
+}
 /* CATEGORIES */
 .categories-card {
   overflow: hidden;
@@ -12239,6 +12610,9 @@ body {
 
 /*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
+  #player-desktop {
+    display: none !important;
+  }
   #player-title-artist h6, #player-title-artist .h6 {
     display: none;
   }

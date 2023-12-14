@@ -1,7 +1,7 @@
 import { convertSecondsToMinSec, generateRandomNumber } from "./utils/utils.js"
 
 const BASE_URL = 'https://deezerdevs-deezer.p.rapidapi.com/'
-const options = {
+let options = {
   method: 'GET',
   headers: {
     'X-RapidAPI-Key': '349d0315bamshe22fa1098ac0240p133261jsnab757b4a040e',
@@ -359,19 +359,18 @@ function displayLikedSectionContainer(likedSectionHTML) {
 
 
 function createPopularTracksMobile(title, image, counter) {
-
   const listeners = generateRandomNumber()
   return `<div class="d-flex p-2">
               <div class="col-sm-1 p-3 d-flex align-items-center"><p>${counter}</p></div>
               <div class="col-sm-1" style="width: 80px; height: 80px">
                 <img
                   src="${image}"
-                  class="img-fluid"
+                  class="img-fluid songPopularImage"
                   alt="Immagine 1"
                 />
               </div>
               <div class="col-sm-9 p-2">
-                <h3>${title}</h3>
+                <h3 class="songName">${title}</h3>
                 <p>${listeners}</p>
               </div>
               <div class="col-sm-1 ms-auto d-flex align-items-center">
@@ -381,6 +380,7 @@ function createPopularTracksMobile(title, image, counter) {
                   height="16"
                   fill="currentColor"
                   class="bi bi-three-dots-vertical"
+                  onclick="toggleDropdownMenu(this)"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -390,7 +390,6 @@ function createPopularTracksMobile(title, image, counter) {
               </div>
             </div>`
 }
-
 
 function displayPopularTracksMobile(popularTracksMobileHTML) {
   tracksPopularMobile.innerHTML = popularTracksMobileHTML

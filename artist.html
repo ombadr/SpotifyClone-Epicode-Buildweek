@@ -268,7 +268,7 @@
       <div id="desktop-wrapper" class="container-fluid">
         <div class="row">
           <!--NAVBAR DESKTOP-->
-          <div id="navbar-desktop" class="col-lg-3 d-none d-md-block mt-2">
+          <div id="navbar-desktop" class="col-lg-2 d-none d-md-block mt-2">
             <div class="dropdown">
               <span
                 class="dots dropdown-toggle"
@@ -400,15 +400,16 @@
           </div>
 
           <!--CENTER SECTION-->
-          <section class="col-lg-7 d-none d-md-block">
-            <!--HERO ARTIST-->
-            <div id="hero-artist" class="mb-0">
+          <section class="col-lg-8 d-none d-md-block">
+            <!--HERO ARTIST MARGIN TOP MODIFICATO-->
+            <div id="hero-artist" class="mt-2">
               <!--ADD HERE DYNAMICALLY -->
 
               <div class="container" id="heroDesktopSection">
                 <div class="row">
                   <div class="col-md-6">
                     <button
+                      id="goBackButton"  
                       class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2"
                     >
                       <svg
@@ -424,24 +425,13 @@
                           d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
                         />
                       </svg>
-                    </button>
-                    <button
-                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-chevron-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                        />
-                      </svg>
-                    </button>
+                    </button> 
+                    <!-- SCRIPT GO BACK -->
+                    <script>
+                      document.getElementById('goBackButton').addEventListener('click', function() {
+                        window.history.back();
+                      });
+                    </script>                  
                   </div>
                   <div class="col-md-6">
                     <div class="dropdown d-flex justify-content-end">
@@ -1129,5 +1119,68 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // GABRIELE'S SCRIPT TO OPEN MODAL ON MOBILE TRACKS
+
+      function toggleDropdownMenu(element) {
+        let menu = document.createElement('div');
+        menu.classList.add('dropdown-menu');
+        let firstRow = document.createElement('div');
+        firstRow.style.display = 'flex';
+        firstRow.classList.add('justify-content-beetwen');
+        let imageDiv = document.createElement('div');
+        let textDiv = document.createElement('div');
+
+        let songName =
+          element.previousElementSibling.querySelector('.songName').innerText;
+        let artistName =
+          element.previousElementSibling.querySelector('.artistName').innerText;
+
+        imageDiv.style.width = '35px';
+        imageDiv.style.height = '35px';
+        imageDiv.style.backgroundColor = '#000';
+
+        textDiv.innerHTML = '<p>' + songName + '</p><p>' + artistName + '</p>';
+
+        firstRow.appendChild(imageDiv);
+        firstRow.appendChild(textDiv);
+
+        menu.appendChild(firstRow);
+        let buttons = [
+          { icon: 'bi bi-heart', text: 'Mi piace' },
+          { icon: 'bi bi-dash-circle', text: 'Nascondi questo brano' },
+          { icon: 'bi bi-music-note-beamed', text: 'Aggiungi alla playlist' },
+          { icon: 'bi bi-music-note-list', text: 'Aggiungi in coda' },
+          { icon: 'bi bi-person', text: 'Visualizza artista' },
+          { icon: 'bi bi-share', text: 'Condividi' },
+        ];
+        for (let i = 0; i < buttons.length; i++) {
+          let button = document.createElement('button');
+          button.classList.add('dropdown-menu-button');
+          let icon = document.createElement('i');
+          icon.className = buttons[i].icon;
+          button.appendChild(icon);
+          button.innerHTML += ' ' + buttons[i].text;
+          menu.appendChild(button);
+        }
+
+        const svgElement = document.querySelector('.d-flex p-2 .bi-three-dots-vertical');
+        svgElement.addEventListener('click', function () {
+        toggleDropdownMenu(this);
+        });
+
+        document.addEventListener('click', function (event) {
+          let isClickInsideMenu = menu.contains(event.target);
+          let isClickOnTrigger = element.contains(event.target);
+
+          if (!isClickInsideMenu && !isClickOnTrigger) {
+            menu.remove();
+          }
+        });
+
+        // Aggiunta del menu al DOM
+        document.body.appendChild(menu);
+      }
+    </script>
   </body>
 </html>

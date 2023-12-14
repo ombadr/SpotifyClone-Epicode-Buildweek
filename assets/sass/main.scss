@@ -519,6 +519,12 @@ body {
   transform: translateY(175%);
 }
 
+@media (min-width: 768px) {
+  #album-track-mobile {
+    display: none !important;
+  }
+}
+
 /*ARTIST*/
 
 /*POPULAR MOBILE

@@ -12298,6 +12298,10 @@ body {
   color: gray;
 }
 
+#album-tracks{
+  overflow: auto;
+}
+
 /*ARTIST*/
 /* HERO MOBILE */
 #hero-mobile {

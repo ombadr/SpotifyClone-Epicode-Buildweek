@@ -15,8 +15,13 @@ const heroAlbum = document.getElementById('heroAlbum')
 const albumTrackMobileContainer = document.getElementById('albumTrackMobileContainer')
 const heroMobileAlbumImage = document.getElementById('hero-mobile-artist')
 const albumTitleMobile = document.getElementById('titleMobileWrapper')
+const heroMobileBackButton = document.getElementById('heroMobileBackButton')
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  heroMobileBackButton.addEventListener('click', () => {
+    window.history.back()
+  })
 
   fetchSongs()
 

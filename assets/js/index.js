@@ -258,7 +258,7 @@ function displaySuggeritiAlbums(albumsHTML) {
   suggeritiAlbumsContainer.innerHTML = albumsHTML
 }
 
-getSuggeritiAlbums() // Activate this to start the API fetch
+// getSuggeritiAlbums() // Activate this to start the API fetch
 
 // END SUGGERITI ALBUMS
 

@@ -1,5 +1,5 @@
 // This script sets basic functionalities for player controls
-let options = {
+let optionsPlayer = {
   method: 'GET',
   headers: {
     'X-RapidAPI-Key': '349d0315bamshe22fa1098ac0240p133261jsnab757b4a040e',
@@ -40,7 +40,7 @@ const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + bandRequested
 // Carica gli script al caricamento della finestra
 window.onload = (event) => {
   event.preventDefault();
-  fetchData(url, options);
+  fetchData(url, optionsPlayer);
   // Alternates between showing play and pause button
   setToggle(playButton, pauseButton);
   // Alternates between showing filled and empty heart for favorites

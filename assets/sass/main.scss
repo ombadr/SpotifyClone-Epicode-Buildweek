@@ -372,6 +372,16 @@ body {
 
 }
 
+.playerControls {
+  border: none;
+  background-color: transparent;
+  color: $lightTextColor;
+}
+
+.playerControlsHighlighted {
+  color: $spotifyGreen;
+}
+
 
 
 

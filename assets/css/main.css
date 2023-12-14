@@ -12314,6 +12314,16 @@ body {
   height: 45px;
 }
 
+.playerControls {
+  border: none;
+  background-color: transparent;
+  color: #f7f7f7;
+}
+
+.playerControlsHighlighted {
+  color: #1db954;
+}
+
 /* SUGGERITI MOBILE */
 .nav-tabs {
   --bs-nav-tabs-border-color: black;

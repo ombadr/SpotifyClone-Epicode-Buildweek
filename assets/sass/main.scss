@@ -26,6 +26,8 @@ body {
   color: white;
 }
 
+//scrollbar style
+
 ::-webkit-scrollbar {
   background-color: #2b2b2b;
   }
@@ -82,6 +84,7 @@ body {
   background: $spotifyGreen;
 }
 
+//button trasform index
 #playBtn-index, #saveBtn-index {
   transition: transform 0.1s ease-in-out;
 }
@@ -713,12 +716,16 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   box-shadow: 0 0 30px rgba(0, 0, 0, 1);
 }
 
+//following bar style - artist 
+
 #following-bar {
   background-color: $lighterBackground;
   border-radius: 35px;
   display: flex;
   align-items: center;
 }
+
+//follow button style - artist
 
 #follow-btn-artist {
   padding: 0.3rem 0.8rem;
@@ -727,6 +734,10 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   font-size: 0.9rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+#treDots-artist {
+  background-color: $lighterBackground !important;
 }
 
 #user1-btn-artist {
@@ -749,6 +760,7 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   }
 }
 
+//card color search
 $cardColors: #e13300, #e8125c, #1e3264, #158a08, #bc5800, #8964a7, #94845f, #61b4e0;
 @for $i from 1 to 8 {
   #card#{$i} {
@@ -756,6 +768,7 @@ $cardColors: #e13300, #e8125c, #1e3264, #158a08, #bc5800, #8964a7, #94845f, #61b
   }
 }
 
+//margin-bottom search
 #card-section-search {
   margin-bottom: 11rem;
 }

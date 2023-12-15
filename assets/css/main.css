@@ -12547,6 +12547,14 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   font-weight: 700;
 }
 
+#treDots-artist {
+  background-color: #2b2b2b !important;
+}
+
+#user1-btn-artist {
+  margin-top: 1rem !important;
+}
+
 /*SEARCH*/
 #search-component input {
   color: white;

@@ -14,10 +14,17 @@
     <script type="module" src="assets/js/utils/utils.js" defer></script>
   </head>
   <body>
+    <header>
+      <nav id="scrolldownBar">
+        Nome Artista
+      </nav>
+    </header>
+
     <main>
       <!--HERO MOBILE-->
 
       <div id="hero-mobile" class="d-md-none">
+        <i class="backbtn-album bi bi-arrow-left"></i>
         <div id="hero-overlay">
           <div id="heroMobileArtist">
             <!--RENDER THIS DYNAMICALLY-->
@@ -34,7 +41,6 @@
           >
           ascoltatori mensili
         </p>
-        <!-- questo numero potrebbe variare randomicamente per simulare dei dati veri-->
 
         <div id="icon-wrapper">
           <div id="follow-wrapper">
@@ -409,7 +415,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <button
-                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2"
+                      class="rounded-pill border-0 bg-black bg-gradient mb-3 mx-2"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -526,12 +532,13 @@
                 </svg>
               </button>
               <button
-                class="follow-btn-artist rounded border-white text-white m-3 w-10"
                 id="follow-btn-artist"
+                class="follow-btn-artist rounded border-white text-white m-3 w-10"
+                
               >
                 Following
               </button>
-              <button class="border-0 bg-secondary text-white p-2 m-3">
+              <button class="border-0 text-white p-2 m-3" id="treDots-artist">
                 . . .
               </button>
             </div>

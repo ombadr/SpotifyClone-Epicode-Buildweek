@@ -49,8 +49,8 @@ searchForm.addEventListener('submit', async (e) => {
     if (searchTerm !== '') {
         try {
             const searchResults = await getTracksFromSearch(searchTerm)
-            const artist = searchResults.data[0].artist.name
-            window.location.href = `artist.html?artist=${encodeURIComponent(artist)}`
+            const artistId = searchResults.data[0].artist.id
+            window.location.href = `artist.html?artist=${encodeURIComponent(artistId)}`
         } catch (e) {
             console.error(e)
         }

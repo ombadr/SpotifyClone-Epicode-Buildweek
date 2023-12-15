@@ -175,6 +175,7 @@ body {
 }
 
 /* PLAYER DESKTOP */
+
 #player-desktop {
   position: fixed;
   z-index: 10;
@@ -215,7 +216,7 @@ body {
       object-fit: contain;
       display: none;
 
-      @media screen and (min-width: 860px) {
+      @media screen and (min-width: $xlBreak) {
         display: block;
       }
     }
@@ -229,6 +230,7 @@ body {
     .volumeControls {
       position: relative;
     }
+
     #coverBarContainer {
       position: absolute;
       background-color: $cardBackground;
@@ -237,21 +239,29 @@ body {
       z-index: 10;
     }
   }
+
   .rightSideButtons {
     z-index: 20;
   }
 
   .nowPlaying {
     width: 300px;
-    gap: 20px;
+    gap: 10px;
 
     p {
       margin: 0;
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: $heartSize;
+      height: $heartSize;
+      display: none;
+      @media screen and (min-width: 992px) {
+        display: block;
+      }
+    }
+    #player-title-artist {
+      min-width: 100px;
     }
   }
 
@@ -339,6 +349,7 @@ body {
     border: none;
     background: none;
     color: $playerButtonsColor;
+
     svg {
       position: relative;
       z-index: 10;
@@ -352,6 +363,7 @@ body {
   .volumeContainer {
     position: relative;
     top: 2px;
+
     &:hover {
       cursor: pointer;
     }
@@ -382,16 +394,23 @@ body {
 
   .coloredVolumeBar .volumeFlex .emptyBar .fullBar {
     background-color: $spotifyGreen;
+
     &::after {
       content: '';
       display: inline-block;
-      width: 15px; /* Adjust the size of the sphere as needed */
-      height: 15px; /* Should be equal to width to create a perfect circle */
-      background-color: white; /* Color of the sphere */
-      border-radius: 50%; /* Make it a circle */
+      width: 15px;
+      /* Adjust the size of the sphere as needed */
+      height: 15px;
+      /* Should be equal to width to create a perfect circle */
+      background-color: white;
+      /* Color of the sphere */
+      border-radius: 50%;
+      /* Make it a circle */
       position: absolute;
-      top: 50%; /* Position it vertically in the middle */
-      right: 0; /* Position it at the end of the div */
+      top: 50%;
+      /* Position it vertically in the middle */
+      right: 0;
+      /* Position it at the end of the div */
       transform: translateY(-50%);
     }
   }
@@ -410,23 +429,6 @@ body {
 .playerControlsHighlighted {
   color: $spotifyGreen;
 }
-
-/* SUGGERITI MOBILE */
-.nav-tabs {
-  --bs-nav-tabs-border-color: black;
-
-  .nav-link {
-    color: white;
-  }
-}
-
-.suggeriti-mobile-cards {
-  h5 {
-    font-size: 12px;
-    font-weight: bold;
-  }
-}
-
 /* PLAYLIST MOBILE */
 
 #playlistMobileWrapper {

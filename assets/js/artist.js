@@ -21,14 +21,16 @@ const heroMobile = document.getElementById('hero-mobile')
 const heroMobileArtist = document.getElementById('heroMobileArtist')
 const listenersMobileNumber = document.getElementById('listenersMobileNumber')
 const likedMobile = document.getElementById('liked-mobile')
+const toggleButtonArtistTrack = document.getElementById('toggleButtonArtistTrack')
 
 
+let artistName = ''
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
 
-  fetchSongs()
+  fetchSongs().then(() => { })
 
   // MARCO'S MOBILE SCRIPT
 
@@ -64,7 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // END MARCO'S MOBILE SCRIPT
 
+  // MOBILE TOGGLE SCRIPT
+
+  const heroMobileBackButton = document.querySelector('.backbtn-album');
+  console.log(heroMobileBackButton);
+
+  heroMobileBackButton.addEventListener('click', () => {
+    console.log('clicked');
+  });
+
+
 })
+
+
 
 async function fetchSongs() {
   try {
@@ -80,6 +94,7 @@ async function fetchSongs() {
     console.log(searchResults)
     console.log('----------------------')
     const artist = searchResults.data[0].artist.name
+    artistName = artist
     const trackListUrl = searchResults.data[0].artist.tracklist
     const imageUrl = searchResults.data[0].album.cover_big
     console.log(artist)
@@ -338,19 +353,20 @@ function createPopularTracksMobile(title, image, counter) {
                 <p>${listeners}</p>
               </div>
               <div class="col-sm-1 ms-auto d-flex align-items-center">
+              <div id="toggleButtonArtistTrack">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
                   class="bi bi-three-dots-vertical"
-                  onclick="toggleDropdownMenu(this)"
                   viewBox="0 0 16 16"
                 >
                   <path
                     d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
                   />
                 </svg>
+                </div>
               </div>
             </div>`
 }

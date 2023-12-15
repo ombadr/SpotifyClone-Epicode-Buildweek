@@ -960,10 +960,10 @@
         <!-- <h1>Player desktop</h1> -->
         <div class="nowPlaying d-flex">
           <!-- Parte sinistra del player -->
-          <img src="assets/imgs/main/image-18.jpg" alt="Album picture" />
+          <img src="" alt="" />
           <div id="player-title-artist">
-            <h6>Song Title</h6>
-            <p>Artist name</p>
+            <h6></h6>
+            <p></p>
           </div>
           <!-- Heart empty -->
           <svg
@@ -1064,7 +1064,7 @@
                 />
               </svg>
             </button>
-            <button type="button" class="playerControls">
+            <button type="button" class="playerControls" id="forwardButton">
               <!-- Skip Forward -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1308,11 +1308,12 @@
         });
       });
 
-      function toggleDropdownMenu(element) {
+      async function toggleDropdownMenu(element) {
         if (!element) {
           console.error('Element not found');
           return;
         }
+
         let menu = document.createElement('div');
         menu.classList.add('toggle-popular-dropdown-menu');
         let firstRow = document.createElement('div');
@@ -1328,7 +1329,7 @@
         let songName = songNameElement ? songNameElement.innerText : 'Song';
         let artistName = artistNameElement
           ? artistNameElement.innerText
-          : 'Pinguini Tattici Nucleari';
+          : 'Artist';
 
         imageDiv.style.width = '35px';
         imageDiv.style.height = '35px';

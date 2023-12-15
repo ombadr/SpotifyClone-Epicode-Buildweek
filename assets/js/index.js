@@ -162,10 +162,10 @@ function createTracks(track) {
                     <p class="card-text">
                         Ascolta il nuovo singolo di ${artist.name}!
                     </p>
-                    <button class="rounded-pill border-0 spotify-green-bg mx-2 py-2 px-4">
+                    <button class="rounded-pill border-0 spotify-green-bg mx-2 py-2 px-4" id="playBtn-index">
                         <b>Play</b>
                     </button>
-                    <button class="rounded-pill border border-secondary bg-transparent text-white mx-2 py-2 px-4">
+                    <button class="rounded-pill border border-secondary bg-transparent text-white mx-2 py-2 px-4" id="saveBtn-index">
                         <b>Salva</b>
                     </button>
                     <button class="rounded-pill border-0 text-secondary bg-transparent">

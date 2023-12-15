@@ -12249,6 +12249,10 @@ body {
 }
 
 /* PLAYLIST MOBILE */
+#playlistMobileWrapper {
+  margin-bottom: 170px;
+}
+
 #playlist-mobile {
   border-radius: 20px;
   background-color: #242424;

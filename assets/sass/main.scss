@@ -416,6 +416,7 @@ body {
 /* NAVBAR MOBILE */
 #navbar-mobile {
   background-color: #242424;
+  z-index: 99;
 }
 
 /*ALBUM*/
@@ -735,5 +736,20 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
     h6 {
       display: none;
     }
+  }
+}
+
+.toggle-popular-dropdown-menu {
+  z-index: 100;
+  position: fixed;
+  background-color: #242424;
+  bottom: 0;
+  width: 100vh;
+  padding-bottom: 200px;
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: white;
   }
 }

@@ -241,7 +241,7 @@
       <div class="container-fluid d-none d-md-block" id="desktop-wrapper">
         <div class="row">
           <!--NAVBAR DESKTOP-->
-          <div id="navbar-desktop" class="col-lg-2 mt-2">
+          <div id="navbar-desktop" class="col-lg-2 d-none d-md-block mt-2">
             <div class="dropdown">
               <span
                 class="dots dropdown-toggle"
@@ -250,58 +250,113 @@
                 >. . .</span
               >
 
-              <ul class="dropdown-menu d-md-none">
-                <li><a class="dropdown-item" href="#">File</a></li>
-                <li><a class="dropdown-item" href="#">Modifica</a></li>
+              <ul
+                id="navbarDropdown"
+                class="dropdown-menu"
+                style="background-color: #242424"
+              >
                 <li>
-                  <a class="dropdown-item" href="#">Visualizzazione</a>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >File</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Riproduzione</a>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >Modifica</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Assistenza</a>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >Visualizzazione</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >Riproduzione</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >Assistenza</a
+                  >
                 </li>
               </ul>
             </div>
             <div class="row mt-3">
               <div class="col-12">
-                <div class="icon-column">
-                  <i class="bi bi-house-door-fill"></i>
-                  <span>Home</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                >
+                  <i
+                    class="bi bi-house-door-fill me-2"
+                    style="font-size: 25px"
+                  ></i>
+                  <span style="font-size: 20px">Home</span>
                 </div>
               </div>
+
               <div class="col-12">
-                <div class="icon-column">
-                  <i class="bi bi-search"></i>
-                  <span>Cerca</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                >
+                  <a
+                    href="search.html"
+                    style="text-decoration: none; color: inherit"
+                    target="_blank"
+                  >
+                    <i class="bi bi-search me-1" style="font-size: 25px"></i>
+                    <span style="font-size: 20px">Cerca</span>
+                  </a>
                 </div>
               </div>
+
               <div class="col-12">
-                <div class="icon-column">
-                  <i class="bi bi-spotify"></i>
-                  <span>La tua libreria</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                >
+                  <i class="bi bi-spotify me-2" style="font-size: 25px"></i>
+                  <span style="font-size: 20px">La tua libreria</span>
                 </div>
               </div>
             </div>
 
-            <div class="row mt-3">
+            <div
+              class="row mt-3 pb-3"
+              style="
+                border-bottom-style: groove;
+                border-bottom-color: rgb(151, 150, 150);
+              "
+            >
               <div class="col-12">
-                <div class="icon-column">
-                  <i class="bi bi-plus-square-fill"></i>
-                  <span>Crea playlist</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                >
+                  <i
+                    class="bi bi-plus-square-fill me-2"
+                    style="font-size: 25px"
+                  ></i>
+                  <span style="font-size: 20px">Crea playlist</span>
                 </div>
               </div>
+
               <div class="col-12">
-                <div class="icon-column">
-                  <i class="bi bi-heart-fill"></i>
-                  <span>Brani che ti piacciono</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                >
+                  <i class="bi bi-heart-fill me-2" style="font-size: 25px"></i>
+                  <span style="font-size: 20px">Brani che ti piacciono</span>
                 </div>
               </div>
+
               <div class="col-12">
-                <div class="icon-column">
-                  <i class="bi bi-bookmark-heart-fill"></i>
-                  <span>I tuoi episodi</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                >
+                  <i
+                    class="bi bi-bookmark-heart-fill me-2"
+                    style="font-size: 25px"
+                  ></i>
+                  <span style="font-size: 20px">I tuoi episodi</span>
                 </div>
               </div>
             </div>
@@ -310,6 +365,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('early stage emily syndrome')"
+                  style="font-size: 1.1rem"
                   >early stage emily syndrome</span
                 >
               </div>
@@ -317,6 +373,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('Be the Young')"
+                  style="font-size: 1.1rem"
                   >Be the Young</span
                 >
               </div>
@@ -324,6 +381,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('Gigi D&#39;Alessio')"
+                  style="font-size: 1.1rem"
                   >Gigi D'Alessio</span
                 >
               </div>
@@ -331,6 +389,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('that fucking mood')"
+                  style="font-size: 1.1rem"
                   >that fucking mood</span
                 >
               </div>
@@ -338,6 +397,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('landing page')"
+                  style="font-size: 1.1rem"
                   >landing page</span
                 >
               </div>
@@ -345,6 +405,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('2021 lol')"
+                  style="font-size: 1.1rem"
                   >2021 lol</span
                 >
               </div>
@@ -352,6 +413,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('Frah Quintale mix')"
+                  style="font-size: 1.1rem"
                   >Frah Quintale mix</span
                 >
               </div>
@@ -359,6 +421,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('Lidia Emily')"
+                  style="font-size: 1.1rem"
                   >Lidia Emily</span
                 >
               </div>
@@ -366,6 +429,7 @@
                 <span
                   class="playlistPrivate"
                   onclick="selezionaPlaylist('Francesco Guccini')"
+                  style="font-size: 1.1rem"
                   >Francesco Guccini</span
                 >
               </div>

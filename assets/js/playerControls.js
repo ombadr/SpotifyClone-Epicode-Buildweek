@@ -69,10 +69,10 @@ async function fetchData(url, options) {
     // Parse the response as JSON
     const data = await response.json();
     const song = data.data;
-    
+
     // Sets player to play song
     setPlaySong(song);
-    
+
   } catch (error) {
     // Handle errors here
     console.error("Error:", error);
@@ -112,13 +112,42 @@ function setPlaySong(songData) {
     , 500);
   let endSong = setInterval(() => {
     if (songObject.ended) {
-      pauseButton.classList.add('d-none');
-      playButton.classList.remove('d-none');
-      barFill = 0;
-      seconds = 0;
-      // clearInterval(songCurrentTime);
       clearInterval(songDuration);
       songCurrentTime.innerHTML = "0:00";
+      songNumber++;
+      setSongInfo(songData)
+      songObject.pause();
+      songObject = new Audio(songData[songNumber].preview);
+
+      storeVolume = setInterval(() => {
+        // Check every 100ms what the volume is and updates it in real time
+        songObject.volume = localStorage.getItem('Volume');
+      }, 250);
+      // Updates songObject current time
+      songCurrentTime = setInterval(() => {
+        displayCurrentTime(songObject);
+      }, 100);
+      // Displays overal songObject duration
+      songDuration = setTimeout(() => {
+        displaySongDuration(songObject)
+        duration = songObject.duration;
+        clearTimeout(songDuration);
+      }, 500);
+      checkSongLoop = setInterval(() =>
+        repeatButton.classList.contains('playerControlsHighlighted') ? (songObject.loop = true) : (songObject.loop = false)
+        , 500);
+      endSong = setInterval(() => {
+        if (songObject.ended) {
+          pauseButton.classList.add('d-none');
+          playButton.classList.remove('d-none');
+          barFill = 0;
+          seconds = 0;
+          // clearInterval(songCurrentTime);
+          clearInterval(songDuration);
+          songCurrentTime.innerHTML = "0:00";
+        }
+      }, 500)
+      setTimeout(() => songObject.play(), 100);
     }
   }, 500)
 
@@ -131,7 +160,7 @@ function setPlaySong(songData) {
       songNumber--;
       setSongInfo(songData)
       songObject.pause();
-      songObject = new Audio (songData[songNumber].preview);
+      songObject = new Audio(songData[songNumber].preview);
       storeVolume = setInterval(() => {
         // Check every 100ms what the volume is and updates it in real time
         songObject.volume = localStorage.getItem('Volume');
@@ -176,11 +205,11 @@ function setPlaySong(songData) {
 
   forwardButton.addEventListener('click', (event) => {
     event.preventDefault()
-    if (songNumber < songData.length){
+    if (songNumber < songData.length) {
       songNumber++;
       setSongInfo(songData)
       songObject.pause();
-      songObject = new Audio (songData[songNumber].preview);
+      songObject = new Audio(songData[songNumber].preview);
 
       storeVolume = setInterval(() => {
         // Check every 100ms what the volume is and updates it in real time
@@ -216,7 +245,7 @@ function setPlaySong(songData) {
       songNumber = randomSong();
       setSongInfo(songData)
       songObject.pause();
-      songObject = new Audio (songData[songNumber].preview);
+      songObject = new Audio(songData[songNumber].preview);
       storeVolume = setInterval(() => {
         // Check every 100ms what the volume is and updates it in real time
         songObject.volume = localStorage.getItem('Volume');

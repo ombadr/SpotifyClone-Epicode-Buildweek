@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchSongs()
 
 
+
+
   // MARCO'S MOBILE SCRIPT
 
   let shuffleIcon = document.getElementById("shuffleIcon");
@@ -187,12 +189,16 @@ function createHeroDesktop(artist) {
 
 
 
-  const heroDesktopHTML = `<div id="hero-artist" class="mb-0">
-            <div class="container">
+  const heroDesktopHTML = `<div id="hero-artist" class="mb-0 mt-3">
+              <!--ADD HERE DYNAMICALLY -->
+
+              <div class="container" id="heroDesktopSection">
                 <div class="row">
                   <div class="col-md-6">
                     <button
-                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2"
+                      onclick="window.history.back()"
+                      id="goBackButton"
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mt-2 px-2 py-1"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -208,83 +214,32 @@ function createHeroDesktop(artist) {
                         />
                       </svg>
                     </button>
-                    <button
-                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-chevron-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="dropdown d-flex justify-content-end">
-                      <img src="" alt="" />
-                      <button
-                        class="dropdown-toggle rounded-pill border-0 bg-black text-white mx-2"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        User 1
-                      </button>
-                      <ul class="dropdown-menu bg-black bg-gradient">
-                        <li>
-                          <img src="" alt="" /><a
-                            class="dropdown-item text-white"
-                            href="#"
-                            >User 2</a
-                          >
-                        </li>
-                        <li>
-                          <img src="" alt="" /><a
-                            class="dropdown-item text-white"
-                            href="#"
-                            >User 3</a
-                          >
-                        </li>
-                        <li>
-                          <img src="" alt="" /><a
-                            class="dropdown-item text-white"
-                            href="#"
-                            >User 4</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
-              </div>
-              <p class="d-inline-block text-primary mx-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-patch-check-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
-                  />
-                </svg>
-              </p>
-              <p class="d-inline-block">Artista verificato</p>
+                <p class="d-inline-block text-primary mx-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-patch-check-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"
+                    />
+                  </svg>
+                </p>
+                <p class="d-inline-block">Artista verificato</p>
 
-              <div>
-                <h1 class="display-1 mx-3"><b>${artist}</b></h1>
-                <p class="mx-3 p-1">${listeners} ascoltatori mensili</p>
+                <!--RENDER THIS DYNAMICALLY-->
+
+                <div id="heroDesktopTitle">
+                  <h1 class="display-1 mx-3"><b>${artist}</b></h1>
+                  <p class="mx-3 p-1">${listeners} ascoltatori mensili</p>
+                </div>
               </div>
-              </div>`
+            </div>`
 
 
 

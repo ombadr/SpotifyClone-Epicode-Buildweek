@@ -479,14 +479,15 @@
           <!--CENTER SECTION-->
           <section class="col-lg-7 d-none d-md-block">
             <!--HERO ARTIST-->
-            <div id="hero-artist" class="mb-0">
+            <div id="hero-artist" class="mb-0 mt-3">
               <!--ADD HERE DYNAMICALLY -->
 
               <div class="container" id="heroDesktopSection">
                 <div class="row">
                   <div class="col-md-6">
                     <button
-                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2"
+                      id="goBackButton"
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mt-2 px-2 py-1"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -502,30 +503,22 @@
                         />
                       </svg>
                     </button>
-
-                    <button
-                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-chevron-right"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                        />
-                      </svg>
-                    </button>
+                    <!-- SCRIPT GO BACK -->
+                    <script>
+                      document
+                        .getElementById('goBackButton')
+                        .addEventListener('click', function () {
+                          window.history.back();
+                        });
+                    </script>
                   </div>
+                  <!--REMOVE THIS-->
+                  <!--
                   <div class="col-md-6">
                     <div class="dropdown d-flex justify-content-end">
                       <img src="" alt="" />
                       <button
-                        class="dropdown-toggle rounded-pill border-0 bg-black text-white mx-2"
+                        class="dropdown-toggle rounded-pill border-0 bg-black text-white mb-3 mt-2 px-2 py-1"
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
@@ -557,6 +550,8 @@
                       </ul>
                     </div>
                   </div>
+                -->
+                  <!--REMOVE HERE-->
                 </div>
                 <p class="d-inline-block text-primary mx-2">
                   <svg
@@ -1331,6 +1326,16 @@
         // Aggiunta del menu al DOM
         document.body.appendChild(menu);
       }
+    </script>
+    <script>
+      const btnBackHero = document.getElementById('goBackButton');
+      console.log(btnBackHero);
+      document
+        .getElementById('goBackButton')
+        .addEventListener('click', function () {
+          window.history.back();
+          console.log('clicked');
+        });
     </script>
   </body>
 </html>

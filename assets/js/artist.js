@@ -21,9 +21,20 @@ const listenersMobileNumber = document.getElementById('listenersMobileNumber')
 const likedMobile = document.getElementById('liked-mobile')
 
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
+
   fetchSongs()
+
+  // HERO MOBILE BACK BUTTON
+
+
+
+
+
+
 
 
 

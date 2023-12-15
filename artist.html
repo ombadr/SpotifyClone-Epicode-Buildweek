@@ -19,6 +19,19 @@
       <!--HERO MOBILE-->
 
       <div id="hero-mobile" class="d-md-none">
+        <button
+          id="heroMobileBackButton"
+          style="
+            position: fixed;
+            top: 0;
+            z-index: 100000;
+            background: transparent;
+            border: none;
+          "
+        >
+          <i class="backbtn-album bi bi-arrow-left"></i>
+        </button>
+
         <div id="hero-overlay">
           <div id="heroMobileArtist">
             <!--RENDER THIS DYNAMICALLY-->
@@ -1270,6 +1283,13 @@
 
       document.addEventListener('DOMContentLoaded', function () {
         toggleDropdownMenu(element);
+
+        const heroMobileBackButton = document.querySelector('.backbtn-album');
+        console.log(heroMobileBackButton);
+
+        heroMobileBackButton.addEventListener('click', () => {
+          console.log('clicked');
+        });
       });
 
       function toggleDropdownMenu(element) {
@@ -1344,6 +1364,16 @@
           window.history.back();
           console.log('clicked');
         });
+    </script>
+    <script>
+      const heroMobileBackButton = document.getElementById(
+        'heroMobileBackButton'
+      );
+      console.log(heroMobileBackButton);
+
+      heroMobileBackButton.addEventListener('click', () => {
+        window.history.back();
+      });
     </script>
   </body>
 </html>

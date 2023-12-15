@@ -111,7 +111,7 @@ function setPlaySong(songData) {
     repeatButton.classList.contains('playerControlsHighlighted') ? (songObject.loop = true) : (songObject.loop = false)
     , 500);
   let endSong = setInterval(() => {
-    if (songObject.ended) {
+    if (songObject.ended && !songObject.loop) {
       clearInterval(songDuration);
       songCurrentTime.innerHTML = "0:00";
       songNumber++;
@@ -150,6 +150,7 @@ function setPlaySong(songData) {
       setTimeout(() => songObject.play(), 100);
     }
   }, 500)
+
 
   // Sets function of backward button
   backWardButton.addEventListener('click', (event) => {
@@ -204,7 +205,12 @@ function setPlaySong(songData) {
   });
 
   forwardButton.addEventListener('click', (event) => {
-    event.preventDefault()
+    event.preventDefault();
+    // Toggle pause play button
+    if(pauseButton.classList.contains('d-none')){
+      pauseButton.classList.remove('d-none');
+      playButton.classList.add('d-none');
+    }
     if (songNumber < songData.length) {
       songNumber++;
       setSongInfo(songData)

@@ -252,7 +252,7 @@
 
               <ul
                 id="navbarDropdown"
-                class="dropdown-menu"
+                class="dropdown-menu d-none"
                 style="background-color: #242424"
               >
                 <li>
@@ -437,13 +437,14 @@
           </div>
 
           <!--CENTER SECTION-->
-          <section class="col-lg-7">
+          <section class="col-lg-8">
             <!--HERO ALBUM-->
             <div id="hero-album">
               <div class="container">
                 <div class="row">
                   <div class="col-md-6 mt-2">
                     <button
+                      onclick="window.history.back()"
                       class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 mx-2 m-1"
                     >
                       <svg
@@ -461,7 +462,7 @@
                       </svg>
                     </button>
                     <button
-                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 m-1"
+                      class="rounded-pill border-0 text-secondary bg-black bg-gradient mb-3 m-1 d-none"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -479,7 +480,7 @@
                     </button>
                   </div>
                   <div class="col-md-6">
-                    <div class="dropdown d-flex justify-content-end m-1">
+                    <div class="dropdown d-flex justify-content-end m-1 d-none">
                       <img src="" alt="" />
                       <button
                         class="dropdown-toggle rounded-pill border-0 bg-black text-white mx-2"

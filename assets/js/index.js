@@ -7,37 +7,21 @@ const options = {
   }
 }
 
-const ID = '122366' // Test album ID
-const artist = '50 cent' // Test artist
+const likedAlbums = ['122366', '7090505', '496520481', '244223', '9410100'];
+const homePageTracks = ['92720102', '1141668', '1662139552'];
+const suggeritiAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257'];
+const mobileMusicaAlbums = ['297188862', '1238967', '103248', '108938', '1238967', '340077257'];
+const mobilePodcastShowAlbums = ['2732901', '108938', '1238967', '340077257', '297188862', '103248'];
+const playlistMobileAlbums = ['2732901', '108938', '1238967'];
 
 
-// 5 random albums
+const likedAlbumCards = document.querySelector('#likedCards');
+const trackSliderItems = document.querySelector('#tracksSliderItems');
+const suggeritiAlbumsContainer = document.querySelector('#suggeritiAlbums');
+const mobileMusicaSuggeriti = document.querySelector('#mobileMusicaSuggeriti');
+const mobilePodcastSuggeriti = document.querySelector('#mobilePodcastSuggeriti');
+const playlistMobileAlbumsContainer = document.querySelector('#playlistMobile');
 
-let likedAlbums = ['122366', '7090505', '496520481', '244223', '9410100'] // 5 random albums for liked section in homepage
-let homePageTracks = ['92720102', '1141668', '1662139552'] // 3 random tracks for homepage
-let suggeritiAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257'] // 6 randoms albums for suggeriti section in homepage
-
-let mobileMusicaAlbums = ['297188862', '1238967', '103248', '108938', '1238967', '340077257']
-let mobilePodcastShowAlbums = ['2732901', '108938', '1238967', '340077257', '297188862', '103248']
-
-let playlistMobileAlbums = ['2732901', '108938', '1238967']
-
-
-const likedAlbumCards = document.querySelector('#likedCards') // homepage liked cards
-const trackSliderItems = document.querySelector('#tracksSliderItems') // homepage slider
-const suggeritiAlbumsContainer = document.querySelector('#suggeritiAlbums')
-const mobileMusicaSuggeriti = document.querySelector('#mobileMusicaSuggeriti')
-const mobilePodcastSuggeriti = document.querySelector('#mobilePodcastSuggeriti')
-const playlistMobileAlbumsContainer = document.querySelector('#playlistMobile')
-
-// FETCH FUNCTIONS (RUN THESE FUNCTIONS TO USE THE API)
-// getTracksForSlider() // get three tracks from the api for the slider in homepage
-// getSuggeritiAlbums() // get suggested albums for the homepage
-// getLikedAlbumTracks() // get liked album tracks in homepage
-
-// getMobileMusicaSuggeriti() // get musica suggerita for the mobile
-// getMobilePodcastSuggeriti() // get podcast suggeriti for the mobile
-// getMobilePlaylistAlbums() // get playlist for the mobile
 
 async function fetchHomepageData() {
   try {
@@ -57,13 +41,6 @@ async function fetchHomepageData() {
 }
 
 fetchHomepageData();
-
-// END FETCH FUNCTIONS
-
-// getAlbumTracks(ID)
-// getTracksFromSearch(artist)
-
-// GET LIKED ALBUMS
 
 async function getAlbumTracks(id) {
   try {
@@ -86,7 +63,6 @@ async function getLikedAlbumTracks() {
       const albumTracks = await getAlbumTracks(albumId);
       const albumHTML = createLikedAlbumHTML(albumTracks);
       albumsHTML += albumHTML;
-      // console.log('Album tracks: ', albumTracks);
     }
 
     displayLikedAlbums(albumsHTML);
@@ -121,12 +97,6 @@ function displayLikedAlbums(albumsHTML) {
   likedAlbumCards.innerHTML = albumsHTML;
 }
 
-// getLikedAlbumTracks(); // activate this to start the fetch request
-
-// END LIKED ALBUMS 
-
-
-// GET TRACKS FOR THE HOMEPAGE
 
 async function getTrackFromID(trackID) {
   try {
@@ -140,7 +110,7 @@ async function getTrackFromID(trackID) {
   }
 }
 
-let isFirstItem = true; // Check if track is the first item 
+let isFirstItem = true;
 
 function createTracks(track) {
   const { title, artist, album } = track;
@@ -205,10 +175,6 @@ async function getTracksForSlider() {
 }
 
 
-// getTracksForSlider(); // Activate this to start the api fetch
-
-// END GET TRACKS FOR HOMEPAGE
-
 async function getSuggeritiAlbums() {
   try {
     let albumsHTML = '';
@@ -258,11 +224,6 @@ function displaySuggeritiAlbums(albumsHTML) {
   suggeritiAlbumsContainer.innerHTML = albumsHTML
 }
 
-// getSuggeritiAlbums() // Activate this to start the API fetch
-
-// END SUGGERITI ALBUMS
-
-// SUGGERITI MOBILE
 
 async function getMobileMusicaSuggeriti() {
   try {
@@ -366,13 +327,6 @@ function displayMobilePodcastSuggeriti(albumsHTML) {
   mobilePodcastSuggeriti.innerHTML = albumsHTML
 }
 
-// getMobileMusicaSuggeriti() // activate this for the fetch request
-
-// getMobilePodcastSuggeriti() // activate this for the fetch request
-
-// END SUGGERITI MOBILE
-
-// PLAYLIST MOBILE
 
 async function getMobilePlaylistAlbums() {
   try {
@@ -426,6 +380,4 @@ function displayMobilePlaylistAlbums(albumHTML) {
   playlistMobileAlbumsContainer.innerHTML = albumHTML
 }
 
-// getMobilePlaylistAlbums() // activate this for the fetch request
-// END PLAYLIST MOBILE
 

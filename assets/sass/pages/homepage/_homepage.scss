@@ -1,0 +1,413 @@
+/*HOMEPAGE*/
+
+/* NAVBAR DESKTOP */
+
+.dropdown-toggle {
+  cursor: pointer;
+  &::after {
+    display: none;
+  }
+}
+
+#navbar-desktop,
+#friends {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.friends-card {
+  h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  span {
+    font-size: 11px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+/*CENTER SECTION */
+#center-section {
+  overflow-y: auto;
+  height: 87vh;
+}
+
+/* HERO HOMEPAGE */
+
+.spotify-green-bg {
+  background: $spotifyGreen;
+}
+
+//button trasform index
+#playBtn-index,
+#saveBtn-index {
+  transition: transform 0.1s ease-in-out;
+}
+
+#playBtn-index:hover,
+#saveBtn-index:hover {
+  transform: scale(1.1);
+}
+
+#saveBtn-index:hover {
+  background-color: white !important;
+  color: black !important;
+}
+
+/*LIKED SECTION */
+
+#liked {
+  color: $darkTextColor;
+
+  a.card-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default text color */
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    color: $lightTextColor;
+    margin-bottom: 30px;
+  }
+
+  .playlists {
+    gap: 10px;
+
+    .card {
+      padding: 10px;
+      background-color: $cardBackground;
+      border: none;
+      display: block;
+      &:hover {
+        cursor: pointer;
+        background-color: $hoverLighterBackground;
+      }
+
+      // Responsive behaviour based on number of cards
+      @media screen and (min-width: $lgBreak) {
+        display: none;
+        @for $i from 1 to 4 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: $xlBreak) {
+        @for $i from 1 to 5 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: $xxlBreak) {
+        @for $i from 1 to 6 {
+          &:nth-child(#{$i}) {
+            display: block;
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      h5 {
+        color: $lightTextColor;
+        font-size: 1rem;
+      }
+
+      p {
+        color: $darkTextColor;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+/* PLAYER DESKTOP */
+#player-desktop {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  background-color: $cardBackground;
+  width: 100vw;
+  height: 100px;
+  justify-content: space-between;
+
+  svg,
+  progress {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .nowPlaying,
+  .playbackControls,
+  .volumeControls {
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+
+    h6 {
+      color: $lightTextColor;
+      font-size: 0.8rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: $darkTextColor;
+    }
+
+    img {
+      border-radius: 3px;
+      box-shadow: 1px 1px, 5px, black;
+      width: 60px;
+      object-fit: contain;
+      display: none;
+
+      @media screen and (min-width: 860px) {
+        display: block;
+      }
+    }
+
+    #volumeBar,
+    #coverBar {
+      width: 90px;
+      height: 10px;
+    }
+
+    .volumeControls {
+      position: relative;
+    }
+    #coverBarContainer {
+      position: absolute;
+      background-color: $cardBackground;
+      // background-color: red;
+      right: 154px;
+      z-index: 10;
+    }
+  }
+  .rightSideButtons {
+    z-index: 20;
+  }
+
+  .nowPlaying {
+    width: 300px;
+    gap: 20px;
+
+    p {
+      margin: 0;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .playbackControls {
+    align-items: center;
+    position: relative;
+    right: 20px;
+
+    @media screen and (min-width: $lgBreak) {
+      position: static;
+    }
+
+    div {
+      align-items: center;
+      padding: 5px;
+      gap: 8px;
+
+      progress {
+        height: 8px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .playerButtons {
+      height: 40px;
+      position: relative;
+      bottom: 10px;
+
+      svg {
+        width: 30px;
+        height: 20px;
+
+        &:hover {
+          scale: 1.2;
+          transition-property: scale;
+          transition-duration: 100ms;
+          transition-timing-function: ease-in-out;
+        }
+      }
+    }
+  }
+
+  #playButton,
+  #pauseButton {
+    width: 30px;
+    height: 30px;
+  }
+
+  .playerBar {
+    position: relative;
+    bottom: 10px;
+
+    progress {
+      width: 300px;
+    }
+  }
+
+  .playbackControls {
+    gap: 10px;
+  }
+}
+
+#heartFill {
+  display: none;
+}
+
+.volumeControls {
+  svg {
+    display: none;
+
+    @media screen and (min-width: $lgBreak) {
+      display: block;
+    }
+  }
+
+  #volumeIcon,
+  #fullscreenIcon {
+    display: block;
+  }
+
+  .rightSideButtons {
+    border: none;
+    background: none;
+    color: $playerButtonsColor;
+    svg {
+      position: relative;
+      z-index: 10;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .volumeContainer {
+    position: relative;
+    top: 2px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .volumeFlex {
+      align-items: center;
+      height: $progressBarHeight;
+      background-color: $playerButtonsColor;
+      border-radius: 10px;
+
+      .emptyBar {
+        background-color: $darkTextColor;
+        width: 100%;
+        height: $progressBarHeight;
+        border-radius: $progressBarRound;
+        position: relative;
+
+        .fullBar {
+          position: absolute;
+          border-radius: $progressBarRound;
+          height: $progressBarHeight;
+          background-color: $lightTextColor;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .coloredVolumeBar .volumeFlex .emptyBar .fullBar {
+    background-color: $spotifyGreen;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 15px; /* Adjust the size of the sphere as needed */
+      height: 15px; /* Should be equal to width to create a perfect circle */
+      background-color: white; /* Color of the sphere */
+      border-radius: 50%; /* Make it a circle */
+      position: absolute;
+      top: 50%; /* Position it vertically in the middle */
+      right: 0; /* Position it at the end of the div */
+      transform: translateY(-50%);
+    }
+  }
+
+  .volumeIconAndSlider {
+    height: 45px;
+  }
+}
+
+.playerControls {
+  border: none;
+  background-color: transparent;
+  color: $lightTextColor;
+}
+
+.playerControlsHighlighted {
+  color: $spotifyGreen;
+}
+
+/* SUGGERITI MOBILE */
+.nav-tabs {
+  --bs-nav-tabs-border-color: black;
+
+  .nav-link {
+    color: white;
+  }
+}
+
+.suggeriti-mobile-cards {
+  h5 {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+/* PLAYLIST MOBILE */
+
+#playlistMobileWrapper {
+  margin-bottom: 170px;
+}
+
+#playlist-mobile {
+  border-radius: 20px;
+  background-color: #242424;
+}
+
+.bi-heart-fill {
+  color: #1ed75f;
+}
+
+/* PLAYER MOBILE */
+#player-mobile {
+  background-color: #242424;
+  border-radius: 10px;
+  bottom: 100px;
+}
+
+/* NAVBAR MOBILE */
+#navbar-mobile {
+  background-color: #242424;
+  z-index: 99;
+}

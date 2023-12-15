@@ -170,7 +170,6 @@ async function getTracksForSlider() {
   }
 }
 
-
 async function getSuggeritiAlbums() {
   try {
     let albumsHTML = '';
@@ -187,7 +186,6 @@ async function getSuggeritiAlbums() {
     console.error(e);
   }
 }
-
 
 function createSuggeritiAlbums(albumTracks, albumId) {
   const { title, cover_big } = albumTracks

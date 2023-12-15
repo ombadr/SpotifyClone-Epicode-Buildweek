@@ -1,0 +1,206 @@
+/*ARTIST*/
+
+/*POPULAR MOBILE
+CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
+.spacingAntiBar {
+  padding-bottom: 6rem !important;
+}
+
+/* HERO MOBILE */
+
+#hero-mobile {
+  position: relative;
+  background: url('/assets/imgs/artist/img-hero.jpg') center/cover;
+  height: 50vh;
+  overflow: hidden;
+}
+
+#hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.2) 10%,
+    rgba(0, 0, 0, 0.5) 80%
+  );
+  z-index: 1;
+  h1 {
+    position: relative;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 2.9rem;
+    line-height: 3.8rem;
+  }
+}
+
+/* LISTENER MOBILE */
+#listeners-mobile {
+  color: #b3b3b3;
+  padding: 1rem;
+}
+
+#listeners-counter {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+#icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#follow-wrapper {
+  display: flex;
+  align-items: center;
+  button {
+    font-size: 0.8rem;
+    margin-right: 1.4rem;
+    background-color: inherit;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 4px 12px;
+  }
+}
+
+#follow-wrapper button.followed {
+  border-color: #b3b3b3;
+}
+
+#shuffle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+#shuffleDot {
+  background-color: #1db954;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  display: none;
+  transform: translate(6px, -3px);
+}
+
+.dotsIcon,
+.shuffleIcon {
+  color: inherit;
+  font-size: 1.3rem;
+}
+
+.green {
+  color: #1db954;
+}
+
+#playIcon {
+  margin-left: 0.8rem;
+  color: #1db954;
+  font-size: 2.5rem;
+}
+
+#liked-mobile {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  padding-top: 0;
+
+  .bi-heart-fill {
+    background-color: #1db954;
+    color: #212121;
+    border-radius: 50%;
+    font-size: 1rem;
+    width: 22px;
+    height: 22px;
+    padding-left: 2.5px;
+    margin-left: -5px;
+    margin-right: -1px;
+    display: inline-block;
+  }
+}
+
+/* LIKED MOBILE */
+
+.liked-img {
+  border-radius: 50%;
+}
+
+#likedIcon {
+  margin-right: 1rem;
+}
+
+.likedSong {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.likedNum {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+}
+
+/*END LIKED MOBILE*/
+
+/*HERO ARTIST*/
+
+/*Aggiunta classe custom per img di bg di div hero artist */
+#buttonFollowingBar {
+  background-color: $spotifyGreen;
+}
+/*Colore bottone play following bar pagina artist*/
+.custom-gradient-background {
+  background: linear-gradient(to bottom, #cc9900, #444444, #000000);
+}
+/*aggiunta classe custom per il bg color della sezione album*/
+.sfumaAlbum {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+}
+
+//following bar style - artist
+
+#following-bar {
+  background-color: $lighterBackground;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+}
+
+//follow button style - artist
+
+#follow-btn-artist {
+  padding: 0.3rem 0.8rem;
+  background: inherit;
+  border: 1px solid white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#treDots-artist {
+  background-color: $lighterBackground !important;
+}
+
+#user1-btn-artist {
+  margin-top: 1rem !important;
+}
+
+.toggle-popular-dropdown-menu {
+  z-index: 100;
+  position: fixed;
+  background-color: #242424;
+  bottom: 0;
+  width: 100vh;
+  padding-bottom: 200px;
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+}

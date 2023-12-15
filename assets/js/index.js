@@ -28,7 +28,7 @@ const trackSliderItems = document.querySelector('#tracksSliderItems') // homepag
 const suggeritiAlbumsContainer = document.querySelector('#suggeritiAlbums')
 const mobileMusicaSuggeriti = document.querySelector('#mobileMusicaSuggeriti')
 const mobilePodcastSuggeriti = document.querySelector('#mobilePodcastSuggeriti')
-const playlistMobileAlbumsContainer = document.querySelector('#playlistMobile')
+const playlistMobileAlbumsContainer = document.querySelector('#playlistMobileWrapper')
 
 // FETCH FUNCTIONS (RUN THESE FUNCTIONS TO USE THE API)
 // getTracksForSlider() // get three tracks from the api for the slider in homepage

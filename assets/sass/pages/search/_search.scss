@@ -1,0 +1,43 @@
+/*SEARCH*/
+
+#main-search {
+  overflow-y: auto;
+  height: 87vh;
+}
+
+#search-component {
+  input {
+    color: white;
+    &::placeholder {
+      color: $secondary;
+      font-weight: bold;
+    }
+  }
+  .custom-focus:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+  }
+}
+
+//margin-bottom search
+#card-section-search {
+  margin-bottom: 11rem;
+}
+
+@media screen and (min-width: 768px) {
+  #card-section-search {
+    margin-bottom: 9rem;
+  }
+}
+
+/* CATEGORIES */
+
+.categories-card {
+  overflow: hidden;
+  img {
+    transform: translateX(16px);
+    rotate: 20deg;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+  }
+}

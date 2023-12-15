@@ -6,6 +6,8 @@ let seconds = 0;
 let volume = 1;
 let duration = 0;
 
+const bandsArray = ["ABBA", "AC/DC", "Aerosmith", "The Allman Brothers Band", "Amadou and Mariam", "The Andrews Sisters", "The Animals", "Arcade Fire", "The Band", "The Beach Boys", "The Beastie Boys", "The Beatles", "The Bee Gees", "Big Star", "Black Flag", "Black Sabbath", "Blondie", "Booker T. and the MGs", "Boston", "The Boswell Sisters", "Boyz II Men", "Brooks & Dunn", "Buffalo Springfield", "The Byrds", "Calle 13", "The Chemical Brothers", "Chicago", "The Clash", "The Coasters", "Coldplay", "Alice Cooper", "Cream", "Creedence Clearwater Revival", "Crosby, Stills & Nash", "Daft Punk", "De La Soul", "Death Cab for Cutie", "The Decemberists", "Def Leppard", "Devo", "The Dillards", "Dion and the Belmonts", "Dire Straits", "Dixie Chicks", "The Doors", "The Drifters", "The Eagles", "Earth, Wind & Fire", " Emerson Lake & Palmer", "The Everly Brothers", "The Flamingos", "Fleetwood Mac", "The Flying Burrito Brothers", "The Four Seasons", "The Four Tops", "Fugazi", "The Gang of Four", "Genesis", "Grandmaster Flash and the Furious Five", "The Grateful Dead", "Green Day", "Guns N Roses", "Hüsker Dü", "The Hollies", "Iggy and the Stooges", "The Ink Spots", "The Isley Brothers", "The Jam", "The Jefferson Airplane", "The Jesus and Mary Chain", "Jonas Brothers", "Joy Division", "The Judds", "The Kingston Trio", "The Kinks", "Gladys Knight and the Pips", "Kool and the Gang", "Kraftwerk", "Ladysmith Black Mambazo", "Led Zeppelin", "Little Anthony and the Imperials", "The Louvin Brothers", "Love", "The Lovin Spoonful", "Frankie Lymon and the Teenagers", "Lynyrd Skynyrd", "The MC5", "The Mamas and the Papas", "The Mekons", "Metallica", "The Mills Brothers", "Modest Mouse", "The Monkees", "The Moody Blues", "The Moonglows", "Mumford & Sons", "My Chemical Romance", "New Order", "The New York Dolls", "Nine Inch Nails", "Nirvana", "The OJays", "The Ohio Players", "One Direction", "The Orioles", "OutKast", "Parliament-Funkadelic", "Pavement", "Pearl Jam", "Pere Ubu", "The Pet Shop Boys", "Peter, Paul and Mary", "Pink Floyd", "Pixies", "The Platters", "Poco", "The Police", "Portishead", "Public Enemy", "Puffy AmiYumi", "Queen", "R.E.M.", "Radiohead", "Rage Against the Machine", "The Ramones", "Rascal Flatts", "Red Hot Chili Peppers", "The Replacements", "The Rolling Stones", "Roxy Music", "Run-D.M.C.", "Sam and Dave", "Santana", "The Sex Pistols", "The Shadows", "The Shirelles", "Sleater-Kinney", "Sly and the Family Stone", "Smashing Pumpkins", "The Smiths", "Sonic Youth", "The Soul Stirrers", "Spice Girls", "Stanley Brothers", "The Staple Singers", "Steely Dan", "The Strokes", "TV on the Radio", "Talking Heads", "Television", "The Temptations", "Tinariwen", "Toots and the Maytals", "Traffic", "The Turtles", "U2", "Van Halen", "The Velvet Underground", "The Ventures", "The Weavers", "The White Stripes", "The Who", "Wilco", "X", "The Yardbirds", "Yes", "Yo La Tengo", "ZZ Top"];
+
 // Selezione elementi del DOM
 const playButton = document.querySelector("#playButton");
 const pauseButton = document.querySelector("#pauseButton");
@@ -24,8 +26,8 @@ const volumeContainer = document.querySelector(".volumeContainer");
 const fullBar = document.querySelector(".fullBar");
 const nowPlaying = document.querySelector('.nowPlaying');
 const playKey = 'Enter';
-let bandRequested = 'blindguardian'
-let songNumber = 6;
+let bandRequested = randomBand(bandsArray);
+let songNumber = randomSong();
 
 // Carica gli script al caricamento della finestra
 window.onload = (event) => {
@@ -67,10 +69,10 @@ async function fetchData(url, options) {
     // Parse the response as JSON
     const data = await response.json();
     const song = data.data;
-    setSongInfo(song[songNumber]);
+    setSongInfo(song);
 
     // Sets player to play song
-    setPlaySong(song[songNumber]);
+    setPlaySong(song);
 
   } catch (error) {
     // Handle errors here
@@ -78,10 +80,19 @@ async function fetchData(url, options) {
   }
 }
 
+// Set picture, title and artist info. To recall when needed
+function setSongInfo(song) {
+  let artistName = song[songNumber].artist.name;
+  let title = song[songNumber].title;
+  let imageUrl = song[songNumber].artist.picture_small;
+  nowPlaying.querySelector('img').src = imageUrl;
+  nowPlaying.querySelector('div h6').innerHTML = artistName;
+  nowPlaying.querySelector('div p').innerHTML = title;
+}
 
 // Plays and stops song when triggered
 function setPlaySong(songData) {
-  let song = new Audio(songData.preview);
+  let song = new Audio(songData[songNumber].preview);
   let storeVolume = setInterval(() => {
     // Check every 100ms what the volume is and updates it in real time
     song.volume = localStorage.getItem('Volume');
@@ -93,11 +104,11 @@ function setPlaySong(songData) {
   }, 100);
 
   // Displays overal song duration
-  let songDuration = setInterval(() => {
+  let songDuration = setTimeout(() => {
     displaySongDuration(song)
     duration = song.duration;
-    clearInterval(songDuration);
-  }, 100);
+    clearTimeout(songDuration);
+  }, 500);
   let checkSongLoop = setInterval(() =>
     repeatButton.classList.contains('playerControlsHighlighted') ? (song.loop = true) : (song.loop = false)
     , 500);
@@ -113,6 +124,7 @@ function setPlaySong(songData) {
     }
   }, 500)
 
+
   // Sets function of backward button
   setSkipBackward(song);
 
@@ -120,7 +132,6 @@ function setPlaySong(songData) {
   playButton.addEventListener("click", () => {
     song.play();
   });
-
 
   // Sets button to pauses song
   pauseButton.addEventListener("click", () => {
@@ -150,6 +161,7 @@ function setPlayParameters() {
 
 function displaySongDuration(song) {
   let durationToDisplay = Math.ceil(song.duration);
+  songDurationDisplay.innerHTML = `0:31`;
   songDurationDisplay.innerHTML = `0:${durationToDisplay}`;
 }
 
@@ -249,13 +261,12 @@ function setShuffleAndRepeat() {
   })
 }
 
-// Set picture, title and artist info. To recall when needed
-function setSongInfo(song) {
-  let artistName = song.artist.name;
-  let title = song.title;
-  let imageUrl = song.artist.picture_small;
-  nowPlaying.querySelector('img').src = imageUrl;
-  nowPlaying.querySelector('div h6').innerHTML = artistName;
-  nowPlaying.querySelector('div p').innerHTML = title;
+
+
+function randomBand(bandsArray) {
+  return bandsArray[Math.floor(Math.random() * bandsArray.length)]
 }
 
+function randomSong() {
+  return Math.floor(Math.random() * 25)
+}

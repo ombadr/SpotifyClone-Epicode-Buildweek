@@ -1,18 +1,8 @@
 import { convertSecondsToMinSec, generateRandomNumber } from "./utils/utils.js"
 
-const BASE_URL = 'https://deezerdevs-deezer.p.rapidapi.com/'
-let options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '349d0315bamshe22fa1098ac0240p133261jsnab757b4a040e',
-    'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
-  }
-}
-
 const STRIVE_URL = 'https://striveschool-api.herokuapp.com/api/deezer/artist/'
 
 const popularTracks = document.getElementById('popularTracks')
-// const heroDesktopTitle = document.getElementById('heroDesktopTitle') // remove this
 const heroDesktopSection = document.getElementById('heroDesktopSection')
 const heroArtist = document.getElementById('hero-artist')
 const likedSectionContainerDesktop = document.getElementById('likedSectionContainerDesktop')
@@ -23,14 +13,12 @@ const listenersMobileNumber = document.getElementById('listenersMobileNumber')
 const likedMobile = document.getElementById('liked-mobile')
 
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
 
   fetchSongs()
 
-  // MARCO'S MOBILE SCRIPT
+  // SCRIPT TO ACTIVATE THE BUTTONS ON ARTIST MOBILE PAGE
 
   let shuffleIcon = document.getElementById("shuffleIcon");
   let shuffleDot = document.getElementById("shuffleDot");
@@ -62,35 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // END MARCO'S MOBILE SCRIPT
-
 })
 
 async function fetchSongs() {
   try {
 
-
     const urlString = window.location.href;
     const url = new URL(urlString);
     let artistFromUrl = url.searchParams.get('artist')
-
-
     const searchResults = await getTracksFromSearch(artistFromUrl)
-    console.log('----------------------')
-    console.log(searchResults)
-    console.log('----------------------')
     const artist = searchResults.data[0].artist.name
-    const trackListUrl = searchResults.data[0].artist.tracklist
     const imageUrl = searchResults.data[0].album.cover_big
-    console.log(artist)
-    console.log(trackListUrl)
-    console.log('Image URL: ' + imageUrl)
 
     if (searchResults) {
       let tracksHTML = ''
       let tracksMobileHTML = ''
-      // const trackList = await getTrackList(trackListUrl)
-      // console.log('List of tracks:', trackList)
 
       const heroDesktopHTML = createHeroDesktop(artist)
       displayHeroDesktop(heroDesktopHTML)
@@ -99,20 +73,16 @@ async function fetchSongs() {
       const likedSectionContainerHTML = createLikedSectionContainer(artist, imageUrl)
       displayLikedSectionContainer(likedSectionContainerHTML)
 
-      // hero mobile
       const heroMobileHTML = createHeroMobileAndListeners(artist)
       displayHeroMobileAndListeners(heroMobileHTML)
 
-      // listeners mobile
       const listenersMobileHTML = createListenersMobileNumber()
       displayListenersMobileNumber(listenersMobileHTML)
 
-
-      // liked mobile
       const likedMobileHTML = createLikedMobile(imageUrl, artist)
       displayLikedMobile(likedMobileHTML)
 
-      for (let i = 0; i < 10; i++) { // max 10 tracks
+      for (let i = 0; i < 10; i++) {
         console.log(searchResults.data[i].title)
         let trackHTML = createPopularSongs(searchResults.data[i], i + 1)
         let trackMobileHTML = createPopularTracksMobile(searchResults.data[i].title, searchResults.data[i].album.cover_big, i + 1)
@@ -138,25 +108,6 @@ async function getTracksFromSearch(artist) {
     console.error(e);
   }
 }
-
-
-/*
-async function getTrackList(trackListUrl) {
-  try {
-    const response = await fetch(trackListUrl)
-    const data = await response.json()
-    return data
-  } catch (e) {
-    console.error(e);
-  }
-}
-
-*/
-
-
-// POPULAR SONGS
-
-
 
 function createPopularSongs(albumTracks, counter) {
   const { title, duration, album } = albumTracks
@@ -186,12 +137,6 @@ function displayPopularSongs(albumsHTML) {
   popularTracks.innerHTML = albumsHTML
 }
 
-// END POPULAR SONGS
-
-// HERO ARTIST DESKTOP
-
-
-
 function createHeroDesktop(artist) {
 
   const listeners = generateRandomNumber()
@@ -199,8 +144,6 @@ function createHeroDesktop(artist) {
 
 
   const heroDesktopHTML = `<div id="hero-artist" class="mb-0 mt-3">
-              <!--ADD HERE DYNAMICALLY -->
-
               <div class="container" id="heroDesktopSection">
                 <div class="row">
                   <div class="col-md-6">
@@ -241,8 +184,6 @@ function createHeroDesktop(artist) {
                 </p>
                 <p class="d-inline-block">Artista verificato</p>
 
-                <!--RENDER THIS DYNAMICALLY-->
-
                 <div id="heroDesktopTitle">
                   <h1 class="display-1 mx-3"><b>${artist}</b></h1>
                   <p class="mx-3 p-1">${listeners} ascoltatori mensili</p>
@@ -279,10 +220,6 @@ function displayHeroDesktop(heroHTML) {
 }
 
 
-// END HERO ARTIST DESKTOP
-
-// LIKED SECTION CONTAINER
-
 function createLikedSectionContainer(artist, image) {
   return `<div class="row">
                   <div class="sectionTitle">Brani che ti piacciono</div>
@@ -316,11 +253,6 @@ function createLikedSectionContainer(artist, image) {
 function displayLikedSectionContainer(likedSectionHTML) {
   likedSectionContainerDesktop.innerHTML = likedSectionHTML
 }
-
-// END LIKED SECTION CONTAINER
-
-// POPULAR TRACKS MOBILE
-
 
 function createPopularTracksMobile(title, image, counter) {
   const listeners = generateRandomNumber()
@@ -360,11 +292,6 @@ function displayPopularTracksMobile(popularTracksMobileHTML) {
 }
 
 
-// END POPULAR TRACKS MOBILE
-
-
-// HERO MOBILE AND LISTENERS MOBILE
-
 function createHeroMobileAndListeners(artist) {
 
   return `<h1>${artist}</h1>`
@@ -384,11 +311,6 @@ function createListenersMobileNumber() {
 function displayListenersMobileNumber(dataHTML) {
   listenersMobileNumber.innerHTML = dataHTML
 }
-
-// END HERO MOBILE AND LISTENERS MOBILE
-
-// LIKED MOBILE
-
 
 function createLikedMobile(image, artist) {
 
@@ -419,4 +341,3 @@ function displayLikedMobile(likedMobileHTML) {
   likedMobile.innerHTML = likedMobileHTML
 }
 
-// END LIKED MOBILE

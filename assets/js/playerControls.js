@@ -69,11 +69,10 @@ async function fetchData(url, options) {
     // Parse the response as JSON
     const data = await response.json();
     const song = data.data;
-    setSongInfo(song);
-
+    
     // Sets player to play song
     setPlaySong(song);
-
+    
   } catch (error) {
     // Handle errors here
     console.error("Error:", error);
@@ -92,28 +91,27 @@ function setSongInfo(song) {
 
 // Plays and stops song when triggered
 function setPlaySong(songData) {
-  let song = new Audio(songData[songNumber].preview);
+  setSongInfo(songData);
+  let songObject = new Audio(songData[songNumber].preview);
   let storeVolume = setInterval(() => {
     // Check every 100ms what the volume is and updates it in real time
-    song.volume = localStorage.getItem('Volume');
+    songObject.volume = localStorage.getItem('Volume');
   }, 250);
-
-  // Updates song current time
+  // Updates songObject current time
   let songCurrentTime = setInterval(() => {
-    displayCurrentTime(song);
+    displayCurrentTime(songObject);
   }, 100);
-
-  // Displays overal song duration
+  // Displays overal songObject duration
   let songDuration = setTimeout(() => {
-    displaySongDuration(song)
-    duration = song.duration;
+    displaySongDuration(songObject)
+    duration = songObject.duration;
     clearTimeout(songDuration);
   }, 500);
   let checkSongLoop = setInterval(() =>
-    repeatButton.classList.contains('playerControlsHighlighted') ? (song.loop = true) : (song.loop = false)
+    repeatButton.classList.contains('playerControlsHighlighted') ? (songObject.loop = true) : (songObject.loop = false)
     , 500);
   let endSong = setInterval(() => {
-    if (song.ended) {
+    if (songObject.ended) {
       pauseButton.classList.add('d-none');
       playButton.classList.remove('d-none');
       barFill = 0;
@@ -124,20 +122,134 @@ function setPlaySong(songData) {
     }
   }, 500)
 
-
   // Sets function of backward button
-  setSkipBackward(song);
+  backWardButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (songObject.currentTime > 2 || songNumber === 0)
+      songObject.currentTime = 0;
+    else {
+      songNumber--;
+      setSongInfo(songData)
+      songObject.pause();
+      songObject = new Audio (songData[songNumber].preview);
+      storeVolume = setInterval(() => {
+        // Check every 100ms what the volume is and updates it in real time
+        songObject.volume = localStorage.getItem('Volume');
+      }, 250);
+      // Updates songObject current time
+      songCurrentTime = setInterval(() => {
+        displayCurrentTime(songObject);
+      }, 100);
+      // Displays overal songObject duration
+      songDuration = setTimeout(() => {
+        displaySongDuration(songObject)
+        duration = songObject.duration;
+        clearTimeout(songDuration);
+      }, 500);
+      checkSongLoop = setInterval(() =>
+        repeatButton.classList.contains('playerControlsHighlighted') ? (songObject.loop = true) : (songObject.loop = false)
+        , 500);
+      endSong = setInterval(() => {
+        if (songObject.ended) {
+          pauseButton.classList.add('d-none');
+          playButton.classList.remove('d-none');
+          barFill = 0;
+          seconds = 0;
+          // clearInterval(songCurrentTime);
+          clearInterval(songDuration);
+          songCurrentTime.innerHTML = "0:00";
+        }
+      }, 500)
+      setTimeout(() => songObject.play(), 100);
+    }
+  })
 
-  // Sets button to play song
+  // Sets button to play songObject
   playButton.addEventListener("click", () => {
-    song.play();
+    songObject.play();
   });
 
   // Sets button to pauses song
   pauseButton.addEventListener("click", () => {
-    song.pause();
+    songObject.pause();
   });
+
+  forwardButton.addEventListener('click', (event) => {
+    event.preventDefault()
+    if (songNumber < songData.length){
+      songNumber++;
+      setSongInfo(songData)
+      songObject.pause();
+      songObject = new Audio (songData[songNumber].preview);
+
+      storeVolume = setInterval(() => {
+        // Check every 100ms what the volume is and updates it in real time
+        songObject.volume = localStorage.getItem('Volume');
+      }, 250);
+      // Updates songObject current time
+      songCurrentTime = setInterval(() => {
+        displayCurrentTime(songObject);
+      }, 100);
+      // Displays overal songObject duration
+      songDuration = setTimeout(() => {
+        displaySongDuration(songObject)
+        duration = songObject.duration;
+        clearTimeout(songDuration);
+      }, 500);
+      checkSongLoop = setInterval(() =>
+        repeatButton.classList.contains('playerControlsHighlighted') ? (songObject.loop = true) : (songObject.loop = false)
+        , 500);
+      endSong = setInterval(() => {
+        if (songObject.ended) {
+          pauseButton.classList.add('d-none');
+          playButton.classList.remove('d-none');
+          barFill = 0;
+          seconds = 0;
+          // clearInterval(songCurrentTime);
+          clearInterval(songDuration);
+          songCurrentTime.innerHTML = "0:00";
+        }
+      }, 500)
+      setTimeout(() => songObject.play(), 100);
+    } else {
+      bandRequested = randomBand();
+      songNumber = randomSong();
+      setSongInfo(songData)
+      songObject.pause();
+      songObject = new Audio (songData[songNumber].preview);
+      storeVolume = setInterval(() => {
+        // Check every 100ms what the volume is and updates it in real time
+        songObject.volume = localStorage.getItem('Volume');
+      }, 250);
+      // Updates songObject current time
+      songCurrentTime = setInterval(() => {
+        displayCurrentTime(songObject);
+      }, 100);
+      // Displays overal songObject duration
+      songDuration = setTimeout(() => {
+        displaySongDuration(songObject)
+        duration = songObject.duration;
+        clearTimeout(songDuration);
+      }, 500);
+      checkSongLoop = setInterval(() =>
+        repeatButton.classList.contains('playerControlsHighlighted') ? (songObject.loop = true) : (songObject.loop = false)
+        , 500);
+      endSong = setInterval(() => {
+        if (songObject.ended) {
+          pauseButton.classList.add('d-none');
+          playButton.classList.remove('d-none');
+          barFill = 0;
+          seconds = 0;
+          // clearInterval(songCurrentTime);
+          clearInterval(songDuration);
+          songCurrentTime.innerHTML = "0:00";
+        }
+      }, 500)
+      setTimeout(() => songObject.play(), 100);
+    }
+  })
 }
+
 
 function setPlayParameters() {
   const startPlay = setInterval(() => {
@@ -190,7 +302,7 @@ function barFillerValue(currentTime, duration) {
 function setSkipBackward(song) {
   backWardButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if (song.currentTime > 2)
+    if (song.currentTime > 2 || songNumber === 0)
       song.currentTime = 0;
   })
 }
@@ -261,12 +373,12 @@ function setShuffleAndRepeat() {
   })
 }
 
-
-
+// Picks a random band from an array of bands
 function randomBand(bandsArray) {
   return bandsArray[Math.floor(Math.random() * bandsArray.length)]
 }
 
+// Gives the song a random index between 0 and the available number of songs (25)
 function randomSong() {
   return Math.floor(Math.random() * 25)
 }

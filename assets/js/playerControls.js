@@ -32,7 +32,7 @@ const volumeContainer = document.querySelector(".volumeContainer");
 const fullBar = document.querySelector(".fullBar");
 const nowPlaying = document.querySelector('.nowPlaying');
 const playKey = 'Enter';
-const bandRequested = '50 cent'
+const bandRequested = 'bomfunk mc'
 const songNumber = 6;
 
 const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + bandRequested;

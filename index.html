@@ -10,8 +10,8 @@
     />
     <title>Homepage</title>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="assets/js/index.js" defer></script>
     <script src="assets/js/playerControls.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
   </head>
   <body>
     <header>
@@ -41,139 +41,194 @@
                 >. . .</span
               >
 
-              <ul id="navbarDropdown" class="dropdown-menu" style="background-color: #242424;">
-                <li><a class="dropdown-item" href="#" style="color: #f7f7f7;">File</a></li>
-                <li><a class="dropdown-item" href="#" style="color: #f7f7f7;">Modifica</a></li>
+              <ul
+                id="navbarDropdown"
+                class="dropdown-menu"
+                style="background-color: #242424"
+              >
                 <li>
-                  <a class="dropdown-item" href="#" style="color: #f7f7f7;">Visualizzazione</a>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >File</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#" style="color: #f7f7f7;">Riproduzione</a>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >Modifica</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#" style="color: #f7f7f7;">Assistenza</a>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >Visualizzazione</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >Riproduzione</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" style="color: #f7f7f7"
+                    >Assistenza</a
+                  >
                 </li>
               </ul>
             </div>
-            <a href="/index.html"
-            style="text-decoration: none; color: white;">
-              <div class="row mt-3">
-                <div class="col-12">
-                  <div class="icon-column">
-                    <i class="bi bi-house-door-fill" style="font-size: 1.1rem;"></i>
-                    <span style="font-size: 1.1rem;">Home</span>
-                  </div>
-                </div>
-            </a>
-              <a
-                href="/search.html"
-                style="text-decoration: none; color: white"
-              >
-                <div class="col-12">
-                  <div class="icon-column">
-                    <i class="bi bi-search" style="font-size: 1.1rem;"></i>
-                    <span style="font-size: 1.1rem;">Cerca</span>
-                  </div>
-                </div>
-              </a>
+            <div class="row mt-3">
               <div class="col-12">
-                <div class="icon-column">
-                  <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 iYxpxA"><path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"></path></svg>
-                  <span style="font-size: 1.1rem;">La tua libreria</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                >
+                  <a
+                    href="index.html"
+                    style="text-decoration: none; color: inherit"
+                  >
+                    <i
+                      class="bi bi-house-door-fill me-2"
+                      style="font-size: 25px"
+                    ></i>
+                    <span style="font-size: 20px">Home</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                >
+                  <a
+                    href="search.html"
+                    style="text-decoration: none; color: inherit"
+                  >
+                    <i class="bi bi-search me-1" style="font-size: 25px"></i>
+                    <span style="font-size: 20px">Cerca</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                  style="cursor: pointer"
+                >
+                  <i class="bi bi-spotify me-2" style="font-size: 25px"></i>
+                  <span style="font-size: 20px">La tua libreria</span>
                 </div>
               </div>
             </div>
 
-            <div class="row mt-3 pb-3" style=" border-bottom-style: groove; border-bottom-color: rgb(151, 150, 150) ;">
+            <div
+              class="row mt-3 pb-3"
+              style="
+                border-bottom-style: groove;
+                border-bottom-color: rgb(151, 150, 150);
+              "
+            >
               <div class="col-12">
-                <div class="icon-column">
-                  <i class="bi bi-plus-square-fill" style="font-size: 1.1rem;"></i>
-                  <span style="font-size: 1.1rem;">Crea playlist</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                  style="cursor: pointer"
+                >
+                  <i
+                    class="bi bi-plus-square-fill me-2"
+                    style="font-size: 25px"
+                  ></i>
+                  <span style="font-size: 20px">Crea playlist</span>
                 </div>
               </div>
+
               <div class="col-12">
-                <div class="icon-column">
-                  <img aria-hidden="true" draggable="false" loading="eager" src="https://misc.scdn.co/liked-songs/liked-songs-64.png" data-testid="entity-image" alt="Brani che ti piacciono" style="width: 1.1rem; height: 1.1rem;">
-                  <span class="d-inline-block" style="font-size: 1.1rem;">Brani che ti piacciono</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                  style="cursor: pointer"
+                >
+                  <i class="bi bi-heart-fill me-2" style="font-size: 25px"></i>
+                  <span style="font-size: 20px">Brani che ti piacciono</span>
                 </div>
               </div>
+
               <div class="col-12">
-                <div class="icon-column">
-                  <img aria-hidden="true" draggable="false" loading="eager" src="https://misc.scdn.co/your-episodes/SE-64.png" data-testid="entity-image" alt="I tuoi episodi" style="width: 1.1rem; height: 1.1rem;">
-                  <span style="font-size: 1.1rem;">I tuoi episodi</span>
+                <div
+                  class="icon-column d-flex justify-content-start align-items-center"
+                  style="cursor: pointer"
+                >
+                  <i
+                    class="bi bi-bookmark-heart-fill me-2"
+                    style="font-size: 25px"
+                  ></i>
+                  <span style="font-size: 20px">I tuoi episodi</span>
                 </div>
               </div>
             </div>
             <div class="row mt-3">
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('early stage emily syndrome')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >early stage emily syndrome</span
                 >
               </div>
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('Be the Young')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >Be the Young</span
                 >
               </div>
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('Gigi D&#39;Alessio')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >Gigi D'Alessio</span
                 >
               </div>
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('that fucking mood')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >that fucking mood</span
                 >
               </div>
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('landing page')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >landing page</span
                 >
               </div>
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('2021 lol')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >2021 lol</span
                 >
               </div>
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('Frah Quintale mix')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >Frah Quintale mix</span
                 >
               </div>
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('Lidia Emily')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >Lidia Emily</span
                 >
               </div>
-              <div class="col-12">
+              <div class="col-12 btn cursor-pointer text-start p-0 ms-2">
                 <span
-                  class="playlistPrivate"
+                  class="playlistPrivate text-secondary"
                   onclick="selezionaPlaylist('Francesco Guccini')"
-                  style="font-size: 1.1rem;"
+                  style="font-size: 1.1rem"
                   >Francesco Guccini</span
                 >
               </div>
@@ -239,7 +294,7 @@
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
                         >
-                          User 1
+                          User 1 <i class="bi bi-caret-down-fill"></i>
                         </button>
                         <ul class="dropdown-menu bg-black bg-gradient">
                           <li>
@@ -476,7 +531,7 @@
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
                         >
-                          User 1
+                          User 1 <i class="bi bi-caret-down-fill"></i>
                         </button>
                         <ul class="dropdown-menu bg-black bg-gradient">
                           <li>
@@ -982,7 +1037,10 @@
                 <!--ADD HERE DYNAMICALLY-->
                 <!--CARD 1-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1005,7 +1063,10 @@
 
                 <!--CARD 2-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1028,7 +1089,10 @@
 
                 <!--CARD 3-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1051,7 +1115,10 @@
 
                 <!--CARD 4-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1074,7 +1141,10 @@
 
                 <!--CARD 5-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1097,7 +1167,10 @@
 
                 <!--CARD 6-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1133,7 +1206,10 @@
                 <!--ADD HERE DYNAMICALLY -->
                 <!--CARD 1-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1156,7 +1232,10 @@
 
                 <!--CARD 2-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1179,7 +1258,10 @@
 
                 <!--CARD 3-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1202,7 +1284,10 @@
 
                 <!--CARD 4-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1225,7 +1310,10 @@
 
                 <!--CARD 5-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1248,7 +1336,10 @@
 
                 <!--CARD 6-->
                 <div class="col-6 mb-2">
-                  <div class="card bg-dark border-0 text-white">
+                  <div
+                    class="card border-0 text-white"
+                    style="background: #242424"
+                  >
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -1294,7 +1385,7 @@
           </div>
           <div class="d-flex justify-content-between mx-2 mt-4">
             <div class="d-flex">
-              <i class="bi bi-heart-fill fs-1"></i>
+              <i class="bi bi-heart-fill fs-1" style="color: #1db954"></i>
               <i class="bi bi-three-dots-vertical fs-1 px-3 text-secondary"></i>
             </div>
             <div class="d-flex align-items-center">
@@ -1378,113 +1469,107 @@
         <div class="playbackControls">
           <!-- Parte centrale del player -->
           <div class="playerButtons d-flex justify-content-center">
-            <!-- Shuffle -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-shuffle"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
-              />
-              <path
-                d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"
-              />
-            </svg>
+            <button type="button" class="playerControls" id="shuffleBtn">
+              <!-- Shuffle -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-shuffle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"
+                />
+                <path
+                  d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"
+                />
+              </svg>
+            </button>
             <!-- Skip backward -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-skip-start-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0z"
-              />
-            </svg>
-            <!-- Play icon -->
-            <svg
-              id="playButton"
-              id="playButton"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-play-circle-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"
-              />
-            </svg>
-            <!-- Pause icon -->
-            <svg
-              id="pauseButton"
-              class="d-none"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-pause-circle-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"
-              />
-            </svg>
-            <!-- Pause icon -->
-            <svg
-              id="pauseButton"
-              class="d-none"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-pause-circle-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"
-              />
-            </svg>
-            <!-- Skip Forward -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-skip-end-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z"
-              />
-            </svg>
-            <!-- Repeat -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-repeat"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
-              />
-            </svg>
+            <button type="button" class="playerControls" id="backwardButton">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-skip-start-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0z"
+                />
+              </svg>
+            </button>
+            <button type="buttons" class="playerControls">
+              <!-- Play icon -->
+              <svg
+                id="playButton"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-play-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"
+                />
+              </svg>
+              <!-- Pause icon -->
+              <svg
+                id="pauseButton"
+                class="d-none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-pause-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"
+                />
+              </svg>
+            </button>
+            <button type="button" class="playerControls">
+              <!-- Skip Forward -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-skip-end-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z"
+                />
+              </svg>
+            </button>
+            <button type="button" class="playerControls" id="repeatBtn">
+              <!-- Repeat -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-repeat"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"
+                />
+              </svg>
+            </button>
           </div>
           <div class="playerBar d-flex justify-content-center">
             <p id="songTimer">0:00</p>
             <label for="progressBar" class="d-none"></label>
             <progress id="progressBar" value="0" max="100"></progress>
-            <p id="songDuration">1:00</p>
+            <p id="songDuration"></p>
           </div>
         </div>
         <div class="volumeControls d-flex">
@@ -1642,19 +1727,31 @@
 
       <!--NAVBAR MOBILE-->
 
-      <div class="container-fluid fixed-bottom d-md-none" id="navbar-mobile">
+      <div
+        class="container-fluid fixed-bottom d-md-none bg-black pt-2"
+        id="navbar-mobile"
+      >
         <div class="row">
           <div class="col-4 text-center">
-            <i class="bi bi-house-door-fill fs-1"></i>
-            <p>Home</p>
+            <a href="/index.html" style="text-decoration: none; color: inherit">
+              <i class="bi bi-house-door-fill fs-1"></i>
+              <p>Home</p>
+            </a>
           </div>
           <div class="col-4 text-center text-secondary">
-            <i class="bi bi-search fs-1"></i>
-            <p>Cerca</p>
+            <a
+              href="/search.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <i class="bi bi-search fs-1"></i>
+              <p>Cerca</p>
+            </a>
           </div>
           <div class="col-4 text-center text-secondary">
-            <i class="bi bi-collection fs-1"></i>
-            <p>La tua libreria</p>
+            <a href="/index.html" style="text-decoration: none; color: inherit">
+              <i class="bi bi-collection fs-1"></i>
+              <p>La tua libreria</p>
+            </a>
           </div>
         </div>
       </div>

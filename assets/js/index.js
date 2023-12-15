@@ -17,7 +17,7 @@ let likedAlbums = ['122366', '7090505', '496520481', '244223', '9410100'] // 5 r
 let homePageTracks = ['92720102', '1141668', '1662139552'] // 3 random tracks for homepage
 let suggeritiAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257'] // 6 randoms albums for suggeriti section in homepage
 
-let mobileMusicaAlbums = ['297188862', '2732901', '103248', '108938', '1238967', '340077257']
+let mobileMusicaAlbums = ['297188862', '1238967', '103248', '108938', '1238967', '340077257']
 let mobilePodcastShowAlbums = ['2732901', '108938', '1238967', '340077257', '297188862', '103248']
 
 let playlistMobileAlbums = ['2732901', '108938', '1238967']
@@ -258,7 +258,7 @@ function displaySuggeritiAlbums(albumsHTML) {
   suggeritiAlbumsContainer.innerHTML = albumsHTML
 }
 
-getSuggeritiAlbums() // Activate this to start the API fetch
+// getSuggeritiAlbums() // Activate this to start the API fetch
 
 // END SUGGERITI ALBUMS
 
@@ -305,7 +305,7 @@ function createMobileMusicaSuggeriti(albumTracks, albumId) {
 
   return `<div class="col-6 mb-2">
             <a href = "/album.html?album=${albumId}" style = "text-decoration: none" >
-                  <div class="card bg-dark border-0 text-white">
+                  <div class="card border-0 text-white" style="background: #242424;">
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -334,7 +334,7 @@ function createMobilePodcastSuggeriti(albumTracks, albumId) {
 
   return `<div class="col-6 mb-2">
             <a href = "/album.html?album=${albumId}" style = "text-decoration: none" >
-                  <div class="card bg-dark border-0 text-white">
+                  <div class="card border-0 text-white" style="background: #242424;">
                     <div class="row g-0">
                       <div class="col-4">
                         <img
@@ -410,7 +410,7 @@ function createMobilePlaylistAlbums(albumTracks, albumId) {
           </div>
           <div class="d-flex justify-content-between mx-2 mt-4">
             <div class="d-flex">
-              <i class="bi bi-heart-fill fs-1"></i>
+              <i class="bi bi-heart-fill fs-1" style="color: #1db954"></i>
               <i class="bi bi-three-dots-vertical fs-1 px-3 text-secondary"></i>
             </div>
             <div class="d-flex align-items-center">

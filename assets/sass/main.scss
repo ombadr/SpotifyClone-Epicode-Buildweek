@@ -428,6 +428,11 @@ body {
 }
 
 /* PLAYLIST MOBILE */
+
+#playlistMobileWrapper {
+  margin-bottom: 170px;
+}
+
 #playlist-mobile {
   border-radius: 20px;
   background-color: #242424;
@@ -482,6 +487,10 @@ body {
 #album-title-mobile {
   margin-top: 0.5rem;
   padding: 0 1rem 1rem 1rem;
+}
+
+#album-track-mobile {
+  margin-bottom: 170px;
 }
 
 #hero-mobile-artist {
@@ -758,6 +767,11 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
 }
 
 /*SEARCH*/
+
+#main-search {
+  overflow-y: auto;
+  height: 87vh;
+}
 
 #search-component {
   input {

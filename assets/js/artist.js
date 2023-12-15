@@ -9,6 +9,8 @@ let options = {
   }
 }
 
+const STRIVE_URL = 'https://striveschool-api.herokuapp.com/api/deezer/artist/'
+
 const popularTracks = document.getElementById('popularTracks')
 // const heroDesktopTitle = document.getElementById('heroDesktopTitle') // remove this
 const heroDesktopSection = document.getElementById('heroDesktopSection')
@@ -27,17 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   fetchSongs()
-
-  // HERO MOBILE BACK BUTTON
-
-
-
-
-
-
-
-
-
 
   // MARCO'S MOBILE SCRIPT
 
@@ -85,6 +76,9 @@ async function fetchSongs() {
 
 
     const searchResults = await getTracksFromSearch(artistFromUrl)
+    console.log('----------------------')
+    console.log(searchResults)
+    console.log('----------------------')
     const artist = searchResults.data[0].artist.name
     const trackListUrl = searchResults.data[0].artist.tracklist
     const imageUrl = searchResults.data[0].album.cover_big
@@ -92,11 +86,11 @@ async function fetchSongs() {
     console.log(trackListUrl)
     console.log('Image URL: ' + imageUrl)
 
-    if (trackListUrl) {
+    if (searchResults) {
       let tracksHTML = ''
       let tracksMobileHTML = ''
-      const trackList = await getTrackList(trackListUrl)
-      console.log('List of tracks:', trackList)
+      // const trackList = await getTrackList(trackListUrl)
+      // console.log('List of tracks:', trackList)
 
       const heroDesktopHTML = createHeroDesktop(artist)
       displayHeroDesktop(heroDesktopHTML)
@@ -119,9 +113,9 @@ async function fetchSongs() {
       displayLikedMobile(likedMobileHTML)
 
       for (let i = 0; i < 10; i++) { // max 10 tracks
-        console.log(trackList.data[i].title)
-        let trackHTML = createPopularSongs(trackList.data[i], i + 1)
-        let trackMobileHTML = createPopularTracksMobile(trackList.data[i].title, trackList.data[i].album.cover_big, i + 1)
+        console.log(searchResults.data[i].title)
+        let trackHTML = createPopularSongs(searchResults.data[i], i + 1)
+        let trackMobileHTML = createPopularTracksMobile(searchResults.data[i].title, searchResults.data[i].album.cover_big, i + 1)
         tracksHTML += trackHTML
         tracksMobileHTML += trackMobileHTML
       }
@@ -137,7 +131,7 @@ async function fetchSongs() {
 
 async function getTracksFromSearch(artist) {
   try {
-    const data = await fetch(BASE_URL + `search?q=${artist}`, options)
+    const data = await fetch(STRIVE_URL + `${artist}` + '/top?limit=11')
     const response = await data.json()
     return response
   } catch (e) {
@@ -145,6 +139,8 @@ async function getTracksFromSearch(artist) {
   }
 }
 
+
+/*
 async function getTrackList(trackListUrl) {
   try {
     const response = await fetch(trackListUrl)
@@ -154,6 +150,8 @@ async function getTrackList(trackListUrl) {
     console.error(e);
   }
 }
+
+*/
 
 
 // POPULAR SONGS

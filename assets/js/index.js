@@ -20,7 +20,7 @@ const trackSliderItems = document.querySelector('#tracksSliderItems');
 const suggeritiAlbumsContainer = document.querySelector('#suggeritiAlbums');
 const mobileMusicaSuggeriti = document.querySelector('#mobileMusicaSuggeriti');
 const mobilePodcastSuggeriti = document.querySelector('#mobilePodcastSuggeriti');
-const playlistMobileAlbumsContainer = document.querySelector('#playlistMobile');
+const playlistMobileAlbumsContainer = document.querySelector('#playlistMobileWrapper');
 
 
 async function fetchHomepageData() {

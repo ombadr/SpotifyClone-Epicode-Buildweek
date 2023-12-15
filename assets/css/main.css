@@ -12568,6 +12568,11 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
 }
 
 /*SEARCH*/
+#main-search {
+  overflow-y: auto;
+  height: 87vh;
+}
+
 #search-component input {
   color: white;
 }

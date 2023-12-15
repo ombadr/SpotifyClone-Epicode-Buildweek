@@ -22,30 +22,12 @@
         <i class="backbtn-album bi bi-arrow-left" id="heroMobileBackButton"></i>
         <div id="hero-mobile-artist">
           <!--RENDER THIS DYNAMICALLY-->
-          <img
-            class="hero-img-artist"
-            src="assets/imgs/artist/img-hero.jpg"
-            alt="album"
-          />
         </div>
 
         <!--ALBUM-TITLE-MOBILE-->
         <div id="album-title-mobile">
           <div id="titleMobileWrapper">
             <!--RENDER THIS DYNAMICALLY-->
-            <h1 class="titleAlbum">Gioventù Brucata</h1>
-
-            <div id="artist-wrapper-album">
-              <img
-                class="album-img"
-                src="assets/imgs/artist/img-hero.jpg"
-                alt="artist"
-              />
-
-              <h2>Pinguini Tattici Nucleari</h2>
-            </div>
-
-            <p class="albumData">Album · <span>2017</span></p>
           </div>
 
           <div class="icon-wrapper-album">
@@ -69,173 +51,8 @@
       <div id="album-track-mobile">
         <div class="container" id="albumTrackMobileContainer">
           <!--RENDER HERE DYNAMICALLY-->
-          <div class="row">
-            <div class="col-11">
-              <p class="songName">Montanelli - Intro</p>
-              <span class="artistName">Pinguini Tattici Nucleari</span>
-            </div>
-            <div
-              class="col-1 p-1 dropdown-trigger"
-              onclick="toggleDropdownMenu(this)"
-            >
-              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-11">
-              <p class="songName">Sciare</p>
-              <span class="artistName">Pinguini Tattici Nucleari</span>
-            </div>
-            <div
-              class="col-1 p-1 dropdown-trigger"
-              onclick="toggleDropdownMenu(this)"
-            >
-              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-11">
-              <p class="songName">Gioventù Bruciata</p>
-              <span class="artistName">Pinguini Tattici Nucleari</span>
-            </div>
-            <div
-              class="col-1 p-1 dropdown-trigger"
-              onclick="toggleDropdownMenu(this)"
-            >
-              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-11">
-              <p class="songName">Ninnananna per genitori disattenti</p>
-              <span class="artistName"
-                ><i class="bi bi-file-arrow-down-fill"></i>
-                <i class="bi bi-explicit-fill"></i> Pinguini Tattici
-                Nucleari</span
-              >
-            </div>
-            <div
-              class="col-1 p-1 dropdown-trigger"
-              onclick="toggleDropdownMenu(this)"
-            >
-              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-11">
-              <p class="songName">L'uomo che inventò il fuoco</p>
-              <span class="artistName">Pinguini Tattici Nucleari</span>
-            </div>
-            <div
-              class="col-1 p-1 dropdown-trigger"
-              onclick="toggleDropdownMenu(this)"
-            >
-              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-11">
-              <p class="songName">Irene</p>
-              <span class="artistName">Pinguini Tattici Nucleari</span>
-            </div>
-            <div
-              class="col-1 p-1 dropdown-trigger"
-              onclick="toggleDropdownMenu(this)"
-            >
-              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-11">
-              <p class="songName">Senti che cantare questi!</p>
-              <span class="artistName">Pinguini Tattici Nucleari</span>
-            </div>
-            <div
-              class="col-1 p-1 dropdown-trigger"
-              onclick="toggleDropdownMenu(this)"
-            >
-              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-11">
-              <p class="songName">Pula</p>
-              <span class="artistName">Pinguini Tattici Nucleari</span>
-            </div>
-            <div
-              class="col-1 p-1 dropdown-trigger"
-              onclick="toggleDropdownMenu(this)"
-            >
-              <i class="bi bi-three-dots-vertical" style="cursor: pointer"></i>
-            </div>
-          </div>
         </div>
       </div>
-
-      <style>
-        @media (min-width: 500px) {
-          #album-track-mobile {
-            display: none !important;
-          }
-        }
-
-        .dropdown-menu {
-          display: block;
-          position: fixed;
-          color: antiquewhite;
-          background-color: rgb(34, 34, 34);
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
-          z-index: 100;
-          padding: 10px;
-          overflow: visible;
-        }
-
-        .dropdown-menu::-webkit-scrollbar {
-          display: none;
-        }
-
-        /* Stili specifici sotto i 500px */
-        @media (max-width: 500px) {
-          .dropdown-menu {
-            width: 100%;
-            height: 50%;
-            bottom: 0;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            z-index: 100;
-            padding: 10px;
-            overflow: auto;
-          }
-        }
-
-        /* Altri stili per la presentazione */
-        .songName {
-          font-size: medium;
-          font-weight: bold;
-          margin-bottom: 0;
-        }
-
-        .artistName {
-          font-size: small;
-          color: gray;
-        }
-
-        /* Altri stili per i bottoni nel menu a comparsa */
-        .dropdown-menu-button {
-          display: block;
-          width: 100%;
-          text-align: left;
-          padding: 0.5rem;
-          color: antiquewhite;
-          border: none;
-          background: none;
-          cursor: pointer;
-        }
-        .dropdown-menu-button:hover {
-          background-color: rgb(51, 50, 50);
-        }
-      </style>
 
       <!--DESKTOP WRAPPER-->
       <div class="container-fluid d-none d-md-block" id="desktop-wrapper">
@@ -541,31 +358,6 @@
               <div class="card mb-3 border-0 bg-transparent">
                 <div class="row" id="heroAlbum">
                   <!--RENDER THIS DYNAMICALLY-->
-                  <div class="col-md-4 p-4 mx-0">
-                    <img
-                      src="/assets/imgs/main/image-8.jpg"
-                      class="img-fluid border-0 sfumaAlbum"
-                      alt="copertina alb"
-                    />
-                  </div>
-                  <div class="col-md-8 pt-5 p-0">
-                    <div class="card-body text-light p-1">
-                      <p><b>Album</b></p>
-                      <h5 class="card-title mb-5 p-3 display-1">
-                        <b>Gioventù Bruciata</b>
-                      </h5>
-                      <p class="card-text mt-5 p-1">
-                        <img
-                          src="/assets/imgs/main/image-12.jpg"
-                          alt="foto artisti"
-                          class="rounded"
-                          width="20"
-                          height="20"
-                        /><b>Pinguini Tattici Nucleari - 2017 - 12 brani,</b
-                        ><b class="text-muted">53 min , 20 sec.</b>
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -637,93 +429,6 @@
 
                 <div id="albumTracks">
                   <!--ADD HERE DYNAMICALLY-->
-                  <!--TRACK 1-->
-                  <div class="row">
-                    <div class="col-lg-1">1</div>
-                    <div class="col-lg-5 flex-grow-1">
-                      <p>
-                        Montanelli - Intro<br /><span
-                          >Pinguini Tattici Nucleari</span
-                        >
-                      </p>
-                    </div>
-                    <div class="col-lg-3 track">694.578</div>
-                    <div class="col-lg-3">1:28</div>
-                  </div>
-
-                  <!--FINE TRACK 1-->
-                  <div class="row">
-                    <div class="col-lg-1">2</div>
-                    <div class="col-lg-5 flex-grow-1">
-                      <p>Sciare<br /><span>Pinguini Tattici Nucleari</span></p>
-                    </div>
-                    <div class="col-lg-3">5.585.178</div>
-                    <div class="col-lg-3">4:41</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-1">3</div>
-                    <div class="col-lg-5 flex-grow-1">
-                      <p>
-                        Gioventù Bruciata<br /><span
-                          >Pinguini Tattici Nucleari</span
-                        >
-                      </p>
-                    </div>
-                    <div class="col-lg-3">3.412.342</div>
-                    <div class="col-lg-3">5:24</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-1">4</div>
-                    <div class="col-lg-5 flex-grow-1">
-                      <p>
-                        Ninnananna per genitori disattenti<br /><span
-                          >Pinguini Tattici Nucleari</span
-                        >
-                      </p>
-                    </div>
-                    <div class="col-lg-3">2.36.629</div>
-                    <div class="col-lg-3">4:01</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-1">5</div>
-                    <div class="col-lg-5 flex-grow-1">
-                      <p>
-                        L'uomo che inventò il fuoco<br /><span
-                          >Pinguini Tattici Nucleari</span
-                        >
-                      </p>
-                    </div>
-                    <div class="col-lg-3">3.417.862</div>
-                    <div class="col-lg-3">5:23</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-1">6</div>
-                    <div class="col-lg-5 flex-grow-1">
-                      <p>Irene<br /><span>Pinguini Tattici Nucleari</span></p>
-                    </div>
-                    <div class="col-lg-3">17.249.689</div>
-                    <div class="col-lg-3">5:11</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-1">7</div>
-                    <div class="col-lg-5 flex-grow-1">
-                      <p>
-                        Senti che cantare questi!<br /><span
-                          >Pinguini Tattici Nucleari</span
-                        >
-                      </p>
-                    </div>
-                    <div class="col-lg-3">760.496</div>
-                    <div class="col-lg-3">1:11</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-1">8</div>
-                    <div class="col-lg-5 flex-grow-1">
-                      <p>Pula<br /><span>Pinguini Tattici Nucleari</span></p>
-                    </div>
-                    <div class="col-lg-3">899.318</div>
-                    <div class="col-lg-3">5:46</div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1148,7 +853,7 @@
     ></script>
 
     <script>
-      // GABRIELE'S SCRIPT TO OPEN MODAL ON MOBILE TRACKS
+      // OPEN MODAL ON MOBILE TRACKS
 
       function toggleDropdownMenu(element) {
         let menu = document.createElement('div');
@@ -1200,7 +905,6 @@
           }
         });
 
-        // Aggiunta del menu al DOM
         document.body.appendChild(menu);
       }
     </script>

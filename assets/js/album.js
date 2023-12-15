@@ -11,7 +11,6 @@ let options = {
 
 const albumTracks = document.getElementById('albumTracks')
 const heroAlbum = document.getElementById('heroAlbum')
-// MOBILE
 const albumTrackMobileContainer = document.getElementById('albumTrackMobileContainer')
 const heroMobileAlbumImage = document.getElementById('hero-mobile-artist')
 const albumTitleMobile = document.getElementById('titleMobileWrapper')
@@ -32,27 +31,11 @@ async function fetchSongs() {
     const urlString = window.location.href;
     const url = new URL(urlString);
     let albumFromUrl = url.searchParams.get('album')
-
-    console.log(albumFromUrl)
-
     const albumResults = await getTracksFromAlbum(albumFromUrl)
-
-
     const artist = albumResults.artist.name
-    const trackList = albumResults.tracklist
-    console.log(albumResults)
-    console.log(artist)
-
-
     if (albumResults) {
-
       let tracksHTML = ''
-      let heroAlbumHTML = ''
       let albumTracksMobileHTML = ''
-
-      // const trackList = await getTrackList(trackListUrl)
-      // console.log('List of tracks:', trackList)
-
       const imageAlbum = albumResults.cover_big
       const albumTitle = albumResults.title
       const albumArtist = albumResults.artist.name
@@ -61,41 +44,24 @@ async function fetchSongs() {
       const numberOfTracks = albumResults.nb_tracks
       const albumDuration = albumResults.duration
       const formattedDuration = formatTime(albumDuration)
-
       const heroHTML = createHeroAlbum(imageAlbum, albumTitle, albumArtist, releaseDate, artistImage, numberOfTracks, formattedDuration)
-
       const albumTitleHTML = createAlbumTitleMobile(albumTitle, artistImage, albumArtist, releaseDate.substring(0, 4))
       displayAlbumTitleMobile(albumTitleHTML)
-
-      // mobile
       const heroMobileAlbumImageHTML = createHeroMobileAlbumImage(imageAlbum)
       displayHeroMobileAlbumImage(heroMobileAlbumImageHTML)
-
       displayHeroAlbum(heroHTML)
 
+      for (let i = 0; i < 10; i++) {
 
-      console.log(releaseDate)
-
-
-      console.log(albumResults)
-      for (let i = 0; i < 10; i++) { // max 10 tracks
-        // const trackHTML = createAlbumSongs(trackList)
-        console.log(albumResults.tracks.data[i].title) // title
-        console.log(albumResults.tracks.data[i].duration) // duration
         const title = albumResults.tracks.data[i].title
         const duration = albumResults.tracks.data[i].duration
         const trackHTML = createAlbumSongs(artist, title, duration, i + 1)
-
         const albumTrackMobileHTML = createAlbumTrackMobile(title, artist)
-
-
-
         tracksHTML += trackHTML
         albumTracksMobileHTML += albumTrackMobileHTML
       }
       displayAlbumSongs(tracksHTML)
       displayAlbumTrackMobile(albumTracksMobileHTML)
-
     }
 
   } catch (e) {
@@ -112,7 +78,6 @@ async function getTracksFromAlbum(album) {
     console.error(e)
   }
 }
-
 
 
 function createAlbumSongs(artist, title, duration, counter) {
@@ -139,13 +104,10 @@ function displayAlbumSongs(albumsHTML) {
   albumTracks.innerHTML = albumsHTML
 }
 
-// HERO ALBUM
-// TODO: finish render hero album
 
 
 function createHeroAlbum(image, title, artist, releaseDate, artistImage, numberOfTracks, duration) {
 
-  // duration format 53 min , 20 sec.
   return ` <div class="col-md-4 p-4 mx-0">
                     <img
                       src="${image}"
@@ -178,9 +140,6 @@ function displayHeroAlbum(heroAlbumHTML) {
   heroAlbum.innerHTML = heroAlbumHTML
 }
 
-// END HERO ALBUM
-
-// ALBUM TRACK MOBILE
 
 function createAlbumTrackMobile(title, artist) {
   return `<div class="row">
@@ -201,10 +160,6 @@ function displayAlbumTrackMobile(albumTrackMobileHTML) {
   albumTrackMobileContainer.innerHTML = albumTrackMobileHTML
 }
 
-// END ALBUM TRACK MOBILE
-
-// HERO ALBUM MOBILE
-
 function createHeroMobileAlbumImage(image) {
   return `<img
             class="hero-img-artist"
@@ -216,11 +171,6 @@ function createHeroMobileAlbumImage(image) {
 function displayHeroMobileAlbumImage(heroMobileAlbumImageHTML) {
   heroMobileAlbumImage.innerHTML = heroMobileAlbumImageHTML
 }
-
-
-// END HERO ALBUM MOBILE
-
-// ALBUM TITLE MOBILE 
 
 function createAlbumTitleMobile(title, image, artist, releaseDate) {
   return `<h1 class="titleAlbum">${title}</h1>
@@ -242,4 +192,4 @@ function displayAlbumTitleMobile(albumTitleMobileHTML) {
   albumTitleMobile.innerHTML = albumTitleMobileHTML
 }
 
-// END ALBUM TITLE MOBILE
+

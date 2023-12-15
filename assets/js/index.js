@@ -26,14 +26,10 @@ const playlistMobileAlbumsContainer = document.querySelector('#playlistMobile');
 async function fetchHomepageData() {
   try {
     await getTracksForSlider();
-
     await getSuggeritiAlbums();
-
     await getLikedAlbumTracks();
-
     await getMobileMusicaSuggeriti();
     await getMobilePodcastSuggeriti();
-
     await getMobilePlaylistAlbums();
   } catch (error) {
     console.error(error);

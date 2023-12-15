@@ -56,7 +56,7 @@ async function fetchHomepageData() {
   }
 }
 
-// fetchHomepageData();
+fetchHomepageData();
 
 // END FETCH FUNCTIONS
 

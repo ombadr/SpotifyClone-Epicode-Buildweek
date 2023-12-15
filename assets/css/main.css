@@ -11860,6 +11860,19 @@ body {
   color: white;
 }
 
+::-webkit-scrollbar {
+  background-color: #2b2b2b;
+}
+
+::-ms-scrollbar {
+  background-color: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1db954;
+  border-radius: 50px;
+}
+
 /*HOMEPAGE*/
 /* NAVBAR DESKTOP */
 .dropdown-toggle {
@@ -11896,6 +11909,21 @@ body {
 /* HERO HOMEPAGE */
 .spotify-green-bg {
   background: #1db954;
+}
+
+#playBtn-index,
+#saveBtn-index {
+  transition: transform 0.1s ease-in-out;
+}
+
+#playBtn-index:hover,
+#saveBtn-index:hover {
+  transform: scale(1.1);
+}
+
+#saveBtn-index:hover {
+  background-color: white !important;
+  color: black !important;
 }
 
 /*LIKED SECTION */
@@ -12240,6 +12268,7 @@ body {
 /* NAVBAR MOBILE */
 #navbar-mobile {
   background-color: #242424;
+  z-index: 99;
 }
 
 /*ALBUM*/
@@ -12514,6 +12543,30 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   box-shadow: 0 0 30px rgb(0, 0, 0);
 }
 
+#following-bar {
+  background-color: #2b2b2b;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+}
+
+#follow-btn-artist {
+  padding: 0.3rem 0.8rem;
+  background: inherit;
+  border: 1px solid white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#treDots-artist {
+  background-color: #2b2b2b !important;
+}
+
+#user1-btn-artist {
+  margin-top: 1rem !important;
+}
+
 /*SEARCH*/
 #search-component input {
   color: white;
@@ -12527,6 +12580,15 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
 }
 
+#card-section-search {
+  margin-bottom: 11rem;
+}
+
+@media screen and (min-width: 768px) {
+  #card-section-search {
+    margin-bottom: 9rem;
+  }
+}
 /* CATEGORIES */
 .categories-card {
   overflow: hidden;
@@ -12546,4 +12608,17 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   #player-title-artist h6, #player-title-artist .h6 {
     display: none;
   }
+}
+.toggle-popular-dropdown-menu {
+  z-index: 100;
+  position: fixed;
+  background-color: #242424;
+  bottom: 0;
+  width: 100vh;
+  padding-bottom: 200px;
+}
+.toggle-popular-dropdown-menu button {
+  background-color: transparent;
+  border: none;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

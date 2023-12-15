@@ -793,6 +793,8 @@
           console.error('Element not found');
           return;
         }
+        let player1 = document.getElementById('player-mobile')
+        player1.classList.add('d-none')
         let menu = document.createElement('div');
         menu.classList.add('toggle-popular-dropdown-menu');
         let firstRow = document.createElement('div');
@@ -844,6 +846,7 @@
 
           if (!isClickInsideMenu && !isClickOnTrigger) {
             menu.remove();
+            player1.classList.remove('d-none')
           }
         });
 

@@ -11855,24 +11855,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  background-color: black;
-  color: white;
-}
-
-::-webkit-scrollbar {
-  background-color: #2b2b2b;
-}
-
-::-ms-scrollbar {
-  background-color: #2b2b2b;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #1db954;
-  border-radius: 50px;
-}
-
 /*HOMEPAGE*/
 /* NAVBAR DESKTOP */
 .dropdown-toggle {
@@ -12249,6 +12231,10 @@ body {
 }
 
 /* PLAYLIST MOBILE */
+#playlistMobileWrapper {
+  margin-bottom: 170px;
+}
+
 #playlist-mobile {
   border-radius: 20px;
   background-color: #242424;
@@ -12271,119 +12257,42 @@ body {
   z-index: 99;
 }
 
-/*ALBUM*/
-.songName {
-  font-size: medium;
+/*SEARCH*/
+#main-search {
+  overflow-y: auto;
+  height: 87vh;
+}
+
+#search-component input {
+  color: white;
+}
+#search-component input::placeholder {
+  color: #6c757d;
   font-weight: bold;
 }
-
-.artistName {
-  font-size: small;
-  color: gray;
+#search-component .custom-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
 }
 
-.spacingAntiBarTracksMobile {
-  padding-bottom: 10rem !important;
-} /*CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
-/*HERO MOBILE*/
-.backbtn-album {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  font-size: 1.2rem;
-  background-color: rgba(131, 131, 131, 0.5);
-  border-radius: 50%;
-  height: 35px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#card-section-search {
+  margin-bottom: 11rem;
 }
 
-#album-title-mobile {
-  margin-top: 0.5rem;
-  padding: 0 1rem 1rem 1rem;
+@media screen and (min-width: 768px) {
+  #card-section-search {
+    margin-bottom: 9rem;
+  }
 }
-
-#hero-mobile-artist {
-  text-align: center;
-  padding: 2.6rem 0 0.5rem 0;
-  background: linear-gradient(to top, #212121 0%, #1db954);
+/* CATEGORIES */
+.categories-card {
+  overflow: hidden;
 }
-
-.hero-img-artist {
-  width: 60%;
-}
-
-.album-img {
-  width: 5%;
-  border-radius: 50%;
-  margin: 0 0.3rem 0 0;
-}
-
-.icon-wrapper-album {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.save-wrapper-album {
-  flex-basis: 29%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.3rem;
-}
-
-.play-wrapper-album {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.titleAlbum {
-  font-size: 1.4rem;
-}
-
-#artist-wrapper-album {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-#artist-wrapper-album h2, #artist-wrapper-album .h2 {
-  font-size: 0.8rem;
-  margin-bottom: 0;
-}
-
-.albumData {
-  color: #838383;
-  font-size: 0.8rem;
-  margin-bottom: 0;
-}
-
-.greyIcon {
-  color: #838383;
-}
-
-.heart-active {
-  fill: #1db954 !important;
-}
-
-.arrow-active {
-  color: #fff !important;
-}
-
-#shuffleDot-album {
-  background-color: #1db954;
-  height: 5px;
-  width: 5px;
-  border-radius: 50%;
-  display: none;
-  vertical-align: middle;
-  margin-left: 6px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(175%);
+.categories-card img {
+  transform: translateX(16px);
+  rotate: 20deg;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
 }
 
 /*ARTIST*/
@@ -12567,48 +12476,6 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   margin-top: 1rem !important;
 }
 
-/*SEARCH*/
-#search-component input {
-  color: white;
-}
-#search-component input::placeholder {
-  color: #6c757d;
-  font-weight: bold;
-}
-#search-component .custom-focus:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
-}
-
-#card-section-search {
-  margin-bottom: 11rem;
-}
-
-@media screen and (min-width: 768px) {
-  #card-section-search {
-    margin-bottom: 9rem;
-  }
-}
-/* CATEGORIES */
-.categories-card {
-  overflow: hidden;
-}
-.categories-card img {
-  transform: translateX(16px);
-  rotate: 20deg;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
-}
-
-/*MEDIA QUERIES*/
-@media screen and (max-width: 768px) {
-  #player-desktop {
-    display: none !important;
-  }
-  #player-title-artist h6, #player-title-artist .h6 {
-    display: none;
-  }
-}
 .toggle-popular-dropdown-menu {
   z-index: 100;
   position: fixed;
@@ -12621,4 +12488,212 @@ CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
   background-color: transparent;
   border: none;
   color: white;
+}
+
+/*ALBUM*/
+.songName {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.artistName {
+  font-size: small;
+  color: gray;
+}
+
+.spacingAntiBarTracksMobile {
+  padding-bottom: 10rem !important;
+} /*CLASSE PER NON NASCONDERE IL CONTENUTO SOTTO LA BARRA E MOSTRARLO INTERAMENTE*/
+/*HERO MOBILE*/
+.backbtn-album {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  background-color: rgba(131, 131, 131, 0.5);
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album-title-mobile {
+  margin-top: 0.5rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+#album-track-mobile {
+  margin-bottom: 170px;
+}
+#album-track-mobile .dropdown-menu {
+  display: block;
+  position: fixed;
+  color: antiquewhite;
+  background-color: rgb(34, 34, 34);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  z-index: 100;
+  padding: 10px;
+  overflow: visible;
+}
+
+@media (min-width: 500px) {
+  #album-track-mobile {
+    display: none !important;
+  }
+}
+.dropdown-menu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Stili specifici sotto i 500px */
+@media (max-width: 500px) {
+  .dropdown-menu {
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    z-index: 100;
+    padding: 10px;
+    overflow: auto;
+  }
+}
+/* Altri stili per la presentazione */
+.songName {
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.artistName {
+  font-size: small;
+  color: gray;
+}
+
+/* Altri stili per i bottoni nel menu a comparsa */
+.dropdown-menu-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem;
+  color: antiquewhite;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.dropdown-menu-button:hover {
+  background-color: rgb(51, 50, 50);
+}
+
+#hero-mobile-artist {
+  text-align: center;
+  padding: 2.6rem 0 0.5rem 0;
+  background: linear-gradient(to top, #212121 0%, #1db954);
+}
+
+.hero-img-artist {
+  width: 60%;
+}
+
+.album-img {
+  width: 5%;
+  border-radius: 50%;
+  margin: 0 0.3rem 0 0;
+}
+
+.icon-wrapper-album {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-wrapper-album {
+  flex-basis: 29%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.play-wrapper-album {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.titleAlbum {
+  font-size: 1.4rem;
+}
+
+#artist-wrapper-album {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+#artist-wrapper-album h2, #artist-wrapper-album .h2 {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.albumData {
+  color: #838383;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.greyIcon {
+  color: #838383;
+}
+
+.heart-active {
+  fill: #1db954 !important;
+}
+
+.arrow-active {
+  color: #fff !important;
+}
+
+#shuffleDot-album {
+  background-color: #1db954;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  display: none;
+  vertical-align: middle;
+  margin-left: 6px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(175%);
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  background-color: #2b2b2b;
+}
+
+::-ms-scrollbar {
+  background-color: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1db954;
+  border-radius: 50px;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 768px) {
+  #player-desktop {
+    display: none !important;
+  }
+  #player-title-artist h6, #player-title-artist .h6 {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */

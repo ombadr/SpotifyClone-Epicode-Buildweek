@@ -7,7 +7,6 @@ const options = {
     }
 }
 
-
 const searchForm = document.getElementById('searchForm')
 const searchInput = document.getElementById('searchInput')
 
@@ -15,36 +14,6 @@ searchForm.addEventListener('submit', async (e) => {
     e.preventDefault()
 
     const searchTerm = searchInput.value.trim()
-
-    /*
-    if (searchTerm !== '') {
-        window.location.href = `artist.html?search=${encodeURIComponent(searchTerm)}`
-    }
-    */
-
-    /*
-        if (searchTerm !== '') {
-            try {
-                const searchResults = await getTracksFromSearch(searchTerm)
-                const artist = searchResults.data[0].artist.name
-                const trackListUrl = searchResults.data[0].artist.tracklist
-                console.log(artist)
-                console.log(trackListUrl)
-    
-                if (trackListUrl) {
-                    const trackList = await getTrackList(trackListUrl)
-                    console.log('List of tracks:', trackList)
-    
-                    for (let i = 0; i < 10; i++) {
-                        console.log(trackList.data[i].title)
-                    }
-                }
-            } catch (e) {
-                console.error(e)
-            }
-        }
-    
-        */
 
     if (searchTerm !== '') {
         try {
